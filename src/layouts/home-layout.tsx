@@ -1,3 +1,5 @@
+import Navbar from "@/components/home/navbar";
+
 type Props = {
   children: React.ReactNode;
 };
@@ -5,7 +7,7 @@ type Props = {
 const HomeLayout = ({ children }: Props) => {
   return (
     <div className="grid grid-rows-[auto,1fr,auto] min-h-screen bg-background text-foreground-light">
-      <div>Navbar</div>
+      <Navbar />
       <div>{children}</div>
       <div>Footer</div>
     </div>

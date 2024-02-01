@@ -14,7 +14,7 @@ const Home = () => {
   return (
     // TODO: organize the code here
     <div className="antialiased">
-      <Column className="text-center bg-grid-white/[0.15] relative left-0 right-0 top-0 bottom-0 py-40 px-6">
+      <Column className="text-center bg-grid-white/[0.15] relative left-0 right-0 top-0 bottom-0 py-36 mb-14 px-6">
         <div
           className="absolute pointer-events-none inset-0 flex items-center justify-center
          dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
