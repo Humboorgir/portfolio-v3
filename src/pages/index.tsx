@@ -7,6 +7,7 @@ import Button from "@/components/ui/button";
 
 import { FaReact as React } from "react-icons/fa";
 import { VscServerProcess as Process } from "react-icons/vsc";
+import { GiAlarmClock as Clock } from "react-icons/gi";
 
 import Image from "next/image";
 
@@ -51,7 +52,9 @@ const Home = () => {
 
       <Container>
         <Row className="flex-wrap">
-          <Row items="start" className="h-[200px] border border-ring rounded-md flex max-w-xl p-4 mr-4">
+          <Row
+            items="start"
+            className="h-[200px] border border-ring rounded-md flex max-w-xl p-4 mb-4 mr-4">
             <Column items="start">
               <div className="rounded-full p-1 bg-white/80 mb-2">
                 <React className="text-2xl text-black" />
@@ -66,7 +69,7 @@ const Home = () => {
           </Row>
           <Row
             items="start"
-            className="min-h-[1px] h-[200px] border border-ring rounded-md flex max-w-xl p-4">
+            className="min-h-[1px] h-[200px] border border-ring rounded-md flex max-w-xl mb-4 p-4">
             <Column items="start">
               <div className="rounded-full p-1 bg-white/80 mb-2">
                 <Process className="text-2xl text-black" />
@@ -77,6 +80,36 @@ const Home = () => {
               </Text>
             </Column>
             <Image className="h-full mt-2" width={230} height={120} src="/process.svg" alt="laptop" />
+          </Row>
+          <Row
+            items="start"
+            className="min-h-[1px] h-[200px] border border-ring rounded-md flex max-w-xl p-4 mr-4">
+            <Column items="start">
+              <div className="rounded-full p-1 bg-white/80 mb-2">
+                <Clock className="text-2xl text-black" />
+              </div>
+              <Text variant="h4">Always On Time</Text>
+              <Text variant="p">
+                Being Punctual is a very important value to me therefore I always try to keep things on
+                time
+              </Text>
+            </Column>
+            <Image className="h-full mt-2" width={230} height={120} src="/clock.svg" alt="laptop" />
+          </Row>
+          <Row
+            items="start"
+            className="min-h-[1px] h-[200px] border border-ring rounded-md flex max-w-xl p-4">
+            <Column items="start">
+              <div className="rounded-full p-1 bg-white/80 mb-2">
+                <Process className="text-2xl text-black" />
+              </div>
+              <Text variant="h4">Experienced with it</Text>
+              <Text variant="p">
+                I've been doing web development since early 2020 and consider myself to be quite good at
+                my job
+              </Text>
+            </Column>
+            <Image className="h-full mt-2" width={230} height={120} src="/expert.svg" alt="laptop" />
           </Row>
         </Row>
       </Container>
