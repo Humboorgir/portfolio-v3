@@ -50,7 +50,7 @@ const Home = () => {
         </Text>
       </Container>
 
-      <Container>
+      <Container className="mb-28">
         <Row className="flex-wrap">
           <Row
             items="start"
@@ -110,6 +110,81 @@ const Home = () => {
               </Text>
             </Column>
             <Image className="h-full mt-2" width={230} height={120} src="/expert.svg" alt="laptop" />
+          </Row>
+        </Row>
+      </Container>
+
+      {/* Man the code looks so messy 
+      too lazy to clean it up now though I just wanna get things done */}
+      <Container>
+        <Text
+          className="relative mb-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500"
+          variant="h2">
+          <span className="bg-clip-text text-transparent bg-gradient-to-br from-primary to-primary/80">
+            Projects
+          </span>{" "}
+          I have built previously
+        </Text>
+      </Container>
+      <Container>
+        <Row className="flex-wrap space-y-12">
+          <Row className="p-5" items="start">
+            <Column className="mr-4" items="start">
+              <Text className="text-foreground/90" variant="h3">
+                FlickerUI
+              </Text>
+              <Text variant="p">
+                Collection of premade, animated React components built with Tailwindcss and
+                Framer-motion. Comes with a CLI used to add components to your project. Also a nice
+                looking documentation website.
+              </Text>
+            </Column>
+            <Image
+              className="h-full w-[50%] rounded-lg"
+              src="/flickerUI.png"
+              alt="FlickerUI"
+              width={900}
+              height={800}
+            />
+          </Row>
+
+          <Row className="p-5" items="start">
+            <Image
+              className="h-full w-[50%] rounded-lg"
+              src="/flickerUI.png"
+              alt="FlickerUI"
+              width={900}
+              height={800}
+            />
+            <Column className="ml-4" items="start">
+              <Text className="text-foreground/90" variant="h3">
+                Sweet's Dashboard
+              </Text>
+              <Text variant="p">
+                Sweet is my verified Discord bot with hundreds of active servers. This is its web
+                dashboard built with NextJS, NextAuth, Redux, Tailwindcss and Framer-motion. Has anything
+                you would expect in a web application: State management, Data fetching, etc
+              </Text>
+            </Column>
+          </Row>
+
+          <Row className="p-5" items="start">
+            <Column className="mr-4" items="start">
+              <Text className="text-foreground/90" variant="h3">
+                Sweet
+              </Text>
+              <Text variant="p">
+                AI-Powered, Verified Discord Moderation bot. Detects commands based on user's natural
+                language input and responds accordingly. Built with NodeJS, Tensorflow and Python.
+              </Text>
+            </Column>
+            <Image
+              className="h-full w-[50%] rounded-lg"
+              src="/flickerUI.png"
+              alt="FlickerUI"
+              width={900}
+              height={800}
+            />
           </Row>
         </Row>
       </Container>
