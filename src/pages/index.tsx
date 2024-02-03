@@ -116,14 +116,36 @@ const Home = () => {
 
       {/* Man the code looks so messy 
       too lazy to clean it up now though I just wanna get things done */}
-      <Container>
+      <Container className="relative mb-24">
+        <svg
+          className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
+          height="360"
+          width="1200"
+          xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="blur" x="0" y="0">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+            </filter>
+          </defs>
+          <ellipse
+            filter="url(#blur)"
+            cx="50%"
+            cy="50%"
+            rx="330"
+            ry="90"
+            style={{ fill: "hsl(var(--primary))" }}
+          />
+          <ellipse filter="url(#blur)" cx="50%" cy="54%" rx="390" ry="90" style={{ fill: "black" }} />
+        </svg>
         <Text
-          className="relative mb-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500"
+          className="relative bg-clip-text text-center text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500"
           variant="h2">
           <span className="bg-clip-text text-transparent bg-gradient-to-br from-primary to-primary/80">
             Projects
           </span>{" "}
-          I have built previously
+          I have built
+          <br />
+          in the past
         </Text>
       </Container>
       <Container>
