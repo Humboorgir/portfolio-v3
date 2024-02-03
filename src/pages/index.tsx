@@ -8,6 +8,9 @@ import Button from "@/components/ui/button";
 import { FaReact as React } from "react-icons/fa";
 import { VscServerProcess as Process } from "react-icons/vsc";
 import { GiAlarmClock as Clock } from "react-icons/gi";
+import { LuComponent as Component } from "react-icons/lu";
+import { LuCommand as Command } from "react-icons/lu";
+import { RiRobot2Line as Robot } from "react-icons/ri";
 
 import Image from "next/image";
 
@@ -148,9 +151,28 @@ const Home = () => {
           in the past
         </Text>
       </Container>
+
+      {/* projects  */}
       <Container>
-        <Row className="flex-wrap space-y-12">
-          <Row className="p-5" items="start">
+        <Column className="space-y-12">
+          <Row className="relative p-5 pl-14 min-h-[1px]" items="start">
+            {/* logo and line  */}
+            <div className="mt-5 h-full absolute left-0 top-0">
+              <div className="bg-primary/40 border border-primary/80 rounded-full p-1">
+                <Component className="text-3xl text-white" />
+              </div>
+              <svg
+                viewBox={`0 0 3 100%`}
+                width="3"
+                height="100%"
+                className="absolute left-[50%] translate-x-[-50%]">
+                <path
+                  d={`M 1 0V -36 l 3 24 V 300 l -18 24V 300`}
+                  fill="hsl(var(--primary))"
+                  className="w-1"
+                  fillOpacity="0.5"></path>
+              </svg>
+            </div>
             <Column className="mr-4" items="start">
               <Text className="text-foreground/90" variant="h3">
                 FlickerUI
@@ -208,7 +230,7 @@ const Home = () => {
               height={800}
             />
           </Row>
-        </Row>
+        </Column>
       </Container>
     </div>
   );

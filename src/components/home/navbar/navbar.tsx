@@ -3,11 +3,28 @@ import Container from "@/components/ui/container";
 import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
 
+import HoverHighlight from "./hover-highlight";
+
+import React, { useRef, useState } from "react";
+
 import { MdOutlineWorkHistory as Work } from "react-icons/md";
 import { IoIosColorWand as Theme } from "react-icons/io";
 import { FaGithub as Github } from "react-icons/fa";
 
 const Navbar = () => {
+  const containerRef = useRef<HTMLUListElement>(null);
+  const containerRect = containerRef.current?.getBoundingClientRect();
+
+  const [buttonRect, setButtonRect] = useState<DOMRect | null>(null);
+
+  function updateButtonRect(e: any) {
+    setButtonRect(e.target.getBoundingClientRect());
+  }
+
+  function resetButtonRect() {
+    setButtonRect(null);
+  }
+
   const links = [
     {
       name: "Home",
@@ -24,6 +41,7 @@ const Navbar = () => {
           before:h-[2px] before:bg-gradient-to-r before:from-neutral-700/40 before:via-neutral-700/60
            before:to-neutral-700/40">
       <Container className="w-screen grid grid-cols-[1fr,3fr,1fr] py-4">
+        {/* logo  */}
         <Row>
           <Work className="text-3xl mr-1" />
           <Text
@@ -32,17 +50,30 @@ const Navbar = () => {
             Portfolio
           </Text>
         </Row>
-        <ul className="flex items-center justify-center">
+
+        {/* links  */}
+        <ul
+          key="navbar"
+          ref={containerRef}
+          onMouseLeave={resetButtonRect}
+          className="relative flex items-center justify-center">
+          <HoverHighlight buttonRect={buttonRect} containerRect={containerRect} />
+
           {links.map((link) => {
             return (
-              <li>
-                <Button className="text-foreground/90 text-[17px]" variant="ghost" href={link.href}>
+              <li onMouseOver={updateButtonRect}>
+                <Button
+                  className="text-foreground/90 text-[17px] hover:bg-inherit"
+                  variant="ghost"
+                  href={link.href}>
                   {link.name}
                 </Button>
               </li>
             );
           })}
         </ul>
+
+        {/* theme and github  */}
         <ul className="flex items-center">
           <li>
             <Button variant="ghost">
