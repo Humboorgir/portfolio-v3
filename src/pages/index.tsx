@@ -5,6 +5,8 @@ import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
 import Button from "@/components/ui/button";
 
+import Ring from "@/components/svg/ring";
+
 import { FaReact as React } from "react-icons/fa";
 import { VscServerProcess as Process } from "react-icons/vsc";
 import { GiAlarmClock as Clock } from "react-icons/gi";
@@ -53,7 +55,7 @@ const Home = () => {
         </Text>
       </Container>
 
-      <Container className="mb-28">
+      <Container className="mb-44">
         <Row className="flex-wrap">
           <Row
             items="start"
@@ -117,29 +119,9 @@ const Home = () => {
         </Row>
       </Container>
 
-      {/* Man the code looks so messy 
-      too lazy to clean it up now though I just wanna get things done */}
-      <Container className="relative mb-24">
-        <svg
-          className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
-          height="360"
-          width="1200"
-          xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="blur" x="0" y="0">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
-            </filter>
-          </defs>
-          <ellipse
-            filter="url(#blur)"
-            cx="50%"
-            cy="50%"
-            rx="330"
-            ry="90"
-            style={{ fill: "hsl(var(--primary))" }}
-          />
-          <ellipse filter="url(#blur)" cx="50%" cy="54%" rx="390" ry="90" style={{ fill: "black" }} />
-        </svg>
+      {/* Projects section  */}
+      <Container className="relative my-24">
+        <Ring className="w-[70vw] md:w-[78vw] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]" />
         <Text
           className="relative bg-clip-text text-center text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500"
           variant="h2">
