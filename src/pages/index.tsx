@@ -25,11 +25,11 @@ const Home = () => {
           className="absolute pointer-events-none inset-0 flex items-center justify-center
          dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <Text
-          className="z-10 py-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500"
+          className="z-10 py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500"
           variant="h1">
           Turning ideas into reality
         </Text>
-        <Text className="z-10 text-[19px] max-w-screen-md mb-4" variant="lead">
+        <Text className="z-10 text-[19px] max-w-screen-md mb-5" variant="lead">
           Every great project starts with an idea. Whether it's a startup, a small business, or a
           personal project and I'm here to bring those ideas to life
         </Text>
