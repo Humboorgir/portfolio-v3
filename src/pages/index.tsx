@@ -6,6 +6,8 @@ import Text from "@/components/ui/text";
 import Button from "@/components/ui/button";
 
 import Ring from "@/components/svg/ring";
+import VerticalLine from "@/components/svg/vertical-line";
+import HorizontalLine from "@/components/svg/horizontal-line";
 
 import { FaReact as React } from "react-icons/fa";
 import { VscServerProcess as Process } from "react-icons/vsc";
@@ -136,63 +138,97 @@ const Home = () => {
 
       {/* projects  */}
       <Container>
-        <Column className="space-y-12">
-          <Row className="relative p-5 pl-14 min-h-[1px]" items="start">
-            {/* logo and line  */}
-            <div className="mt-5 h-full absolute left-0 top-0">
-              <div className="bg-primary/40 border border-primary/80 rounded-full p-1">
-                <Component className="text-3xl text-white" />
-              </div>
-              <svg
-                viewBox={`0 0 3 100%`}
-                width="3"
-                height="100%"
-                className="absolute left-[50%] translate-x-[-50%]">
-                <path
-                  d={`M 1 0V -36 l 3 24 V 300 l -18 24V 300`}
-                  fill="hsl(var(--primary))"
-                  className="w-1"
-                  fillOpacity="0.5"></path>
-              </svg>
-            </div>
-            <Column className="mr-4" items="start">
-              <Text className="text-foreground/90" variant="h3">
-                FlickerUI
-              </Text>
-              <Text variant="p">
-                Collection of premade, animated React components built with Tailwindcss and
-                Framer-motion. Comes with a CLI used to add components to your project. Also a nice
-                looking documentation website.
-              </Text>
-            </Column>
-            <Image
-              className="h-full w-[50%] rounded-lg"
-              src="/flickerUI.png"
-              alt="FlickerUI"
-              width={900}
-              height={800}
-            />
-          </Row>
+        <Column>
+          <Column>
+            <Row className="relative p-5 pb-[80px] pl-14 min-h-[1px]" items="start">
+              {/* logo and line  */}
+              <Column className="mt-5 h-full absolute left-0 top-0">
+                <div className="bg-primary/40 border border-primary/80 rounded-full w-fit p-1">
+                  <Component className="text-3xl text-white" />
+                </div>
+                <div className="w-[3px] h-full bg-gradient-to-b from-primary/20 to-primary/80" />
+              </Column>
 
-          <Row className="p-5" items="start">
-            <Image
-              className="h-full w-[50%] rounded-lg"
-              src="/flickerUI.png"
-              alt="FlickerUI"
-              width={900}
-              height={800}
-            />
-            <Column className="ml-4" items="start">
-              <Text className="text-foreground/90" variant="h3">
-                Sweet's Dashboard
-              </Text>
-              <Text variant="p">
-                Sweet is my verified Discord bot with hundreds of active servers. This is its web
-                dashboard built with NextJS, NextAuth, Redux, Tailwindcss and Framer-motion. Has anything
-                you would expect in a web application: State management, Data fetching, etc
-              </Text>
-            </Column>
-          </Row>
+              <Column className="mr-4" items="start">
+                <Text className="text-foreground/90" variant="h3">
+                  FlickerUI
+                </Text>
+                <Text variant="p">
+                  Collection of premade, animated React components built with Tailwindcss and
+                  Framer-motion. Comes with a CLI used to add components to your project. Also a nice
+                  looking documentation website.
+                </Text>
+              </Column>
+              <Image
+                className="h-full w-[50%] rounded-lg"
+                src="/flickerUI.png"
+                alt="FlickerUI"
+                width={900}
+                height={800}
+              />
+            </Row>
+            <Row items="end" className="w-[calc(100%-34px)] mt-[14px]">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                className="rotate-[2deg]"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2 0V7.79708C2 17.0811 5.21323 26.0791 11.0941 33.263V33.263C18.7299 42.5908 30.1483 48 42.2029 48H50"
+                  stroke="#0063CC"
+                  stroke-width="3"
+                />
+              </svg>
+              <div
+                className="h-[3px] translate-x-[-2px] w-[calc(100%-88px)] bg-gradient-to-r 
+              from-primary/80 via-primary to-primary/30"
+              />
+            </Row>
+          </Column>
+
+          <Column>
+            <Row className="relative p-14 pr-16 min-h-[1px]" items="start">
+              <Image
+                className="h-full w-[50%] rounded-lg translate-y-[-20px]"
+                src="/flickerUI.png"
+                alt="FlickerUI"
+                width={900}
+                height={800}
+              />
+              <Column className="ml-4 text-right translate-y-[-20px]" items="end">
+                <Text className="text-foreground/90" variant="h3">
+                  Sweet's Dashboard
+                </Text>
+                <Text variant="p">
+                  Sweet is my verified Discord bot with hundreds of active servers. This is its web
+                  dashboard built with NextJS, NextAuth, Redux, Tailwindcss and Framer-motion. Has
+                  anything you would expect in a web application: State management, Data fetching, etc
+                </Text>
+              </Column>
+
+              {/* logo and line  */}
+              <Column className="h-full absolute right-0 top-0">
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 50 50"
+                  fill="none"
+                  className="rotate-[7deg] translate-x-[-15px] translate-y-[-0.5px] stroke-primary/30"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M48 50V42.2029C48 32.9189 44.7868 23.9209 38.9059 16.737V16.737C31.2701 7.40917 19.8517 2 7.79708 2L1.90735e-06 2"
+                    stroke-width="3"
+                  />
+                </svg>
+                <div className="bg-primary/40 border border-primary/80 rounded-full w-fit p-1">
+                  <Command className="text-3xl text-white" />
+                </div>
+                <div className="w-[3px] h-full bg-gradient-to-b from-primary/20 to-primary" />
+              </Column>
+            </Row>
+          </Column>
 
           <Row className="p-5" items="start">
             <Column className="mr-4" items="start">
