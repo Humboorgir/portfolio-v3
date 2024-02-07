@@ -197,11 +197,11 @@ const Home = () => {
                 width={900}
                 height={800}
               />
-              <Column className="ml-4 text-right translate-y-[-20px]" items="end">
-                <Text className="text-foreground/90" variant="h3">
+              <Column className="ml-4 translate-y-[-20px]" items="end">
+                <Text className="text-foreground/90 text-right" variant="h3">
                   Sweet's Dashboard
                 </Text>
-                <Text variant="p">
+                <Text className="ml-1" variant="p">
                   Sweet is my verified Discord bot with hundreds of active servers. This is its web
                   dashboard built with NextJS, NextAuth, Redux, Tailwindcss and Framer-motion. Has
                   anything you would expect in a web application: State management, Data fetching, etc
