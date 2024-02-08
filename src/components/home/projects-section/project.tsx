@@ -6,9 +6,12 @@ import Text from "@/components/ui/text";
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Button from "@/components/ui/button";
+
+type Project = { name: string | JSX.Element; icon: IconType; description: string; image: string };
 
 type Props = {
-  project: { name: string | JSX.Element; icon: IconType; description: string };
+  project: Project;
   isEven: boolean;
 };
 
@@ -20,8 +23,8 @@ const Project = ({ project, isEven }: Props) => {
       <>
         <Column>
           <Row className="items-stretch px-5 h-fit min-h-[1px]" items="start">
-            <ProjectThumbnail />
-            <Column className="ml-6 items-end">
+            <ProjectThumbnail project={project} />
+            <Column className="ml-6 items-end mb-36">
               <Text className="text-foreground/90" variant="h3">
                 {project.name}
               </Text>
@@ -87,13 +90,13 @@ const Project = ({ project, isEven }: Props) => {
             <div className="w-[3px] h-full bg-gradient-to-b from-primary/20 to-primary/80" />
           </Column>
 
-          <Column className={cn("mr-4 items-start", isEven && "items-end")}>
+          <Column className="mr-4 items-start mb-36">
             <Text className="text-foreground/90" variant="h3">
               {project.name}
             </Text>
             <Text variant="p">{project.description}</Text>
           </Column>
-          <ProjectThumbnail />
+          <ProjectThumbnail project={project} />
         </Row>
         <Row items="start" justify="center" className="w-[calc(100%-75px)] h-[101px]">
           {/* curve  */}
@@ -133,12 +136,12 @@ const Project = ({ project, isEven }: Props) => {
   );
 };
 
-function ProjectThumbnail() {
+function ProjectThumbnail({ project }: { project: Project }) {
   return (
     <Image
-      className="h-full w-[50%] rounded-lg"
-      src="/flickerUI.png"
-      alt="FlickerUI"
+      className="h-full w-[50%] rounded-lg [mask-image:radial-gradient(ellipse_at_center,black_10%,transparent)]"
+      src={project.image}
+      alt={project.description}
       width={900}
       height={800}
     />

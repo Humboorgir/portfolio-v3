@@ -17,6 +17,7 @@ const Projects = () => {
       description:
         "Collection of premade, animated React components built with Tailwindcss and Framer-motion. Comes with a CLI used to add components to your project. Also a nice looking documentation website.",
       icon: Component,
+      image: "/flickerUI.png",
     },
     {
       name: (
@@ -27,6 +28,7 @@ const Projects = () => {
       description:
         "Sweet is my verified Discord bot with hundreds of active servers. This is its web dashboard built with NextJS, NextAuth, Redux, Tailwindcss and Framer-motion. Has anything you would expect in a web application: State management, Data fetching, etc",
       icon: Command,
+      image: "/sweetDashboard.png",
     },
     {
       name: (
@@ -37,6 +39,7 @@ const Projects = () => {
       description:
         "AI-Powered, Verified Discord Moderation bot. Detects commands based on user's natural language input and responds accordingly. Built with NodeJS, Tensorflow and Python.",
       icon: Robot,
+      image: "/sweet.png",
     },
   ];
   return (
