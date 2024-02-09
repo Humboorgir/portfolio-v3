@@ -2,13 +2,20 @@ import type { IconType } from "react-icons";
 
 import Row from "@/components/ui/row";
 import Column from "@/components/ui/column";
+import Button from "@/components/ui/button";
 import Text from "@/components/ui/text";
 
-import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Button from "@/components/ui/button";
 
-type Project = { name: string | JSX.Element; icon: IconType; description: string; image: string };
+import { FiExternalLink as Link } from "react-icons/fi";
+
+type Project = {
+  name: string | JSX.Element;
+  icon: IconType;
+  description: string;
+  image: string;
+  repo: string;
+};
 
 type Props = {
   project: Project;
@@ -28,7 +35,17 @@ const Project = ({ project, isEven }: Props) => {
               <Text className="text-foreground/90" variant="h3">
                 {project.name}
               </Text>
-              <Text variant="p">{project.description}</Text>
+              <Text className="mb-3 text-right" variant="p">
+                {project.description}
+              </Text>
+              <Row>
+                <Button
+                  className="bg-primary/80 hover:bg-primary/60 grow w-[240px]"
+                  href={project.repo}
+                  openInNewTab>
+                  View repository <Link className="mb-[3px] ml-1" />
+                </Button>
+              </Row>
             </Column>
 
             <Column className="left-0 top-0 ml-3">
@@ -94,7 +111,17 @@ const Project = ({ project, isEven }: Props) => {
             <Text className="text-foreground/90" variant="h3">
               {project.name}
             </Text>
-            <Text variant="p">{project.description}</Text>
+            <Text className="mb-3" variant="p">
+              {project.description}
+            </Text>
+            <Row>
+              <Button
+                className="bg-primary/80 hover:bg-primary/60 grow w-[240px]"
+                href={project.repo}
+                openInNewTab>
+                View repository <Link className="mb-[3px] ml-1" />
+              </Button>
+            </Row>
           </Column>
           <ProjectThumbnail project={project} />
         </Row>
