@@ -139,7 +139,7 @@ const Project = ({ project, isEven }: Props) => {
 function ProjectThumbnail({ project }: { project: Project }) {
   return (
     <Image
-      className="h-full w-[50%] rounded-lg [mask-image:radial-gradient(ellipse_at_center,black_10%,transparent)]"
+      className="h-full w-[50%] rounded-lg opacity-60"
       src={project.image}
       alt={project.description}
       width={900}
