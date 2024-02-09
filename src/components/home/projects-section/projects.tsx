@@ -51,7 +51,7 @@ const Projects = () => {
     },
   ];
   return (
-    <Container className="flex flex-col items-center">
+    <Container className="flex flex-col items-center mb-36">
       {projects.map((project, i) => {
         const isEven = (i + 1) % 2 == 0;
         return <Project project={project} isEven={isEven} />;
