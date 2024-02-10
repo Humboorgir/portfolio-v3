@@ -25,6 +25,14 @@ const config: Config = {
         accent: "hsl(var(--accent))",
         ring: "hsl(var(--ring))",
       },
+      animation: {
+        ripple: "ripple 600ms linear",
+      },
+      keyframes: {
+        ripple: {
+          "0%": { opacity: "40%", transform: "scale(0)" },
+          "100%": { opacity: "0%", transform: "scale(3)" },
+        },
     },
   },
   plugins: [
