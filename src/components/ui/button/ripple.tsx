@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-const useDebouncedRippleCleanUp = (rippleCount: number, duration: number, cleanUpFunction: () => void) => {
+const useDebouncedRippleCleanUp = (
+  rippleCount: number,
+  duration: number,
+  cleanUpFunction: () => void
+) => {
   useEffect(() => {
     let bounce: any = null;
     if (rippleCount > 0) {
@@ -22,7 +26,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const Ripple = ({ duration = 600, rippleColor = "hsl(var(--primary))", children }: Props) => {
+const Ripple = ({ duration = 600, rippleColor = "#ffffff71", children }: Props) => {
   interface Ripple {
     y: number;
     x: number;

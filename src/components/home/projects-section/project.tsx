@@ -166,7 +166,7 @@ const Project = ({ project, isEven }: Props) => {
 function ProjectThumbnail({ project }: { project: Project }) {
   return (
     <Image
-      className="h-full w-[50%] rounded-lg opacity-60"
+      className="h-full w-[50%] rounded-lg opacity-80"
       src={project.image}
       alt={project.description}
       width={900}
