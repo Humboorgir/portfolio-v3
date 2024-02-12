@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const Tooltip = ({
@@ -23,7 +23,7 @@ const Tooltip = ({
           onMouseLeave={() => setHoveredIndex(null)}>
           <AnimatePresence>
             {hoveredIndex === id && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 20, x: -10, rotate: "-20deg", scale: 0.6 }}
                 animate={{
                   opacity: 1,
@@ -46,7 +46,7 @@ const Tooltip = ({
                 <div className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px" />
                 <div className="font-bold text-foreground relative z-30 text-lg">{item.name}</div>
                 <div className="text-foreground-light text-sm">{item.description}</div>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
           <div

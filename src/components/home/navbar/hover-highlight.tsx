@@ -1,4 +1,4 @@
-import { motion, cubicBezier, AnimatePresence } from "framer-motion";
+import { m, cubicBezier, AnimatePresence } from "framer-motion";
 
 type Props = {
   buttonRect: DOMRect | null;
@@ -8,7 +8,7 @@ const HoverHighlight = ({ buttonRect, containerRect }: Props) => {
   return (
     <AnimatePresence>
       {buttonRect && containerRect && (
-        <motion.div
+        <m.div
           key="hoverHighlight"
           initial={{
             x: buttonRect?.left - containerRect?.left,
