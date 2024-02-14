@@ -18,7 +18,7 @@ import { IoLogoDiscord as Discord } from "react-icons/io5";
 import { FaTelegram as Telegram } from "react-icons/fa6";
 import { FaTwitter as Twitter } from "react-icons/fa6";
 
-import { HiOutlineBars3BottomLeft as Project } from "react-icons/hi2";
+import { RiQuestionAnswerLine as Project } from "react-icons/ri";
 const Home = () => {
   return (
     <div className="antialiased">
@@ -29,20 +29,22 @@ const Home = () => {
       <ProjectsSection />
 
       <Container className="flex flex-col items-center">
-        <Column items="start" className="p-10 z-10 bg-background rounded-[33px] mb-4">
-          <Text className="text-blue-500 !text-base !flex !items-center ml-2.5" variant="p">
-            <Project className="!text-xl mr-1.5 mb-1" />
+        <Column
+          items="center"
+          className="text-center p-10 bg-gradient-to-br from-primary/30 to-primary/10 z-10 rounded-[33px] mb-4">
+          {/* <Text className="text-blue-500 !text-base !flex !items-center ml-4" variant="p">
+            <Project className="text-lg mr-1.5 mb-0.5" />
             So what are you waiting for?
-          </Text>
-          <Text className="text-foreground/80 z-20 !text-4xl md:!text-6xl" variant="h2">
+          </Text> */}
+          <Text className="text-foreground/90 z-20 !text-4xl md:!text-6xl" variant="h2">
             Let's build the future!
           </Text>
-          <Text className="max-w-xl mb-3" variant="p">
+          <Text className="max-w-xl mb-5" variant="p">
             Send me a message, make sure to include necessary details like your project and how I can
             contact you back
           </Text>
-          <Input className="max-w-[200px] w-full mb-2 self-start" placeholder="Name" />
-          <Textarea className="w-full mb-4" placeholder="Message" />
+          <Input className="w-full mb-2.5 self-start bg-inherit" placeholder="Name" />
+          <Textarea className="w-full mb-3" placeholder="Message" />
           <Button className="w-full bg-gradient-to-br from-blue-600 to-blue-800">
             Send project request <Mail className="ml-1" />
           </Button>
