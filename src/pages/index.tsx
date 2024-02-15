@@ -2,7 +2,8 @@ import HomeLayout from "@/layouts/home-layout";
 import HeroSection from "@/components/home/hero-section";
 import ExperienceSection from "@/components/home/experience-section";
 import ProjectsSection from "@/components/home/projects-section";
-import ContactSection from "@/components/home/contact-section/contact-section";
+import PricingSection from "@/components/home/pricing-section";
+import ContactSection from "@/components/home/contact-section";
 
 const Home = () => {
   return (
@@ -12,6 +13,8 @@ const Home = () => {
       <ExperienceSection />
 
       <ProjectsSection />
+
+      <PricingSection />
 
       <ContactSection />
     </div>
