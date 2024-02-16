@@ -30,7 +30,7 @@ const PricingCards = () => {
     {
       name: "Bot",
       description: "A Discord or Telegram bot. The price heavily depends on the bot's functionality.",
-      perks: ["Delievered within 2 weeks", "Nicely designed", "Beautifully animated", "Decent price"],
+      perks: ["Delievered within a week", "Fully customizable", "Performant", "Decent price"],
       price: "Around 20",
     },
   ];
