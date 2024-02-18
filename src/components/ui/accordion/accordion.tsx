@@ -46,12 +46,20 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
         {items.map((item, i) => {
           return (
             <div className="mb-1">
-              <Button onClick={() => toggleOpen(i)} className="w-full justify-between" variant="ghost">
+              <button
+                onClick={() => toggleOpen(i)}
+                className="w-full hover:bg-accent/80 active:bg-secondary/90 active:transition-all
+                 flex items-center justify-between p-2 rounded-md">
                 <Text className="text-foreground/90 flex items-center" variant="h5">
                   {item.trigger}
                 </Text>
-                <AngleDown className={cn("transition-all duration-300", open == i && "rotate-180")} />
-              </Button>
+                <AngleDown
+                  className={cn(
+                    "text-lg mr-1 transition-all duration-300",
+                    open == i && "rotate-180 ease-out"
+                  )}
+                />
+              </button>
               <AnimatePresence>
                 {open == i && (
                   <MText
