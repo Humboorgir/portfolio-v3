@@ -1,15 +1,20 @@
-import { cn } from "@/lib/utils";
-import React, { useState } from "react";
-import { AnimatePresence, cubicBezier, m } from "framer-motion";
-import Button from "@/components/ui/button";
 import Text from "@/components/ui/text";
+
+import { cn } from "@/lib/utils";
+import { forwardRef, useState } from "react";
+import { AnimatePresence, cubicBezier, m } from "framer-motion";
 
 import { FaAngleDown as AngleDown } from "react-icons/fa6";
 
-export type AccordionProps = React.HTMLProps<HTMLDivElement>;
+export type AccordionProps = React.HTMLProps<HTMLDivElement> & {
+  items: {
+    trigger: string;
+    content: string;
+  }[];
+};
 
-const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
-  ({ children, className, ...props }, ref) => {
+const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
+  ({ children, className, items, ...props }, ref) => {
     const [open, setOpen] = useState<number | null>(null);
     const MText = m(Text);
 
@@ -18,34 +23,11 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
       setOpen(i);
     }
 
-    // dummy data
-    const items = [
-      {
-        trigger: "How long would my project take?",
-        content: `Depends on what your project is, a bot could take anywhere from 2 days to a few weeks.
-    web apps are similar but usually take a bit more. a personal website could take about a
-    week or two, whereas an interactive application could take around a month`,
-      },
-      {
-        trigger: "How much is the price?",
-        content: `Depends on what your project is, a bot could take anywhere from 2 days to a few weeks.
-    websites are similar but usually take a bit more. a personal website could take about a
-    week or two, whereas an interactive application could take around a month`,
-      },
-      {
-        trigger: "Where can I contact you",
-        content: `Depends on what your project is, a bot could take anywhere from 2 days to a few weeks.
-    websites are similar but usually take a bit more. a personal website could take about a
-    week or two, whereas an interactive application could take around a month`,
-      },
-    ];
-
-    // TODO: turn this into a reusable component
     return (
       <div className="max-w-xl" ref={ref} {...props}>
         {items.map((item, i) => {
           return (
-            <div className="mb-1">
+            <div className={cn("mb-1", className)}>
               <button
                 onClick={() => toggleOpen(i)}
                 className="w-full hover:bg-accent/80 active:bg-secondary/90 active:transition-all
