@@ -46,9 +46,9 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
                 {open == i && (
                   <MText
                     key={i}
-                    initial={{ maxHeight: 0, opacity: 0 }}
-                    animate={{ maxHeight: 100, opacity: 1 }}
-                    exit={{ maxHeight: 0, opacity: 0 }}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
                     transition={{
                       duration: 0.4,
                       ease: cubicBezier(0.22, 1, 0.36, 1),
