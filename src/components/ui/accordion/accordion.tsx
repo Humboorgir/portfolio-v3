@@ -24,10 +24,10 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
     }
 
     return (
-      <div className="max-w-xl" ref={ref} {...props}>
+      <div className={className} ref={ref} {...props}>
         {items.map((item, i) => {
           return (
-            <div className={cn("mb-1", className)}>
+            <div className="mb-1">
               <button
                 onClick={() => toggleOpen(i)}
                 className="w-full hover:bg-accent/80 active:bg-secondary/90 active:transition-all

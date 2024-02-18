@@ -31,8 +31,8 @@ const FAQSection = () => {
   ];
 
   return (
-    <Container className="mb-32">
-      <Text className="text-foreground/90 mb-4" variant="h2">
+    <Container className="mb-32 w-full max-w-screen-md">
+      <Text className="text-foreground/90 mb-4" variant="h3">
         Frequently asked questions
       </Text>
       <Accordion items={accordionItems} />
