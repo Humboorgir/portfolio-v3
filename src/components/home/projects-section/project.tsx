@@ -30,23 +30,25 @@ const Project = ({ project, isEven }: Props) => {
       <>
         <Column>
           <Row className="items-stretch px-5 h-fit min-h-[1px]" items="start">
-            <ProjectThumbnail project={project} />
-            <Column className="ml-6 items-end mb-36">
-              <Text className="text-foreground/90" variant="h3">
-                {project.name}
-              </Text>
-              <Text className="mb-3 text-right" variant="p">
-                {project.description}
-              </Text>
-              <Row>
-                <Button
-                  className="bg-primary/80 hover:bg-primary/60 grow w-[240px]"
-                  href={project.repo}
-                  openInNewTab>
-                  View repository <Link className="mb-[3px] ml-1" />
-                </Button>
-              </Row>
-            </Column>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <ProjectThumbnail project={project} />
+              <Column className="ml-6 items-end mb-36">
+                <Text className="text-foreground/90" variant="h3">
+                  {project.name}
+                </Text>
+                <Text className="mb-3 text-right" variant="p">
+                  {project.description}
+                </Text>
+                <Row>
+                  <Button
+                    className="bg-primary/80 hover:bg-primary/60 grow w-[240px]"
+                    href={project.repo}
+                    openInNewTab>
+                    View repository <Link className="mb-[3px] ml-1" />
+                  </Button>
+                </Row>
+              </Column>
+            </div>
 
             <Column className="left-0 top-0 ml-3">
               {/* icon */}
@@ -107,23 +109,25 @@ const Project = ({ project, isEven }: Props) => {
             <div className="w-[3px] h-full bg-gradient-to-b from-primary/20 to-primary/80" />
           </Column>
 
-          <Column className="mr-4 items-start mb-36">
-            <Text className="text-foreground/90" variant="h3">
-              {project.name}
-            </Text>
-            <Text className="mb-3" variant="p">
-              {project.description}
-            </Text>
-            <Row>
-              <Button
-                className="bg-primary/80 hover:bg-primary/60 grow w-[240px]"
-                href={project.repo}
-                openInNewTab>
-                View repository <Link className="mb-[3px] ml-1" />
-              </Button>
-            </Row>
-          </Column>
-          <ProjectThumbnail project={project} />
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <Column className="mr-4 items-start mb-36">
+              <Text className="text-foreground/90" variant="h3">
+                {project.name}
+              </Text>
+              <Text className="mb-3" variant="p">
+                {project.description}
+              </Text>
+              <Row>
+                <Button
+                  className="bg-primary/80 hover:bg-primary/60 grow w-[240px]"
+                  href={project.repo}
+                  openInNewTab>
+                  View repository <Link className="mb-[3px] ml-1" />
+                </Button>
+              </Row>
+            </Column>
+            <ProjectThumbnail project={project} />
+          </div>
         </Row>
         <Row items="start" justify="center" className="w-[calc(100%-75px)] h-[101px]">
           {/* curve  */}
@@ -166,7 +170,8 @@ const Project = ({ project, isEven }: Props) => {
 function ProjectThumbnail({ project }: { project: Project }) {
   return (
     <Image
-      className="h-full w-[50%] rounded-lg opacity-80"
+      className="rounded-lg opacity-80 row-start-2 row-end-2
+      md:row-auto"
       src={project.image}
       alt={project.description}
       width={900}
