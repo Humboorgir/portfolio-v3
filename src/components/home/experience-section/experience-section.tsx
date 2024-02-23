@@ -39,7 +39,7 @@ const ExperienceSection = () => {
     <>
       <Container>
         <Text
-          className="relative mb-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500"
+          className="relative mb-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
           variant="h2">
           <span className="bg-clip-text text-transparent bg-gradient-to-br from-primary to-primary/80">
             4 Years

@@ -27,11 +27,23 @@ const config: Config = {
       },
       animation: {
         ripple: "ripple 600ms linear",
+        scroll: "scroll 30s forwards linear infinite",
       },
       keyframes: {
         ripple: {
           "0%": { opacity: "40%", transform: "scale(0)" },
           "100%": { opacity: "0%", transform: "scale(3)" },
+        },
+        scroll: {
+          "0%": {
+            transform: "translate(0)",
+          },
+          "50%": {
+            transform: "translate(-30%)",
+          },
+          "100%": {
+            transform: "translate(0)",
+          },
         },
       },
     },

@@ -3,7 +3,30 @@ import Row from "@/components/ui/row";
 import Button from "@/components/ui/button";
 import Text from "@/components/ui/text";
 
+import { m } from "framer-motion";
+
+import { FaReact as React } from "react-icons/fa";
+import {
+  SiTypescript as Typescript,
+  SiNextdotjs as Next,
+  SiSvelte as Svelte,
+  SiFramer as FramerMotion,
+  SiBootstrap as Bootstrap,
+  SiMui as Mui,
+  SiNodedotjs as NodeJS,
+  SiBun as Bun,
+  SiExpress as Express,
+  SiSocketdotio as SocketIO,
+  SiMongodb as MongoDB,
+  SiPostgresql as PostgreSQL,
+  SiPrisma as Prisma,
+} from "react-icons/si";
+import { FaVuejs as Vue } from "react-icons/fa6";
+import { SiTailwindcss as Tailwindcss } from "react-icons/si";
+
 const HeroSection = () => {
+  const MRow = m(Row);
+
   return (
     <Column className="text-center bg-grid-white/[0.15] relative left-0 right-0 top-0 bottom-0 py-36 mb-14 px-6">
       <div
@@ -23,7 +46,7 @@ const HeroSection = () => {
 
       {/* button group */}
       <Column
-        className="md:flex-row items-stretch md:items-center z-10 px-6 sm:px-10
+        className="md:flex-row items-stretch md:items-center z-10 px-6 sm:px-10 mb-10
       space-y-3 space-x-0 md:space-x-3 md:space-y-0 flex-wrap w-full md:w-fit">
         <Button
           className="md:w-64 md:grow-0 rounded-3xl bg-foreground/80
@@ -34,6 +57,34 @@ const HeroSection = () => {
         <Button className="md:w-64 md:grow-0 rounded-3xl" size="lg" variant="outline">
           Contact
         </Button>
+      </Column>
+
+      <Column
+        className="max-w-sm relative overflow-hidden
+        [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+        <Text variant="p">Experienced with most major frameworks</Text>
+        <MRow className="space-x-3 mt-2 animate-scroll">
+          {[
+            Typescript,
+            React,
+            Next,
+            Svelte,
+            Vue,
+            Tailwindcss,
+            Mui,
+            Bootstrap,
+            FramerMotion,
+            NodeJS,
+            Bun,
+            Express,
+            SocketIO,
+            MongoDB,
+            PostgreSQL,
+            Prisma,
+          ].map((Icon, i) => {
+            return <Icon key={i} className="w-9 h-9 rounded-md" />;
+          })}
+        </MRow>
       </Column>
     </Column>
   );
