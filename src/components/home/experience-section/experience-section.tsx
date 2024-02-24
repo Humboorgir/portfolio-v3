@@ -3,9 +3,10 @@ import Column from "@/components/ui/column";
 import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
 
-import { FaReact as React } from "react-icons/fa";
-import { VscServerProcess as Process } from "react-icons/vsc";
+import { VscCode as Code } from "react-icons/vsc";
+import { VscServerProcess as Frontend } from "react-icons/vsc";
 import { GiAlarmClock as Clock } from "react-icons/gi";
+import { PiStackLight as Stack } from "react-icons/pi";
 
 import Image from "next/image";
 
@@ -37,44 +38,94 @@ const ExperienceSection = () => {
   ];
   return (
     <>
-      <Container>
-        <Text
-          className="relative mb-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
-          variant="h2">
-          <span className="bg-clip-text text-transparent bg-gradient-to-br from-primary to-primary/80">
-            4 Years
-          </span>{" "}
-          of experience
-          <div className="absolute flex bg-gradient-to-r from-transparent via-sky-500 to-transparent h-1 w-full mt-1" />
-        </Text>
-      </Container>
+      <Container className="mb-44 relative w-full border-l border-l-ring sm:px-0 px-0">
+        <div className="pl-6">
+          <Text className="flex items-center mb-3 text-foreground/50 lg:text-[17px]" variant="p">
+            <Stack className="mr-1 text-lg" /> Programming since 2020
+          </Text>
+          <Text className="mb-10 text-foreground/90 lg:text-3xl max-w-sm font-medium" variant="h3">
+            4 Years of experience, including both Backend and Frontend development
+          </Text>
+        </div>
 
-      <Container className="mb-44">
-        <Row className="flex-wrap justify-center">
-          {items.map((item) => {
-            return (
-              <Column
-                items="start"
-                justify="between"
-                className="min-h-[200px] md:h-[1px] min-w-[1px] border border-ring rounded-md max-w-xl p-4 mb-4 mr-4
-              md:flex-row">
-                <Column className="grow" items="start">
-                  <div className="rounded-full p-1 bg-white/80 mb-2">
-                    <React className="text-2xl text-black" />
-                  </div>
-                  <Text variant="h4">{item.name}</Text>
-                  <Text variant="p">{item.description}</Text>
-                </Column>
-                <Image
-                  className="self-center md:self-start h-full mt-6 md:mt-2"
-                  width={230}
-                  height={120}
-                  src={item.image}
-                  alt={item.name}
-                />
-              </Column>
-            );
-          })}
+        <Row className="grid place-items-center grid-cols-2">
+          <Column
+            items="start"
+            justify="between"
+            className="relative min-h-[200px] md:h-[1px] min-w-[1px] border-t border-t-ring p-4
+              md:flex-row bg-black/40 z-10">
+            <div className="absolute left-5 -top-4 rounded-full p-1.5 border border-foreground/50 bg-background">
+              <Frontend className="h-[26px] w-[26px]" />
+            </div>
+            <Column className="grow pt-4" items="start">
+              <Text variant="h4">Front-end development</Text>
+              <Text variant="p">
+                Experienced with most major javascript frameworks, such as React, Svelte, Vue and meta
+                frameworks like Next
+              </Text>
+            </Column>
+            <Image
+              className="self-center md:self-start h-full mt-6 md:mt-2"
+              width={230}
+              height={120}
+              src="/laptop.svg"
+              alt="Frontend development"
+            />
+          </Column>
+          <Column
+            items="start"
+            justify="between"
+            className="relative min-h-[200px] md:h-[1px] min-w-[1px] border-t border-l border-ring p-4
+              md:flex-row bg-black/40 z-10">
+            <div
+              className="absolute left-5 -top-4 rounded-full p-2 border border-foreground/50 bg-background
+            ">
+              <Code className="h-6 w-6" />
+            </div>
+            <Column className="grow pt-4" items="start">
+              <Text variant="h4">Back-end development</Text>
+              <Text variant="p">
+                Experienced with frameworks like Express and Nest and building Real-time apps with
+                SocketIO
+              </Text>
+            </Column>
+            <Image
+              className="self-center md:self-start h-full mt-6 md:mt-2"
+              width={230}
+              height={120}
+              src="/process.svg"
+              alt="Backend development"
+            />
+          </Column>
+
+          {/* 3  */}
+          <Column
+            items="start"
+            justify="between"
+            className="relative min-h-[200px] md:h-[1px] min-w-[1px] border-t border-t-ring rounded-md p-4
+              md:flex-row bg-black/40 z-10 col-span-2 w-full">
+            <div
+              className="absolute left-5 -top-4 rounded-full p-2 border border-foreground/50 bg-background
+            ">
+              <Code className="h-6 w-6" />
+            </div>
+            <Column className="grow pt-4" items="start">
+              <Text className="lg:text-3xl font-medium" variant="h3">
+                High quality code
+              </Text>
+              <Text className="max-w-2xl" variant="p">
+                Familiar with the proper ways of writing code. The code returned will be clean and
+                readable; Decent speed and bundle size will all be considered along the way.
+              </Text>
+            </Column>
+            <Image
+              className="self-center md:self-start mt-6 md:mt-2"
+              width={300}
+              height={220}
+              src="/code.svg"
+              alt="High quality code"
+            />
+          </Column>
         </Row>
       </Container>
     </>

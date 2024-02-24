@@ -5,7 +5,7 @@ import type { NextPage } from "next";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Roboto } from "next/font/google";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700", "900"] });
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"] });
 
 export type PageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
