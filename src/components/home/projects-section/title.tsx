@@ -8,12 +8,9 @@ const Title = () => {
     <Container className="relative my-24">
       <Ring className="w-[70vw] md:w-[78vw] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]" />
       <Text
-        className="relative bg-clip-text text-center text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500"
+        className="relative bg-clip-text text-center text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
         variant="h2">
-        <span className="bg-clip-text text-transparent bg-gradient-to-br from-primary to-primary/80">
-          Projects
-        </span>{" "}
-        I have built
+        Projects I have built
         <br />
         in the past
       </Text>
