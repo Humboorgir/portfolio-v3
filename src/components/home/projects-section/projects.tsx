@@ -45,7 +45,7 @@ const Projects = () => {
         return <Project project={project} isEven={isEven} />;
       })}
 
-      <Row className="items-stretch w-full justify-end px-5 h-fit min-h-[1px]" items="start">
+      <Row className="items-stretch w-full justify-end px-5 h-fit min-h-[1.5px]" items="start">
         <Column className="items-end mb-36">
           <Text className="text-foreground/90" variant="h3">
             More Projects
@@ -71,7 +71,7 @@ const Projects = () => {
             <Github className="text-[26.5px] text-white" />
           </div>
           {/* line  */}
-          <div className="w-[1px] h-full bg-ring" />
+          <div className="w-[1.5px] h-full bg-ring" />
         </Column>
       </Row>
     </Container>
