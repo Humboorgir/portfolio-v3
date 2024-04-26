@@ -25,10 +25,8 @@ import { FaVuejs as Vue } from "react-icons/fa6";
 import { SiTailwindcss as Tailwindcss } from "react-icons/si";
 
 const HeroSection = () => {
-  const MRow = m(Row);
-
   return (
-    <Column className="text-center bg-grid-white/[0.15] relative left-0 right-0 top-0 bottom-0 py-36 mb-14 px-6">
+    <Column className="text-center bg-grid-[#ffffff25] relative left-0 right-0 top-0 bottom-0 py-36 mb-14 px-6">
       <div
         className="absolute pointer-events-none inset-0 flex items-center justify-center
      dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
@@ -54,37 +52,66 @@ const HeroSection = () => {
           size="lg">
           About me
         </Button>
-        <Button className="md:w-64 md:grow-0 rounded-3xl" size="lg" variant="outline">
+        <Button
+          className="md:w-64 md:grow-0 rounded-3xl [box-shadow:var(--shadow-border)]"
+          size="lg"
+          variant="outline">
           Contact
         </Button>
       </Column>
 
       <Column
-        className="max-w-sm relative overflow-hidden
+        className="max-w-sm items-start relative overflow-hidden
         [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
-        <Text variant="p">Experienced with most major frameworks</Text>
-        <MRow className="space-x-3 mt-2 animate-scroll">
-          {[
-            Typescript,
-            React,
-            Next,
-            Svelte,
-            Vue,
-            Tailwindcss,
-            Mui,
-            Bootstrap,
-            FramerMotion,
-            NodeJS,
-            Bun,
-            Express,
-            SocketIO,
-            MongoDB,
-            PostgreSQL,
-            Prisma,
-          ].map((Icon, i) => {
-            return <Icon key={i} className="w-9 h-9 rounded-md" />;
-          })}
-        </MRow>
+        <Text className="self-center" variant="p">
+          Experienced with most major frameworks
+        </Text>
+        <Row>
+          <Row className="space-x-3 mt-2 mr-3 animate-scroll">
+            {[
+              Typescript,
+              React,
+              Next,
+              Svelte,
+              Vue,
+              Tailwindcss,
+              Mui,
+              Bootstrap,
+              FramerMotion,
+              NodeJS,
+              Bun,
+              Express,
+              SocketIO,
+              MongoDB,
+              PostgreSQL,
+              Prisma,
+            ].map((Icon, i) => {
+              return <Icon key={i} className="w-9 h-9 rounded-md" />;
+            })}
+          </Row>
+          <Row className="space-x-3 mt-2 animate-scroll">
+            {[
+              Typescript,
+              React,
+              Next,
+              Svelte,
+              Vue,
+              Tailwindcss,
+              Mui,
+              Bootstrap,
+              FramerMotion,
+              NodeJS,
+              Bun,
+              Express,
+              SocketIO,
+              MongoDB,
+              PostgreSQL,
+              Prisma,
+            ].map((Icon, i) => {
+              return <Icon key={i} className="w-9 h-9 rounded-md" />;
+            })}
+          </Row>
+        </Row>
       </Column>
     </Column>
   );

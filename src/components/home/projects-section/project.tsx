@@ -28,8 +28,8 @@ const Project = ({ project, isEven }: Props) => {
   if (isEven)
     return (
       <>
-        <Column className="px-5" items="stretch">
-          <Row className="items-stretch h-fit min-h-[1.5px]" items="start">
+        <Column className="z-10 px-5" items="stretch">
+          <Row className="items-stretch h-fit min-h-[2px]" items="start">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <ProjectThumbnail project={project} />
               <Column className="ml-6 items-end mb-36">
@@ -52,15 +52,15 @@ const Project = ({ project, isEven }: Props) => {
 
             <Column className="left-0 top-0 ml-3">
               {/* icon */}
-              <div className="rounded-full border border-ring w-fit p-1.5">
+              <div className="rounded-full border-2 border-ring w-fit p-1.5">
                 <project.icon className="text-[26.5px] text-white" />
               </div>
               {/* line  */}
-              <div className="w-[1.5px] h-full bg-ring" />
+              <div className="w-[2px] h-full bg-ring" />
             </Column>
           </Row>
           <Image
-            className="scale-x-[-1] px-[1.125rem]"
+            className="scale-x-[-1] px-[1.2rem]"
             width="1200"
             height="50"
             alt="line"
@@ -72,15 +72,15 @@ const Project = ({ project, isEven }: Props) => {
 
   return (
     <>
-      <Column className="px-5">
-        <Row className="items-stretch h-fit min-h-[1.5px]" items="start">
+      <Column className="z-10 px-5">
+        <Row className="items-stretch h-fit min-h-[2px]" items="start">
           <Column className="left-0 top-0 mr-3">
             {/* icon */}
-            <div className="rounded-full w-fit p-1.5 border border-ring">
+            <div className="rounded-full w-fit p-1.5 border-2 border-ring">
               <project.icon className="text-[26.5px] text-white z-20" />
             </div>
             {/* line  */}
-            <div className="w-[1.5px] h-full bg-ring" />
+            <div className="w-[2px] h-full bg-ring" />
           </Column>
 
           <div className="grid grid-cols-1 md:grid-cols-2">
@@ -104,7 +104,7 @@ const Project = ({ project, isEven }: Props) => {
             <ProjectThumbnail project={project} />
           </div>
         </Row>
-        <Image className="px-[1.125rem]" width="1200" height="50" alt="line" src="/line.svg" />
+        <Image className="px-[1.2rem]" width="1200" height="50" alt="line" src="/line.svg" />
       </Column>
     </>
   );

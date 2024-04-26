@@ -10,7 +10,7 @@
   --primary: 211 100% 40%;
   --secondary: 240 4% 18%;
   --accent: 240 4% 15%;
-  --ring: 240 6% 30%;
+  --ring: 0, 0%, 100%, 0.2;
 
   /* lightmode colors  */
   /* --foreground: 215 28% 17%;

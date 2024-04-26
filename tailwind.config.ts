@@ -27,7 +27,7 @@ const config: Config = {
       },
       animation: {
         ripple: "ripple 600ms linear",
-        scroll: "scroll 30s forwards linear infinite",
+        scroll: "scroll 40s forwards linear infinite",
       },
       keyframes: {
         ripple: {
@@ -38,11 +38,8 @@ const config: Config = {
           "0%": {
             transform: "translate(0)",
           },
-          "50%": {
-            transform: "translate(-30%)",
-          },
           "100%": {
-            transform: "translate(0)",
+            transform: "translate(-100%)",
           },
         },
       },
