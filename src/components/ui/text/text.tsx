@@ -10,7 +10,7 @@ const textVariants = cva("", {
       h2: "text-foreground text-3xl md:text-5xl font-bold my-2",
       h3: "text-foreground text-2xl md:text-3xl font-bold my-1.5",
       h4: "text-foreground text-xl my-1.5",
-      h5: "text-foreground text-lg my-1",
+      h5: "text-foreground text-lg my-1.5",
       p: "text-foreground-light text-base my-0.5",
       lead: "text-foreground-muted text-base my-0.5",
     },
