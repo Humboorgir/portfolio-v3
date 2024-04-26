@@ -57,7 +57,8 @@ const HeroSection = () => {
 
       <Column
         className="max-w-sm items-start relative overflow-hidden
-        [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+        [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]
+        bg-gradient-to-br from-transparent to-primary/40 pb-2.5">
         <Text className="self-center mb-1.5" variant="p">
           Experienced with most major frameworks
         </Text>

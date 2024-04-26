@@ -18,54 +18,36 @@ const ExperienceSection = () => {
   return (
     <>
       <Container className="mb-44 relative w-full sm:px-0 px-0">
-        {/* border left */}
-        <m.div
-          initial={{ scaleY: 0 }}
-          whileInView={{ scaleY: 1 }}
-          transition={{ duration: 4, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-          viewport={{ once: true }}
-          className="absolute left-0 top-0 h-full w-[1px] bg-foreground/50 origin-top z-10"
-        />
+        {/* <div className="absolute left-20 right-20 top-20 bottom-20 bg-primary/20 blur-[120px]"></div> */}
 
-        {/* title  */}
-        <div className="pl-6">
-          <MText
-            initial={{ x: 15, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-            viewport={{ once: true }}
-            className="flex items-center mb-3 text-foreground/50 lg:text-[17px]"
-            variant="p">
-            <Stack className="mr-1 text-lg" /> Programming since 2020
-          </MText>
-          <MText
-            initial={{ x: 15, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.15, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-            viewport={{ once: true }}
-            className="mb-10 text-foreground/90 lg:text-3xl max-w-sm font-medium"
-            variant="h3">
-            4 Years of experience, including both Backend and Frontend development
-          </MText>
-        </div>
+        <div className="grid grid-cols-12 gap-x-4 gap-y-3">
+          {/* title  */}
+          <div className="p-6 bg-gradient-to-b from-primary/5 to-primary/30 col-span-12 rounded-xl">
+            <MText
+              initial={{ x: 15, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: cubicBezier(0.22, 1, 0.36, 1) }}
+              viewport={{ once: true }}
+              className="flex items-center mb-3 text-foreground/50 lg:text-[17px]"
+              variant="p">
+              <Stack className="mr-1 text-lg" /> Programming since 2020
+            </MText>
+            <MText
+              initial={{ x: 15, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.15, ease: cubicBezier(0.22, 1, 0.36, 1) }}
+              viewport={{ once: true }}
+              className="mb-10 text-foreground/90 lg:text-3xl max-w-sm font-medium"
+              variant="h3">
+              4 Years of experience, including both Backend and Frontend development
+            </MText>
+          </div>
 
-        <Row className="relative grid place-items-center grid-cols-2">
-          {/* border  */}
-          <m.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ duration: 2, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-            viewport={{ once: true }}
-            className="absolute left-0 top-0 w-full h-[1px] bg-white/50 origin-left"
-          />
           <Column
             items="start"
             justify="between"
-            className="relative min-h-[200px] md:h-[1px] min-w-[1px] p-4
-              md:flex-row bg-black/40 z-10">
-            <div className="absolute left-5 -top-4 rounded-full p-1.5 border border-foreground/50 bg-background">
-              <Frontend className="h-[26px] w-[26px]" />
-            </div>
+            className="relative min-h-[200px] md:h-[1px] min-w-[1px] p-5
+              md:flex-row z-10 bg-gradient-to-b from-primary/5 to-primary/30 col-span-12 md:col-span-6 rounded-xl">
             <Column className="grow pt-4" items="start">
               <MText
                 initial={{ x: 15, opacity: 0 }}
@@ -97,24 +79,12 @@ const ExperienceSection = () => {
               alt="Frontend development"
             />
           </Column>
+
           <Column
             items="start"
             justify="between"
-            className="relative min-h-[200px] md:h-[1px] min-w-[1px] p-4
-              md:flex-row bg-black/40 z-10">
-            {/* border  */}
-            <m.div
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              transition={{ duration: 2, delay: 0.4, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-              viewport={{ once: true }}
-              className="absolute left-0 top-0 h-full w-[1px] bg-white/50 origin-top"
-            />
-            <div
-              className="absolute left-5 -top-4 rounded-full p-2 border border-foreground/50 bg-background
-            ">
-              <Code className="h-6 w-6" />
-            </div>
+            className="relative min-h-[200px] md:h-[1px] min-w-[1px] p-5
+              md:flex-row z-10 bg-gradient-to-b from-primary/5 to-primary/30 col-span-12 md:col-span-6 rounded-xl">
             <Column className="grow pt-4" items="start">
               <MText
                 initial={{ x: 15, opacity: 0 }}
@@ -151,13 +121,8 @@ const ExperienceSection = () => {
           <Column
             items="start"
             justify="between"
-            className="relative min-h-[200px] md:h-[1px] min-w-[1px] border-t border-t-ring rounded-md p-4
-              md:flex-row bg-black/40 z-10 col-span-2 w-full">
-            <div
-              className="absolute left-5 -top-4 rounded-full p-2 border border-foreground/50 bg-background
-            ">
-              <Code className="h-6 w-6" />
-            </div>
+            className="relative min-h-[200px] md:h-[1px] min-w-[1px] bg-gradient-to-b from-primary/5 to-primary/30 p-5
+              md:flex-row z-10 col-span-12 rounded-xl">
             <Column className="grow pt-4" items="start">
               <MText
                 initial={{ x: 15, opacity: 0 }}
@@ -190,7 +155,7 @@ const ExperienceSection = () => {
               alt="High quality code"
             />
           </Column>
-        </Row>
+        </div>
       </Container>
     </>
   );
