@@ -26,12 +26,21 @@ import { SiTailwindcss as Tailwindcss } from "react-icons/si";
 
 const HeroSection = () => {
   return (
-    <Column className="text-center relative left-0 right-0 top-0 bottom-0 py-36 mb-14 px-6">
+    <Column className="text-center py-36 mb-14 px-6">
+      {/* title  */}
       <Text
-        className="z-10 py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
+        className="flex z-10 py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
         variant="h1">
-        Turning ideas into reality
+        Turning <span className="mx-3.5 bg-gradient-to-b from-transparent to-blue-500/50">ideas</span>
+        into{" "}
+        <span className="ml-3.5 relative">
+          <div className="absolute left-0 right-0 top-0 bottom-0 bg-blue-500/40 blur-xl -z-10" />
+          <span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400">
+            reality
+          </span>
+        </span>
       </Text>
+
       <Text className="z-10 text-lg md:text-[19px] max-w-screen-md mb-5" variant="lead">
         Every great project starts with an idea. Whether it's a startup, a small business, or a personal
         project and I'm here to bring those ideas to life
@@ -56,9 +65,8 @@ const HeroSection = () => {
       </Column>
 
       <Column
-        className="max-w-sm items-start relative overflow-hidden
-        [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]
-        bg-gradient-to-br from-transparent to-primary/40 pb-2.5">
+        className="max-w-sm items-start relative overflow-hidden pb-2.5
+        [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
         <Text className="self-center mb-1.5" variant="p">
           Experienced with most major frameworks
         </Text>
@@ -66,7 +74,7 @@ const HeroSection = () => {
         <Row>
           {/* return this twice, basically */}
           {[0, 0].map(() => (
-            <Row className="space-x-3 mt-2 mr-3 animate-scroll">
+            <Row key={Math.random()} className="space-x-3 mt-2 mr-3 animate-scroll">
               {[
                 Typescript,
                 React,

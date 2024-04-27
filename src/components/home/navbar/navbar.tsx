@@ -36,11 +36,8 @@ const Navbar = () => {
     { name: "Resume", href: "/resume" },
   ];
   return (
-    <nav
-      className="relative before:content-[''] before:absolute before:w-full before:bottom-0
-          before:h-[2px] before:bg-gradient-to-r before:from-neutral-700/40 before:via-neutral-700/60
-           before:to-neutral-700/40">
-      <Container className="w-full grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-4">
+    <Container>
+      <nav className="translate-y-2 rounded-full border-2 border-foreground-muted/20 px-10 w-full grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-3.5">
         {/* logo  */}
         <Row>
           <Work className="text-3xl mr-1" />
@@ -86,8 +83,8 @@ const Navbar = () => {
             </Button>
           </li>
         </ul>
-      </Container>
-    </nav>
+      </nav>
+    </Container>
   );
 };
 

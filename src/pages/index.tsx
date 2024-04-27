@@ -18,6 +18,11 @@ const Home = () => {
         </pattern>
         <rect width="100%" height="100%" fill="url(#smallGrid)" />
       </svg>
+
+      <div
+        className="absolute top-0 left-[50%] translate-x-[-50%] h-[200px] w-[600px]
+       bg-gradient-to-r from-primary/80 to-accent/60 blur-[140px]"
+      />
       <HeroSection />
 
       <ExperienceSection />

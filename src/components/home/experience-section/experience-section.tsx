@@ -22,7 +22,7 @@ const ExperienceSection = () => {
 
         <div className="grid grid-cols-12 gap-x-4 gap-y-3">
           {/* title  */}
-          <div className="p-6 bg-gradient-to-b from-primary/5 to-primary/30 col-span-12 rounded-xl">
+          <div className="p-6 bg-gradient-to-b from-primary/5 to-primary/20 col-span-12 rounded-xl">
             <MText
               initial={{ x: 15, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -47,7 +47,7 @@ const ExperienceSection = () => {
             items="start"
             justify="between"
             className="relative min-h-[200px] md:h-[1px] min-w-[1px] p-5
-              md:flex-row z-10 bg-gradient-to-b from-primary/5 to-primary/30 col-span-12 md:col-span-6 rounded-xl">
+              md:flex-row z-10 bg-gradient-to-b from-primary/5 to-primary/20 col-span-12 md:col-span-6 rounded-xl">
             <Column className="grow pt-4" items="start">
               <MText
                 initial={{ x: 15, opacity: 0 }}
@@ -84,7 +84,7 @@ const ExperienceSection = () => {
             items="start"
             justify="between"
             className="relative min-h-[200px] md:h-[1px] min-w-[1px] p-5
-              md:flex-row z-10 bg-gradient-to-b from-primary/5 to-primary/30 col-span-12 md:col-span-6 rounded-xl">
+              md:flex-row z-10 bg-gradient-to-b from-primary/5 to-primary/20 col-span-12 md:col-span-6 rounded-xl">
             <Column className="grow pt-4" items="start">
               <MText
                 initial={{ x: 15, opacity: 0 }}
@@ -121,7 +121,7 @@ const ExperienceSection = () => {
           <Column
             items="start"
             justify="between"
-            className="relative min-h-[200px] md:h-[1px] min-w-[1px] bg-gradient-to-b from-primary/5 to-primary/30 p-5
+            className="relative min-h-[200px] md:h-[1px] min-w-[1px] bg-gradient-to-b from-primary/5 to-primary/20 p-5
               md:flex-row z-10 col-span-12 rounded-xl">
             <Column className="grow pt-4" items="start">
               <MText
