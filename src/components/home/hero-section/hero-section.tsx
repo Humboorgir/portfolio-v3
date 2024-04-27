@@ -23,18 +23,31 @@ import {
 } from "react-icons/si";
 import { FaVuejs as Vue } from "react-icons/fa6";
 import { SiTailwindcss as Tailwindcss } from "react-icons/si";
-
+import { FaExclamationTriangle as Exclamation } from "react-icons/fa";
 const HeroSection = () => {
   return (
-    <Column className="text-center py-36 mb-14 px-6">
+    <Column className="text-center pt-[8.5rem] pb-36 mb-14 px-6">
       {/* title  */}
+      <Text
+        className="flex items-center border-2 border-foreground-muted/20 px-4 py-2 rounded-full mb-2
+      bg-clip-text text-transparent bg-gradient-to-b from-blue-300 to-blue-500"
+        variant="lead">
+        <Exclamation className="h-3.5 w-3.5 mb-0.5 text-blue-300 mr-2" /> 4 Years of programming
+      </Text>
       <Text
         className="flex z-10 py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
         variant="h1">
-        Turning <span className="mx-3.5 bg-gradient-to-b from-transparent to-blue-500/50">ideas</span>
+        Turning{" "}
+        <span
+          style={{
+            textShadow: "-1px -1px 0 #3b82f6, 1px -1px 0 #3b82f6, -1px 1px 0 #3b82f6, 1px 1px 0 #3b82f6",
+          }}
+          className="mx-3.5 text-blue-950 bg-transparent">
+          ideas
+        </span>
         into{" "}
         <span className="ml-3.5 relative">
-          <div className="absolute left-0 right-0 top-0 bottom-0 bg-blue-500/40 blur-xl -z-10" />
+          <div className="absolute left-0 right-0 top-0 bottom-0 bg-blue-500/30 blur-xl -z-10" />
           <span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400">
             reality
           </span>
