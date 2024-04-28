@@ -37,7 +37,7 @@ const Navbar = () => {
   ];
   return (
     <Container>
-      <nav className="translate-y-2 rounded-full border-2 border-foreground-muted/20 px-10 w-full grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-3.5">
+      <nav className="translate-y-3 rounded-full border-2 border-foreground-muted/20 px-10 w-full grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-3.5">
         {/* logo  */}
         <Row>
           <Work className="text-3xl mr-1" />
