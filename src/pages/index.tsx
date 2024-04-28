@@ -7,6 +7,13 @@ import FAQSection from "@/components/home/faq-section";
 import ContactSection from "@/components/home/contact-section";
 import Container from "@/components/ui/container";
 import Text from "@/components/ui/text";
+import Column from "@/components/ui/column";
+import CountUp from "react-countup";
+import { FaNodeJs as NodejsIcon } from "react-icons/fa";
+import { IoLogoDiscord as DiscordIcon } from "react-icons/io5";
+
+import { FaReact as ReactIcon } from "react-icons/fa";
+import Row from "@/components/ui/row";
 
 const Home = () => {
   return (
@@ -24,6 +31,75 @@ const Home = () => {
        bg-gradient-to-r from-primary/80 to-accent/60 blur-[140px]"
       />
       <HeroSection />
+
+      <Container className="relative py-20 flex flex-col items-center">
+        <div
+          className="absolute top-0 left-0 h-[200px] w-[400px]
+       bg-gradient-to-r from-primary/50 to-blue-200/30 blur-[140px]"
+        />
+        <Text
+          className="mb-4 flex items-center border-2 border-foreground-muted/20 px-4 py-1.5 rounded-full
+      bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-600 w-fit"
+          variant="lead">
+          <div className="h-3.5 w-3.5 mb-0.5 rounded-full bg-blue-500 animate-pulse mr-2" />
+          Professions
+        </Text>
+        <Text variant="lead">Doing Full-stack web development since 2020</Text>
+        <Text className="mb-4 text-foreground/80" variant="h2">
+          Fields I'm experienced at
+        </Text>
+        <Row className="items-stretch space-x-4">
+          {[
+            {
+              label: "Front-end Development",
+              description:
+                "Experienced with React, Svelte, Vue and almost all major frameworks. also with popular React state managers like Redux and Zustand.",
+              Icon: ReactIcon,
+            },
+            {
+              label: "Back-end Development",
+              description:
+                "Experienced with Node.js, Express and Nest.js. Familiar with commonly used back end systems like JWT refresh tokens",
+              Icon: NodejsIcon,
+            },
+            {
+              label: "Discord bot Development",
+              description:
+                "Experienced with building all sorts of discord bots. Including moderation, music and entertainment.",
+              Icon: DiscordIcon,
+            },
+          ].map(({ label, description, Icon }) => {
+            return (
+              <Column
+                className="text-center relative p-6 w-[280px] rounded-md border-2 border-blue-300/10 backdrop-blur-sm"
+                key={label}>
+                <div
+                  className="absolute top-0 left-[50%] translate-x-[-50%] w-[50%] h-[2px] bg-gradient-to-r 
+                from-transparent via-blue-500 to-transparent"
+                  aria-hidden="true"
+                />
+                <Column className="z-10">
+                  <div className="relative mt-2 p-2 mb-3 bg-gradient-to-br from-neutral-800 to-background rounded-md">
+                    <div
+                      className="absolute left-[53%] top-[53%] translate-x-[-50%] translate-y-[-50%]
+                  h-full w-full bg-gradient-to-b from-blue-600/60 to-blue-800 -z-10 rounded-md"
+                    />
+                    <Icon className="h-16 w-16 text-gradient-to-b from-red-500 to-blue-200" />
+                  </div>
+                  <Text
+                    className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400"
+                    variant="h3">
+                    {label}
+                  </Text>
+                  <Text variant="lead" className="text-[15px]">
+                    {description}
+                  </Text>
+                </Column>
+              </Column>
+            );
+          })}
+        </Row>
+      </Container>
 
       <ExperienceSection />
 

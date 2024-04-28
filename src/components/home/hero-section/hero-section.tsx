@@ -3,9 +3,9 @@ import Row from "@/components/ui/row";
 import Button from "@/components/ui/button";
 import Text from "@/components/ui/text";
 
-import { m } from "framer-motion";
-
-import { FaReact as React } from "react-icons/fa";
+import CountUp from "react-countup";
+import React from "react";
+import { FaReact as ReactIcon } from "react-icons/fa";
 import {
   SiTypescript as Typescript,
   SiNextdotjs as Next,
@@ -76,7 +76,6 @@ const HeroSection = () => {
           Contact
         </Button>
       </Column>
-
       <Column
         className="max-w-sm items-start relative overflow-hidden pb-2.5
         [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
@@ -90,7 +89,7 @@ const HeroSection = () => {
             <Row key={Math.random()} className="space-x-3 mt-2 mr-3 animate-scroll">
               {[
                 Typescript,
-                React,
+                ReactIcon,
                 Next,
                 Svelte,
                 Vue,
