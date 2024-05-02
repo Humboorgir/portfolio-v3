@@ -37,13 +37,12 @@ const Home = () => {
           className="absolute top-0 left-0 h-[200px] w-[400px]
        bg-gradient-to-r from-primary/50 to-blue-200/30 blur-[140px]"
         />
-        <Text
+        <span
           className="mb-4 flex items-center border-2 border-foreground-muted/20 px-4 py-1.5 rounded-full
-      bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-600 w-fit"
-          variant="lead">
+      bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-600 w-fit">
           <div className="h-3.5 w-3.5 mb-0.5 rounded-full bg-blue-500 animate-pulse mr-2" />
           Professions
-        </Text>
+        </span>
         <Text variant="lead">Doing Full-stack web development since 2020</Text>
         <Text className="mb-4 text-foreground/80" variant="h2">
           Fields I'm experienced at
