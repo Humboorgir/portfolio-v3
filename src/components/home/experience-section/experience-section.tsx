@@ -3,11 +3,11 @@ import Column from "@/components/ui/column";
 import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
 
-import Image from "next/image";
 import { cubicBezier, m } from "framer-motion";
 
 import { FaNodeJs as NodejsIcon, FaReact as ReactIcon } from "react-icons/fa";
 import { IoLogoDiscord as DiscordIcon } from "react-icons/io5";
+import Button from "@/components/ui/button";
 
 const ExperienceSection = () => {
   return (
@@ -31,32 +31,33 @@ const ExperienceSection = () => {
           {
             label: "Front-end Development",
             description:
-              "Experienced with React, Svelte, Vue and almost all major frameworks. also with popular React state managers like Redux and Zustand.",
+              "Experienced with React, Svelte, Vue and almost all major frameworks. also experienced with popular React state managers like Redux and Zustand.",
             Icon: ReactIcon,
           },
           {
             label: "Back-end Development",
             description:
-              "Experienced with Node.js, Express and Nest.js. Familiar with commonly used back end systems like JWT refresh tokens",
+              "Experienced with Node.js, Express and Nest.js. Familiar with commonly used back end systems like JWT and session authentication.",
             Icon: NodejsIcon,
           },
           {
             label: "Discord bot Development",
             description:
-              "Experienced with building all sorts of discord bots. Including moderation, music and entertainment.",
+              "Experienced with building all sorts of Discord bots. Including moderation, music, games, entertainment and fully customized Discord bots.",
             Icon: DiscordIcon,
           },
         ].map(({ label, description, Icon }) => {
           return (
             <Column
-              className="mr-4 mb-4 text-center relative p-6 w-[280px] rounded-md border-2 border-blue-300/10 backdrop-blur-sm"
+              className="mr-4 mb-4 text-center relative p-6 w-[300px] md:w-[350px] rounded-md border-2 border-blue-300/10 backdrop-blur-sm"
               key={label}>
               <div
                 className="absolute top-0 left-[50%] translate-x-[-50%] w-[50%] h-[2px] bg-gradient-to-r 
             from-transparent via-blue-500 to-transparent"
                 aria-hidden="true"
               />
-              <Column className="z-10">
+              <Column className="z-10 h-full">
+                {/* icon  */}
                 <div className="relative mt-2 p-2 mb-3 bg-gradient-to-br from-neutral-800 to-background rounded-md">
                   <div
                     className="absolute left-[53%] top-[53%] translate-x-[-50%] translate-y-[-50%]
@@ -64,14 +65,20 @@ const ExperienceSection = () => {
                   />
                   <Icon className="h-16 w-16 text-gradient-to-b from-red-500 to-blue-200" />
                 </div>
+                {/* title  */}
                 <Text
                   className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400"
                   variant="h3">
                   {label}
                 </Text>
-                <Text variant="lead" className="text-[15px]">
+                <Text variant="lead" className="text-[15px] pb-5">
                   {description}
                 </Text>
+                {/* bg-transparent is used to hide the default bg here, so that the bg-gradient will be displayed properly  */}
+                {/* TODO: implement this thing's functionality once project section's done */}
+                <Button className="mt-auto w-[calc(100%-16px)] text-foreground/90 bg-transparent bg-gradient-to-b from-primary to-primary/70">
+                  See work samples
+                </Button>
               </Column>
             </Column>
           );
