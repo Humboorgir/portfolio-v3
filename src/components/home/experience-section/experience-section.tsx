@@ -2,12 +2,10 @@ import Container from "@/components/ui/container";
 import Column from "@/components/ui/column";
 import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
-
-import { cubicBezier, m } from "framer-motion";
+import Button from "@/components/ui/button";
 
 import { FaNodeJs as NodejsIcon, FaReact as ReactIcon } from "react-icons/fa";
 import { IoLogoDiscord as DiscordIcon } from "react-icons/io5";
-import Button from "@/components/ui/button";
 
 const ExperienceSection = () => {
   return (

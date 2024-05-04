@@ -1,7 +1,6 @@
 import Column from "@/components/ui/column";
 import Container from "@/components/ui/container";
 import Text from "@/components/ui/text";
-import { PiDetectiveFill as DetectiveIcon } from "react-icons/pi";
 
 const Title = () => {
   return (
