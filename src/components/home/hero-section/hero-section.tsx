@@ -47,7 +47,7 @@ const HeroSection = () => {
         </span>
         into{" "}
         <span className="ml-3.5 relative">
-          <div className="absolute left-0 right-0 top-0 bottom-0 bg-blue-500/30 blur-xl -z-10" />
+          <div className="absolute left-0 right-0 top-0 bottom-0 bg-blue-500/30 blur-3xl -z-10" />
           <span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400">
             reality
           </span>
