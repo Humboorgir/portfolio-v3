@@ -3,161 +3,81 @@ import Column from "@/components/ui/column";
 import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
 
-import { VscCode as Code } from "react-icons/vsc";
-import { VscServerProcess as Frontend } from "react-icons/vsc";
-import { GiAlarmClock as Clock } from "react-icons/gi";
-import { PiStackLight as Stack } from "react-icons/pi";
-
 import Image from "next/image";
 import { cubicBezier, m } from "framer-motion";
 
+import { FaNodeJs as NodejsIcon, FaReact as ReactIcon } from "react-icons/fa";
+import { IoLogoDiscord as DiscordIcon } from "react-icons/io5";
+
 const ExperienceSection = () => {
-  const MText = m(Text);
-  const MImage = m(Image);
-
   return (
-    <>
-      <Container className="mb-44 relative w-full sm:px-0 px-0">
-        {/* <div className="absolute left-20 right-20 top-20 bottom-20 bg-primary/20 blur-[120px]"></div> */}
-
-        <div className="grid grid-cols-12 gap-x-4 gap-y-3">
-          {/* title  */}
-          <div className="p-6 bg-gradient-to-b from-primary/5 to-primary/20 col-span-12 rounded-xl">
-            <MText
-              initial={{ x: 15, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-              viewport={{ once: true }}
-              className="flex items-center mb-3 text-foreground/50 lg:text-[17px]"
-              variant="p">
-              <Stack className="mr-1 text-lg" /> Programming since 2020
-            </MText>
-            <MText
-              initial={{ x: 15, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.15, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-              viewport={{ once: true }}
-              className="mb-10 text-foreground/90 lg:text-3xl max-w-sm font-medium"
-              variant="h3">
-              4 Years of experience, including both Backend and Frontend development
-            </MText>
-          </div>
-
-          <Column
-            items="start"
-            justify="between"
-            className="relative min-h-[200px] md:h-[1px] min-w-[1px] p-5
-              md:flex-row z-10 bg-gradient-to-b from-primary/5 to-primary/20 col-span-12 md:col-span-6 rounded-xl">
-            <Column className="grow pt-4" items="start">
-              <MText
-                initial={{ x: 15, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.2, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-                viewport={{ once: true }}
-                variant="h4">
-                Front-end development
-              </MText>
-              <MText
-                initial={{ x: 15, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.25, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-                viewport={{ once: true }}
-                variant="p">
-                Experienced with most major javascript frameworks, such as React, Svelte, Vue and meta
-                frameworks like Next
-              </MText>
+    <Container className="relative py-20 flex flex-col items-center">
+      <div
+        className="absolute top-0 left-0 h-[200px] w-[400px]
+   bg-gradient-to-r from-primary/50 to-blue-200/30 blur-[140px]"
+      />
+      <span
+        className="mb-4 flex items-center border-2 border-foreground-muted/20 px-4 py-1.5 rounded-full
+  bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-600 w-fit">
+        <div className="h-3.5 w-3.5 mb-0.5 rounded-full bg-blue-500 animate-pulse mr-2" />
+        Professions
+      </span>
+      <Text variant="lead">Doing Full-stack web development since 2020</Text>
+      <Text className="mb-4 text-foreground/80" variant="h2">
+        Fields I'm experienced at
+      </Text>
+      <Row className="items-stretch justify-center flex-wrap">
+        {[
+          {
+            label: "Front-end Development",
+            description:
+              "Experienced with React, Svelte, Vue and almost all major frameworks. also with popular React state managers like Redux and Zustand.",
+            Icon: ReactIcon,
+          },
+          {
+            label: "Back-end Development",
+            description:
+              "Experienced with Node.js, Express and Nest.js. Familiar with commonly used back end systems like JWT refresh tokens",
+            Icon: NodejsIcon,
+          },
+          {
+            label: "Discord bot Development",
+            description:
+              "Experienced with building all sorts of discord bots. Including moderation, music and entertainment.",
+            Icon: DiscordIcon,
+          },
+        ].map(({ label, description, Icon }) => {
+          return (
+            <Column
+              className="mr-4 mb-4 text-center relative p-6 w-[280px] rounded-md border-2 border-blue-300/10 backdrop-blur-sm"
+              key={label}>
+              <div
+                className="absolute top-0 left-[50%] translate-x-[-50%] w-[50%] h-[2px] bg-gradient-to-r 
+            from-transparent via-blue-500 to-transparent"
+                aria-hidden="true"
+              />
+              <Column className="z-10">
+                <div className="relative mt-2 p-2 mb-3 bg-gradient-to-br from-neutral-800 to-background rounded-md">
+                  <div
+                    className="absolute left-[53%] top-[53%] translate-x-[-50%] translate-y-[-50%]
+              h-full w-full bg-gradient-to-b from-blue-600/60 to-blue-800 -z-10 rounded-md"
+                  />
+                  <Icon className="h-16 w-16 text-gradient-to-b from-red-500 to-blue-200" />
+                </div>
+                <Text
+                  className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400"
+                  variant="h3">
+                  {label}
+                </Text>
+                <Text variant="lead" className="text-[15px]">
+                  {description}
+                </Text>
+              </Column>
             </Column>
-            <MImage
-              initial={{ y: 15, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.3, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-              viewport={{ once: true }}
-              className="self-center md:self-start h-full mt-6 md:mt-2"
-              width={230}
-              height={120}
-              src="/laptop.svg"
-              alt="Frontend development"
-            />
-          </Column>
-
-          <Column
-            items="start"
-            justify="between"
-            className="relative min-h-[200px] md:h-[1px] min-w-[1px] p-5
-              md:flex-row z-10 bg-gradient-to-b from-primary/5 to-primary/20 col-span-12 md:col-span-6 rounded-xl">
-            <Column className="grow pt-4" items="start">
-              <MText
-                initial={{ x: 15, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.35, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-                viewport={{ once: true }}
-                variant="h4">
-                Back-end development
-              </MText>
-              <MText
-                initial={{ x: 15, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.4, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-                viewport={{ once: true }}
-                variant="p">
-                Experienced with frameworks like Express and Nest and building Real-time apps with
-                SocketIO
-              </MText>
-            </Column>
-            <MImage
-              initial={{ y: 15, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.45, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-              viewport={{ once: true }}
-              className="self-center md:self-start h-full mt-6 md:mt-2"
-              width={230}
-              height={120}
-              src="/process.svg"
-              alt="Backend development"
-            />
-          </Column>
-
-          {/* 3  */}
-          <Column
-            items="start"
-            justify="between"
-            className="relative min-h-[200px] md:h-[1px] min-w-[1px] bg-gradient-to-b from-primary/5 to-primary/20 p-5
-              md:flex-row z-10 col-span-12 rounded-xl">
-            <Column className="grow pt-4" items="start">
-              <MText
-                initial={{ x: 15, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.45, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-                viewport={{ once: true }}
-                variant="h4">
-                High quality code
-              </MText>
-              <MText
-                initial={{ x: 15, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.4, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-                viewport={{ once: true }}
-                className="max-w-2xl"
-                variant="p">
-                Familiar with the proper ways of writing code. The code returned will be clean and
-                readable; Decent speed and bundle size will all be considered along the way.
-              </MText>
-            </Column>
-            <MImage
-              initial={{ y: 15, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.35, ease: cubicBezier(0.22, 1, 0.36, 1) }}
-              viewport={{ once: true }}
-              className="self-center md:self-start mt-6 md:mt-2"
-              width={240}
-              height={180}
-              src="/code.svg"
-              alt="High quality code"
-            />
-          </Column>
-        </div>
-      </Container>
-    </>
+          );
+        })}
+      </Row>
+    </Container>
   );
 };
 
