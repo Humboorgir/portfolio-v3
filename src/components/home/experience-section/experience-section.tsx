@@ -17,13 +17,15 @@ const ExperienceSection = () => {
    bg-gradient-to-r from-primary/50 to-blue-200/30 blur-[140px]"
       />
       <span
-        className="mb-4 flex items-center border-2 border-foreground-muted/20 px-4 py-1.5 rounded-full
-  bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-600 w-fit">
+        className="mb-6 flex items-center border-2 border-blue-500/10 px-4 py-1.5 rounded-full
+        bg-blue-500/10 w-fit">
         <div className="h-3.5 w-3.5 mb-0.5 rounded-full bg-blue-500 animate-pulse mr-2" />
-        Professions
+        <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-500">
+          Professions
+        </span>
       </span>
-      <Text variant="lead">Doing Full-stack web development since 2020</Text>
-      <Text className="mb-4 text-foreground/80" variant="h2">
+      <Text variant="p">Doing Full-stack web development since 2020</Text>
+      <Text className="mb-6 text-foreground/80" variant="h2">
         Fields I'm experienced at
       </Text>
       <Row className="items-stretch justify-center flex-wrap">
