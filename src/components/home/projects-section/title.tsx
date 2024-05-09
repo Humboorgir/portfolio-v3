@@ -4,7 +4,7 @@ import Text from "@/components/ui/text";
 
 const Title = () => {
   return (
-    <Container className="relative w-full py-10 mt-16">
+    <Container className="relative w-full py-10 mt-16 mb-10">
       <div
         className="absolute top-[8px] left-6 w-[50%] h-[2px] bg-gradient-to-r 
             from-blue-400 to-transparent blur-[1px]"

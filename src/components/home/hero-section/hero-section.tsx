@@ -27,13 +27,13 @@ import { FaExclamationTriangle as Exclamation } from "react-icons/fa";
 const HeroSection = () => {
   return (
     <Column className="text-center pt-[8.5rem] pb-36 mb-14 px-6">
-      {/* title  */}
       <Text
         className="flex items-center border-2 border-foreground-muted/20 px-4 py-2 rounded-full mb-2
-      bg-clip-text text-transparent bg-gradient-to-b from-blue-300 to-blue-500"
+        bg-clip-text text-transparent bg-gradient-to-b from-blue-300 to-blue-500"
         variant="lead">
         <Exclamation className="h-3.5 w-3.5 mb-0.5 text-blue-300 mr-2" /> 4 Years of programming
       </Text>
+      {/* title  */}
       <Text
         className="flex z-10 py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
         variant="h1">
