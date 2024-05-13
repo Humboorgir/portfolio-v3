@@ -29,8 +29,8 @@ const Project = ({ project, isEven }: Props) => {
   if (isEven)
     return (
       <Row className="relative z-10 px-5 items-stretch h-fit min-h-[2px]" items="start">
-        <div className="grid grid-cols-1 md:grid-cols-2 mb-32">
-          <Column className="relative mr-4 items-start mb-36">
+        <div className="grid grid-cols-1 md:grid-cols-2 mb-16">
+          <Column className="relative mr-4 items-start mb-8">
             <div className="absolute left-10 right-10 top-10 bottom-10 bg-blue-400/20 blur-[90px]" />
             <Text className="text-foreground/90 mb-2" variant="h3">
               {project.name}
@@ -55,10 +55,10 @@ const Project = ({ project, isEven }: Props) => {
 
   return (
     <Row className="relative z-10 px-5 items-stretch h-fit min-h-[2px]" items="start">
-      <div className="relative grid grid-cols-1 md:grid-cols-2 mb-32">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 mb-16">
         <div className="absolute left-16 right-16 top-16 bottom-16 bg-blue-400/20 blur-[110px]" />
         <ProjectThumbnail isEven={isEven} project={project} />
-        <Column items="start" className="ml-6 mb-36">
+        <Column items="start" className="ml-6 mb-8">
           <Text className="text-foreground/90 mb-2" variant="h3">
             {project.name}
           </Text>
