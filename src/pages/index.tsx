@@ -19,7 +19,7 @@ const Home = () => {
       </svg>
 
       <div
-        className="absolute top-0 left-[50%] translate-x-[-50%] h-[200px] w-[600px]
+        className="absolute top-0 left-[50%] translate-x-[-50%] h-[200px] w-[600px] max-w-[60vw]
        bg-gradient-to-r from-primary/80 to-accent/60 blur-[140px]"
       />
       <HeroSection />

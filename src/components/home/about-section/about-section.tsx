@@ -18,7 +18,7 @@ const AboutSection = () => {
     <div className="relative py-20 bg-primary/10 backdrop-blur-[1px]">
       <div className="absolute -z-10 right-0 top-[50%] translate-y-[-50%] w-[50%] h-full bg-blue-900/20 blur-3xl rounded-full" />
       <div className="absolute -z-10 left-0 top-[50%] translate-y-[-50%] w-[50%] h-full bg-primary/20 blur-3xl rounded-full" />
-      <Container className="flex items-center w-full">
+      <Container className="flex flex-col lg:flex-row items-center w-full">
         <Column items="start">
           {/* TODO: create a reusable component for this */}
           <span
@@ -54,7 +54,9 @@ const AboutSection = () => {
                   <Text variant="h2">
                     <CountUp start={0} end={amount} enableScrollSpy duration={2} suffix="+" />
                   </Text>
-                  <Text variant="p">{label}</Text>
+                  <Text className="text-center" variant="p">
+                    {label}
+                  </Text>
                 </Column>
               );
             })}
@@ -70,7 +72,7 @@ const AboutSection = () => {
             duration: 2,
             ease: cubicBezier(0.16, 1, 0.3, 1),
           }}
-          className="gap-4 h-fit w-fit ml-20 grid grid-cols-2 grid-rows-2">
+          className="gap-4 h-fit w-fit mt-20 lg:mt-0 lg:ml-20 grid grid-cols-2 grid-rows-2 justify-center items-center">
           <div className="p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
             <ReactIcon className="w-16 h-16 text-blue-500" />
           </div>

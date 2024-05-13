@@ -35,18 +35,18 @@ const HeroSection = () => {
       </Text>
       {/* title  */}
       <Text
-        className="flex z-10 py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
+        className="flex flex-wrap justify-center text-center z-10 text-[42px] leading-none py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
         variant="h1">
         Turning{" "}
         <span
           style={{
             textShadow: "-1px -1px 0 #3b82f6, 1px -1px 0 #3b82f6, -1px 1px 0 #3b82f6, 1px 1px 0 #3b82f6",
           }}
-          className="mx-3.5 text-blue-950 bg-transparent">
+          className="mx-3 md:mx-3.5 text-blue-950 bg-transparent">
           ideas
         </span>
         into{" "}
-        <span className="ml-3.5 relative">
+        <span className="ml-3 md:ml-3.5 relative">
           <div className="absolute left-0 right-0 top-0 bottom-0 bg-blue-500/30 blur-3xl -z-10" />
           <span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400">
             reality
@@ -54,7 +54,7 @@ const HeroSection = () => {
         </span>
       </Text>
 
-      <Text className="z-10 text-lg md:text-[19px] max-w-screen-md mb-5" variant="lead">
+      <Text className="z-10 text-base md:text-lg md:text-[19px] max-w-screen-md mb-5" variant="lead">
         Every great project starts with an idea. Whether it's a startup, a small business, or a personal
         project and I'm here to bring those ideas to life
       </Text>
