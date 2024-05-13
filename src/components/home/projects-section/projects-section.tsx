@@ -49,33 +49,46 @@ const ProjectsSection = () => {
           return <Project key={project.repo} project={project} isEven={isEven} />;
         })}
 
-        <Row className="items-stretch w-full justify-end px-5 h-fit min-h-[1.5px]" items="start">
-          <Column className="items-end mb-36">
+        <Row className="relative items-stretch w-full justify-end px-5 h-fit min-h-[1.5px]">
+          <div
+            className="absolute top-0 right-0 w-1/3 h-1/2 bg-gradient-to-l
+            from-blue-400/30 to-transparent blur-[100px]"
+            aria-hidden="true"
+          />
+          <Column className="z-10 items-end mb-36">
             <Text className="text-foreground/90" variant="h3">
               More Projects
             </Text>
             <Text className="mb-3 text-right max-w-xl" variant="p">
-              You thought that was it? During my years of programming, I have built a huge number of open
-              source projects which you can view from my Github page
+              There's more to discover! If you're interested, feel free to explore my Github account,
+              where you can find a number of projects I've worked on.
             </Text>
             <Row>
               <Button
-                className="bg-foreground/90 hover:bg-foreground/70 text-black grow w-[220px] rounded-full"
-                variant="ghost"
+                className="relative w-[200px] rounded-xl border border-foreground/10 backdrop-blur-sm"
                 href="https://github.com/humboorgir"
+                variant="ghost"
                 openInNewTab>
+                <div
+                  className="absolute bottom-0 left-[50%] translate-x-[-50%] w-[50%] h-[2px] bg-gradient-to-r 
+            from-transparent via-blue-500 to-transparent"
+                  aria-hidden="true"
+                />
                 Github page <Github className="mb-[3px] ml-2" />
               </Button>
             </Row>
           </Column>
 
-          <Column className="left-0 top-0 ml-3">
+          <Column className="relative mt-3.5 ml-5">
             {/* icon */}
-            <div className="border border-ring rounded-full w-fit p-1.5">
-              <Github className="text-[26.5px] text-white" />
-            </div>
+            <div className="bg-blue-400/80 blur-[1px] w-4 h-4 rounded-full mb-1.5" />
+            <div className="absolute right-0 top-0 bg-blue-400 blur-md w-[18px] h-[18px] rounded-full mb-1.5" />
             {/* line  */}
-            <div className="w-[1.5px] h-full bg-ring" />
+            <div
+              className="w-[2px] h-full bg-gradient-to-b
+            from-transparent via-20% via-blue-400 to-100% to-transparent blur-[1px]"
+              aria-hidden="true"
+            />
           </Column>
         </Row>
       </Container>
