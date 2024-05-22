@@ -74,7 +74,6 @@ const ExperienceSection = () => {
                 <Text variant="lead" className="text-[15px] pb-5">
                   {description}
                 </Text>
-                {/* bg-transparent is used to hide the default bg here, so that the bg-gradient will be displayed properly  */}
                 {/* TODO: implement this thing's functionality once project section's done */}
                 <Button className="mt-auto w-[calc(100%-16px)] text-foreground/80 bg-transparent bg-gradient-to-br from-blue-800 to-blue-950">
                   See work samples
