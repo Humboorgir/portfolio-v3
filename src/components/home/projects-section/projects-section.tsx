@@ -79,10 +79,10 @@ const ProjectsSection = () => {
             </Row>
           </Column>
 
-          <Column className="relative mt-3.5 ml-5">
+          <Column className="relative mt-3.5 ml-7">
             {/* icon */}
-            <div className="bg-blue-400/80 blur-[1px] w-4 h-4 rounded-full mb-1.5" />
-            <div className="absolute right-0 top-0 bg-blue-400 blur-md w-[18px] h-[18px] rounded-full mb-1.5" />
+            <div className="bg-blue-400 blur-[1px] w-4 h-4 rounded-full mb-1.5" />
+            <div className="absolute right-0 top-0 bg-blue-400 blur-md w-[20px] h-[20px] rounded-full mb-1.5" />
             {/* line  */}
             <div
               className="w-[2px] h-full bg-gradient-to-b
