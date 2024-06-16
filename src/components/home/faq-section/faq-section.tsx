@@ -31,11 +31,26 @@ const FAQSection = () => {
   ];
 
   return (
-    <Container className="mb-32 w-full max-w-screen-md">
-      <Text className="text-foreground/90 mb-4" variant="h3">
+    <Container className="relative mb-32 w-full max-w-screen-md">
+      <div
+        className="absolute top-0 left-0 h-[200px] w-[400px]
+          bg-gradient-to-r from-primary/40 to-blue-200/30 blur-[140px]"
+      />
+      <span
+        className="mb-5 flex items-center justify-between border-2 border-blue-500/10 px-5 py-1.5 rounded-full
+        bg-blue-500/10 w-fit">
+        <div className="h-3.5 w-3.5 mb-0.5 rounded-full bg-blue-500 animate-pulse mr-3" />
+        <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-500">
+          FAQ
+        </span>
+      </span>
+      <Text className="relative text-foreground/90 mb-3" variant="h2">
         Frequently asked questions
       </Text>
-      <Accordion items={accordionItems} />
+      <Text className="text-lg text-foreground/80 mb-8" variant="p">
+        Don't see your question here? Send me a private message on the listed socials
+      </Text>
+      <Accordion className="z-10" items={accordionItems} />
     </Container>
   );
 };
