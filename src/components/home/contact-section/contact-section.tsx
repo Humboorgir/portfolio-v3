@@ -32,72 +32,48 @@ const ContactSection = () => {
   };
 
   return (
-    <Container className="flex flex-col items-center">
-      <Column items="center" className="text-center p-10 z-10 mb-4">
-        <Row ref={titleRef} className="text-blue-500 !text-lg !flex !items-center space-x-1">
-          <Project className="text-lg mr-1.5 mb-0.5" />
-          {"So what are you waiting for?".split(" ").map((text, i) => {
-            return (
-              <m.span
-                initial="hidden"
-                whileInView="shown"
-                variants={mVariants}
-                transition={{ delay: (i + 1) / 10, ease: mEase, duration: 0.5 }}>
-                {text}
-              </m.span>
-            );
-          })}
-        </Row>
+    <Container className="flex flex-col items-center w-full">
+      <Text className="text-foreground/80 -mb-4" variant="h2">
+        So what are you waiting for?
+      </Text>
+      <Column
+        items="center"
+        className="relative text-center !pt-12 p-7 md:p-10 z-10 bg-blue-400/5 rounded-xl backdrop-blur-sm 
+        border-2 border-blue-400/10 mb-8 w-full">
+        <div
+          className="absolute top-0 left-0 h-[200px] w-[400px]
+          bg-gradient-to-r from-primary/40 to-blue-200/30 blur-[140px]"
+          aria-hidden
+        />
+
+        <span
+          className="mb-5 flex items-center justify-between border-2 border-blue-500/10 px-5 py-1.5 rounded-full
+        bg-blue-500/10 w-fit">
+          <div className="h-3.5 w-3.5 mb-0.5 rounded-full bg-blue-500 animate-pulse mr-3" />
+          <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-500">
+            Contact
+          </span>
+        </span>
+
         {visible && (
           <>
-            <MText
-              initial="hidden"
-              animate="shown"
-              variants={mVariants}
-              transition={{ delay: 1.2, ease: mEase, duration: 1 }}
-              className="text-foreground/90 z-20 !text-4xl md:!text-6xl"
-              variant="h2">
+            <Text className="text-foreground/90 z-20" variant="h2">
               Let's build the future!
-            </MText>
-            <MText
-              initial="hidden"
-              animate="shown"
-              variants={mVariants}
-              transition={{ delay: 1.3, ease: mEase, duration: 0.7 }}
-              className="max-w-xl mb-5"
-              variant="p">
+            </Text>
+            <Text className="max-w-prose text-center mb-5" variant="p">
               Send me a message, make sure to include necessary details like your project and how I can
               contact you back
-            </MText>
-            <MInput
-              initial="hidden"
-              animate="shown"
-              variants={mVariants}
-              transition={{ delay: 1.4, ease: mEase, duration: 0.7 }}
-              className="w-full mb-2.5 self-start"
-              placeholder="Name"
-            />
-            <MTextArea
-              initial="hidden"
-              animate="shown"
-              variants={mVariants}
-              transition={{ delay: 1.5, ease: mEase, duration: 0.7 }}
-              className="w-full mb-3"
-              placeholder="Message"
-            />
-            <MButton
-              className="w-full bg-gradient-to-br from-blue-600 to-blue-800"
-              initial="hidden"
-              animate="shown"
-              variants={mVariants}
-              transition={{ delay: 1.6, ease: mEase, duration: 0.7 }}>
+            </Text>
+            <Input className="w-full max-w-[660px] mb-2.5" placeholder="Name" />
+            <TextArea className="w-full max-w-[660px] mb-5" placeholder="Message" />
+            <Button className="w-full max-w-[660px] bg-gradient-to-br from-blue-600 to-blue-800">
               Send project request <Mail className="ml-1" />
-            </MButton>
+            </Button>
           </>
         )}
       </Column>
 
-      <Text variant="h4" className="text-foreground/80">
+      <Text variant="h4" className="text-foreground/90 font-medium">
         Platforms you can contact me from
       </Text>
       <Row className="space-x-2 mb-10">
@@ -107,7 +83,11 @@ const ContactSection = () => {
               name: "Telegram",
               description: "@Humboorgir",
               displayText: (
-                <Button size="sm" variant="secondary" className="text-lg text-foreground/80">
+                <Button
+                  size="default"
+                  variant="ghost"
+                  className="text-lg bg-transparent text-blue-200 relative">
+                  <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
                   <Telegram className="text-2xl mr-1.5" /> Telegram
                 </Button>
               ),
@@ -116,7 +96,11 @@ const ContactSection = () => {
               name: "Discord",
               description: "Humboorgir",
               displayText: (
-                <Button size="sm" variant="secondary" className="text-lg text-foreground/80">
+                <Button
+                  size="default"
+                  variant="ghost"
+                  className="text-lg bg-transparent text-blue-200 relative">
+                  <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
                   <Discord className="text-2xl mr-1.5" /> Discord
                 </Button>
               ),
@@ -125,7 +109,11 @@ const ContactSection = () => {
               name: "Twitter",
               description: "@Humboorgir",
               displayText: (
-                <Button size="sm" variant="secondary" className="text-lg text-foreground/80">
+                <Button
+                  size="default"
+                  variant="ghost"
+                  className="text-lg bg-transparent text-blue-200 relative">
+                  <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
                   <Twitter className="text-2xl mr-1.5" /> Twitter
                 </Button>
               ),
