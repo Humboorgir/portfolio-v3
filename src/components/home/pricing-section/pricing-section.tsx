@@ -5,7 +5,7 @@ import Text from "@/components/ui/text";
 
 const PricingSection = () => {
   return (
-    <Container className="relative flex flex-col items-center mb-32">
+    <Container className="relative flex flex-col items-center mb-44">
       <div
         className="absolute top-0 left-0 h-[200px] w-[400px]
    bg-gradient-to-r from-primary/40 to-blue-200/30 blur-[140px]"

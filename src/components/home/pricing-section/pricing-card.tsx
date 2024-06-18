@@ -28,12 +28,14 @@ const PricingCard = ({ plan }: Props) => {
       <Text className="mb-2 md:text-2xl text-foreground/80" variant="h3">
         {plan.name}
       </Text>
+
       <Row>
         <Text className="mb-3 mr-2 text-2xl md:text-[40px] text-foreground/90" variant="h3">
           {plan.price}$
         </Text>
         <Text variant="lead"> / project </Text>
       </Row>
+
       <Text className="mb-3" variant="p">
         {plan.description}
       </Text>
@@ -45,7 +47,7 @@ const PricingCard = ({ plan }: Props) => {
           </Text>
         );
       })}
-      <Button className="mt-2 w-[calc(100%-16px)] text-foreground/90 bg-transparent bg-gradient-to-br from-blue-800 to-blue-950">
+      <Button className="mt-3 w-[calc(100%-16px)] text-foreground/90 bg-transparent bg-gradient-to-br from-blue-800 to-blue-950">
         Contact <MessageIcon className="w-4.5 h-4.5 ml-2" />
       </Button>
     </Column>
