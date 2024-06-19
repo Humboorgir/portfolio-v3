@@ -32,7 +32,7 @@ const ContactSection = () => {
   };
 
   return (
-    <Container className="flex flex-col items-center w-full">
+    <Container className="flex flex-col items-center w-full pb-24">
       <Text className="text-foreground/80 -mb-4" variant="h2">
         So what are you waiting for?
       </Text>
@@ -55,22 +55,18 @@ const ContactSection = () => {
           </span>
         </span>
 
-        {visible && (
-          <>
-            <Text className="text-foreground/90 z-20" variant="h2">
-              Let's build the future!
-            </Text>
-            <Text className="max-w-prose text-center mb-5" variant="p">
-              Send me a message, make sure to include necessary details like your project and how I can
-              contact you back
-            </Text>
-            <Input className="w-full max-w-[660px] mb-2.5" placeholder="Name" />
-            <TextArea className="w-full max-w-[660px] mb-5" placeholder="Message" />
-            <Button className="w-full max-w-[660px] bg-gradient-to-br from-blue-600 to-blue-800">
-              Send project request <Mail className="ml-1" />
-            </Button>
-          </>
-        )}
+        <Text className="text-foreground/90 z-20" variant="h2">
+          Let's build the future!
+        </Text>
+        <Text className="max-w-prose text-center mb-5" variant="p">
+          Send me a message, make sure to include necessary details like your project and how I can
+          contact you back
+        </Text>
+        <Input className="w-full max-w-[660px] mb-2.5" placeholder="Name" />
+        <TextArea className="w-full max-w-[660px] mb-5" placeholder="Message" />
+        <Button className="w-full max-w-[660px] bg-gradient-to-br from-blue-600 to-blue-800">
+          Send project request <Mail className="ml-1" />
+        </Button>
       </Column>
 
       <Text variant="h4" className="text-foreground/90 font-medium">
