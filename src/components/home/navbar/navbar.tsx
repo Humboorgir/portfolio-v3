@@ -10,6 +10,7 @@ import React, { useRef, useState } from "react";
 import { MdOutlineWorkHistory as Work } from "react-icons/md";
 import { IoIosColorWand as Theme } from "react-icons/io";
 import { FaGithub as Github } from "react-icons/fa";
+import HamburgerMenu from "./hamburger-menu";
 
 const Navbar = () => {
   const containerRef = useRef<HTMLUListElement>(null);
@@ -36,8 +37,10 @@ const Navbar = () => {
     { name: "Resume", href: "/resume" },
   ];
   return (
-    <Container>
-      <nav className="translate-y-3 rounded-full border-2 border-foreground-muted/20 px-10 w-full grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-3.5">
+    <Container className="relative z-30 opacity-90 w-full md:w-fit">
+      <nav
+        className="translate-y-3 rounded-full border-2 border-foreground-muted/20 px-8 md:px-10 w-full
+       grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-2  md:py-3.5">
         {/* logo  */}
         <Row>
           <Work className="text-3xl mr-1" />
@@ -56,9 +59,9 @@ const Navbar = () => {
           className="relative hidden md:flex items-center justify-center">
           <HoverHighlight buttonRect={buttonRect} containerRect={containerRect} />
 
-          {links.map((link) => {
+          {links.map((link, i) => {
             return (
-              <li onMouseOver={updateButtonRect}>
+              <li key={i} onMouseOver={updateButtonRect}>
                 <Button
                   className="text-foreground/90 text-[17px] hover:bg-inherit"
                   variant="ghost"
@@ -71,7 +74,7 @@ const Navbar = () => {
         </ul>
 
         {/* theme and github  */}
-        <ul className="flex items-center justify-end">
+        <ul className="hidden md:flex items-center justify-end">
           <li>
             <Button variant="ghost">
               Theme <Theme className="text-xl ml-1" />
@@ -83,6 +86,8 @@ const Navbar = () => {
             </Button>
           </li>
         </ul>
+
+        <HamburgerMenu className="md:hidden ml-auto" links={links} />
       </nav>
     </Container>
   );
