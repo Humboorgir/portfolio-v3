@@ -11,7 +11,7 @@ const ExperienceSection = () => {
   return (
     <Container className="relative py-20 flex flex-col items-center">
       <div
-        className="absolute top-0 left-0 h-[200px] w-[400px]
+        className="absolute top-0 left-0 h-[200px] w-[400px]  max-w-[80vw]
    bg-gradient-to-r from-primary/50 to-blue-200/30 blur-[140px]"
       />
       <span

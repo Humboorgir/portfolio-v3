@@ -41,7 +41,7 @@ const ContactSection = () => {
         className="relative text-center !pt-12 p-7 md:p-10 z-10 bg-blue-400/5 rounded-xl backdrop-blur-sm 
         border-2 border-blue-400/10 mb-8 w-full">
         <div
-          className="absolute top-0 left-0 h-[200px] w-[400px]
+          className="absolute top-0 left-0 h-[200px] w-[400px] max-w-[80vw]
           bg-gradient-to-r from-primary/40 to-blue-200/30 blur-[140px]"
           aria-hidden
         />
