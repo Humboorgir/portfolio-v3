@@ -72,7 +72,8 @@ const ContactSection = () => {
       <Text variant="h4" className="text-foreground/90 font-medium">
         Platforms you can contact me from
       </Text>
-      <Row className="space-x-2 mb-10">
+
+      <Row className="space-x-2 mb-10 flex-wrap justify-center">
         <Tooltip
           items={[
             {
