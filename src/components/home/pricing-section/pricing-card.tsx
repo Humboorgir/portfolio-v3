@@ -25,12 +25,12 @@ const PricingCard = ({ plan }: Props) => {
             from-transparent via-blue-500 to-transparent"
         aria-hidden="true"
       />
-      <Text className="mb-2 md:text-2xl text-foreground/80" variant="h3">
+      <Text className="mb-2 md:text-2xl text-2xl text-foreground/80" variant="h3">
         {plan.name}
       </Text>
 
       <Row>
-        <Text className="mb-3 mr-2 text-2xl md:text-[40px] text-foreground/90" variant="h3">
+        <Text className="mb-3 mr-2 text-[40px] leading-8 md:text-[40px] text-foreground/90" variant="h3">
           {plan.price}$
         </Text>
         <Text variant="lead"> / project </Text>
