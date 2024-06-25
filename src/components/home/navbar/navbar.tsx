@@ -3,7 +3,7 @@ import Container from "@/components/ui/container";
 import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
 
-import HamburgerMenu from "./hamburger-menu";
+import HamburgerButton from "./hamburger-menu";
 import HoverHighlight from "./hover-highlight";
 
 import React, { useRef, useState } from "react";
@@ -86,7 +86,7 @@ const Navbar = ({ toggleOpen, links }: Props) => {
           </li>
         </ul>
 
-        <HamburgerMenu className="md:hidden ml-auto" toggleOpen={toggleOpen} />
+        <HamburgerButton className="md:hidden ml-auto" toggleOpen={toggleOpen} />
       </nav>
     </Container>
   );

@@ -8,7 +8,7 @@ interface Props {
   toggleOpen: Cycle;
 }
 
-const HamburgerMenu = ({ toggleOpen, className }: Props) => {
+const HamburgerButton = ({ toggleOpen, className }: Props) => {
   return (
     <div className={cn("relative w-fit", className)}>
       <Button variant="ghost" onClick={() => toggleOpen()}>
@@ -18,4 +18,4 @@ const HamburgerMenu = ({ toggleOpen, className }: Props) => {
   );
 };
 
-export default HamburgerMenu;
+export default HamburgerButton;
