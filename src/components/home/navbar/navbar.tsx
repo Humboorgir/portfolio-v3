@@ -3,6 +3,7 @@ import Container from "@/components/ui/container";
 import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
 
+import HamburgerMenu from "./hamburger-menu";
 import HoverHighlight from "./hover-highlight";
 
 import React, { useRef, useState } from "react";
@@ -10,9 +11,17 @@ import React, { useRef, useState } from "react";
 import { MdOutlineWorkHistory as Work } from "react-icons/md";
 import { IoIosColorWand as Theme } from "react-icons/io";
 import { FaGithub as Github } from "react-icons/fa";
-import HamburgerMenu from "./hamburger-menu";
+import { Cycle } from "framer-motion";
 
-const Navbar = () => {
+type Props = {
+  toggleOpen: Cycle;
+  links: {
+    name: string;
+    href: string;
+  }[];
+};
+
+const Navbar = ({ toggleOpen, links }: Props) => {
   const containerRef = useRef<HTMLUListElement>(null);
   const containerRect = containerRef.current?.getBoundingClientRect();
 
@@ -26,18 +35,8 @@ const Navbar = () => {
     setButtonRect(null);
   }
 
-  const links = [
-    {
-      name: "Home",
-      href: "/",
-    },
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
-    { name: "Resume", href: "/resume" },
-  ];
   return (
-    <Container className="relative z-30 opacity-90 w-full md:w-fit">
+    <Container className="relative z-30 w-full md:w-fit">
       <nav
         className="translate-y-3 rounded-full border-2 border-foreground-muted/20 px-8 md:px-10 w-full
        grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-2  md:py-3.5">
@@ -87,7 +86,7 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <HamburgerMenu className="md:hidden ml-auto" links={links} />
+        <HamburgerMenu className="md:hidden ml-auto" toggleOpen={toggleOpen} />
       </nav>
     </Container>
   );
