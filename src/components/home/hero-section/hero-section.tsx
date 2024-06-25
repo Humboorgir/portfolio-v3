@@ -26,7 +26,7 @@ import { SiTailwindcss as Tailwindcss } from "react-icons/si";
 import { FaExclamationTriangle as Exclamation } from "react-icons/fa";
 const HeroSection = () => {
   return (
-    <Column className="relative z-10 text-center pt-[8.5rem] pb-36 mb-14 px-6">
+    <Column className="min-w-[1px] relative z-10 text-center pt-[8.5rem] pb-36 mb-14 px-6">
       <Text
         className="flex items-center border-2 border-foreground-muted/20 px-4 py-2 rounded-full mb-2
         bg-clip-text text-transparent bg-gradient-to-b from-blue-300 to-blue-500"
@@ -77,7 +77,7 @@ const HeroSection = () => {
         </Button>
       </Column>
       <Column
-        className="max-w-sm items-start relative overflow-hidden pb-2.5
+        className="w-full max-w-[280px] sm:max-w-sm items-start relative overflow-hidden pb-2.5
         [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
         <Text className="self-center mb-1.5" variant="p">
           Experienced with most major frameworks
