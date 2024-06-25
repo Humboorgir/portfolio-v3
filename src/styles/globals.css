@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-background text-foreground-light;
+}
+
 :root {
   --foreground: 0 0% 98%;
   --foreground-light: 0 0% 65%;
