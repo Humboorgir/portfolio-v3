@@ -20,7 +20,7 @@ const Footer = () => {
           bg-gradient-to-r from-primary/40 to-blue-200/10 blur-[140px]"
         aria-hidden
       />
-      <Container className="flex flex-col items-center justify-center px-10 w-full py-8">
+      <Container className="flex flex-col items-center justify-center px-8 w-full py-8">
         <Row className="self-start justify-center space-x-14 w-full mb-12 flex-wrap">
           <Column className="mr-8 items-start">
             <Row>

@@ -42,7 +42,7 @@ const ProjectsSection = () => {
   return (
     <>
       <Title />
-      <Container className="flex flex-col items-center mb-36">
+      <Container className="flex flex-col items-center mb-36 px-1 xs:px-6">
         {/* projects  */}
         {projects.map((project, i) => {
           const isEven = (i + 1) % 2 == 0;
@@ -79,7 +79,7 @@ const ProjectsSection = () => {
             </Row>
           </Column>
 
-          <Column className="relative mt-3.5 ml-7">
+          <Column className="relative mt-3.5 ml-2 xs:ml-6">
             {/* icon */}
             <div className="bg-blue-400 blur-[1px] w-4 h-4 rounded-full mb-1.5" />
             <div className="absolute right-0 top-0 bg-blue-400 blur-md w-[20px] h-[20px] rounded-full mb-1.5" />

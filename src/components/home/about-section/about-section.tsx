@@ -12,6 +12,7 @@ import {
   SiTypescript as TypescriptIcon,
 } from "react-icons/si";
 import { cubicBezier, m } from "framer-motion";
+import Balancer from "react-wrap-balancer";
 
 const AboutSection = () => {
   return (
@@ -43,14 +44,14 @@ const AboutSection = () => {
             high degree and as mentioned earlier, I'm very passionate towards my work and always open to
             gain new skills.
           </Text>
-          <Row className="space-x-10">
+          <Row className="grid-areas-layout grid gap-x-10 place-items-center mx-auto md:mx-0 md:w-auto">
             {[
-              { label: "Discord members", amount: 1526 },
-              { label: "Open source projects", amount: 116 },
-              { label: "Satisfied clients", amount: 96 },
-            ].map(({ label, amount }) => {
+              { area: "one", label: "Discord members", amount: 1526 },
+              { area: "two", label: "Github projects", amount: 116 },
+              { area: "three", label: "Satisfied clients", amount: 96 },
+            ].map(({ area, label, amount }, i) => {
               return (
-                <Column key={amount}>
+                <Column style={{ gridArea: area }} key={amount}>
                   <Text variant="h2">
                     <CountUp start={0} end={amount} enableScrollSpy duration={2} suffix="+" />
                   </Text>
@@ -65,7 +66,7 @@ const AboutSection = () => {
 
         <m.div
           whileInView={{
-            gap: "80px",
+            gap: "60px",
             rotate: "12deg",
           }}
           transition={{
@@ -73,17 +74,17 @@ const AboutSection = () => {
             ease: cubicBezier(0.16, 1, 0.3, 1),
           }}
           className="gap-4 h-fit w-fit mt-20 lg:mt-0 lg:ml-20 grid grid-cols-2 grid-rows-2 justify-center items-center">
-          <div className="p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
-            <ReactIcon className="w-16 h-16 text-blue-500" />
+          <div className="p-3 md:p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
+            <ReactIcon className="w-12 h-12 sm:w-16 sm:h-16 text-blue-500" />
           </div>
-          <div className="p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
-            <TailwindcssIcon className="w-16 h-16 text-blue-600" />
+          <div className="p-3 md:p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
+            <TailwindcssIcon className="w-12 h-12 sm:w-16 sm:h-16 text-blue-600" />
           </div>
-          <div className="p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
-            <TypescriptIcon className="w-16 h-16 text-blue-400" />
+          <div className="p-3 md:p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
+            <TypescriptIcon className="w-12 h-12 sm:w-16 sm:h-16 text-blue-400" />
           </div>
-          <div className="p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
-            <FramerMotionIcon className="w-16 h-16 text-blue-500" />
+          <div className="p-3 md:p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
+            <FramerMotionIcon className="w-12 h-12 sm:w-16 sm:h-16 text-blue-500" />
           </div>
         </m.div>
       </Container>

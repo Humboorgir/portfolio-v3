@@ -24,6 +24,7 @@ import {
 import { FaVuejs as Vue } from "react-icons/fa6";
 import { SiTailwindcss as Tailwindcss } from "react-icons/si";
 import { FaExclamationTriangle as Exclamation } from "react-icons/fa";
+import Balancer from "react-wrap-balancer";
 const HeroSection = () => {
   return (
     <Column className="min-w-[1px] relative z-10 text-center pt-[8.5rem] pb-36 mb-14 px-6">
@@ -37,21 +38,7 @@ const HeroSection = () => {
       <Text
         className="flex flex-wrap justify-center text-center z-10 text-[42px] leading-none py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
         variant="h1">
-        Turning{" "}
-        <span
-          style={{
-            textShadow: "-1px -1px 0 #3b82f6, 1px -1px 0 #3b82f6, -1px 1px 0 #3b82f6, 1px 1px 0 #3b82f6",
-          }}
-          className="mx-3 md:mx-3.5 text-blue-950 bg-transparent">
-          ideas
-        </span>
-        into{" "}
-        <span className="ml-3 md:ml-3.5 relative">
-          <div className="absolute left-0 right-0 top-0 bottom-0 bg-blue-500/30 blur-3xl -z-10" />
-          <span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400">
-            reality
-          </span>
-        </span>
+        <Balancer>Turning ideas into reality</Balancer>
       </Text>
 
       <Text className="z-10 text-base md:text-lg md:text-[19px] max-w-screen-md mb-5" variant="lead">
@@ -65,13 +52,11 @@ const HeroSection = () => {
       space-y-3 space-x-0 md:space-x-3 md:space-y-0 flex-wrap w-full md:w-fit">
         <Button
           className="md:w-64 md:grow-0 rounded-3xl bg-foreground/80
-        hover:bg-neutral-500 text-background"
-          size="lg">
+        hover:bg-neutral-500 text-background md:px-4 md:py-3 md:text-xl">
           About me
         </Button>
         <Button
-          className="md:w-64 md:grow-0 rounded-3xl [box-shadow:var(--shadow-border)]"
-          size="lg"
+          className="md:w-64 md:grow-0 rounded-3xl [box-shadow:var(--shadow-border)] md:px-4 md:py-3 md:text-xl"
           variant="outline">
           Contact
         </Button>
@@ -80,10 +65,10 @@ const HeroSection = () => {
         className="w-full max-w-[280px] sm:max-w-sm items-start relative overflow-hidden pb-2.5
         [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
         <Text className="self-center mb-1.5" variant="p">
-          Experienced with most major frameworks
+          <Balancer>Experienced with most major frameworks</Balancer>
         </Text>
 
-        <Row>
+        <Row className="max-w-[1px]">
           {/* return this twice, basically */}
           {[0, 0].map(() => (
             <Row key={Math.random()} className="space-x-3 mt-2 mr-3 animate-scroll">

@@ -26,3 +26,26 @@ body {
   --accent: 240 4% 95%; 
    --ring: 240 3% 87%;*/
 }
+
+/* this could've been way easier if flexbox gap had decent browser support  */
+/* not sure what to call this  */
+.grid-areas-layout {
+  grid-template-areas:
+    "one"
+    "two"
+    "three";
+}
+
+@media screen(xs) {
+  .grid-areas-layout {
+    grid-template-areas:
+      "one two"
+      "three three";
+  }
+}
+
+@media screen(sm) {
+  .grid-areas-layout {
+    grid-template-areas: "one two three";
+  }
+}

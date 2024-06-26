@@ -29,7 +29,7 @@ const ExperienceSection = () => {
         </Text>
       </Container>
 
-      <Container className="pb-20 px-2">
+      <Container className="pb-20 px-0">
         <Row className="items-stretch justify-center flex-wrap">
           {[
             {
@@ -53,7 +53,7 @@ const ExperienceSection = () => {
           ].map(({ label, description, Icon }) => {
             return (
               <Column
-                className="mr-4 mb-4 text-center relative p-6 max-w-[90%] w-[300px] md:w-[350px] rounded-md border-2 border-blue-300/10 backdrop-blur-sm"
+                className="mr-4 mb-4 text-center relative p-6 max-w-[90%] w-[280px] md:w-[350px] rounded-md border-2 border-blue-300/10 backdrop-blur-sm"
                 key={label}>
                 <div
                   className="absolute top-0 left-[50%] translate-x-[-50%] w-[50%] h-[2px] bg-gradient-to-r 

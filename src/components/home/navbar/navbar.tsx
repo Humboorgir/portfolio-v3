@@ -38,8 +38,8 @@ const Navbar = ({ toggleOpen, links }: Props) => {
   return (
     <Container className="relative z-30 w-full md:w-fit">
       <nav
-        className="translate-y-3 rounded-full border-2 border-foreground-muted/20 px-8 md:px-10 w-full
-       grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-2  md:py-3.5">
+        className="translate-y-3 rounded-full border-2 border-foreground-muted/20 px-5 md:px-10 w-full
+       grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-1 md:py-3.5">
         {/* logo  */}
         <Row>
           <Work className="text-3xl mr-1" />

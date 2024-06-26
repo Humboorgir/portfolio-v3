@@ -13,6 +13,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "360px",
+      },
       colors: {
         foreground: {
           DEFAULT: "hsl(var(--foreground))",
