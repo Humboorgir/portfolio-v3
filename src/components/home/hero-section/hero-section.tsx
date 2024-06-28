@@ -36,7 +36,7 @@ const HeroSection = () => {
       </Text>
       {/* title  */}
       <Text
-        className="flex flex-wrap justify-center text-center z-10 text-[42px] leading-none py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
+        className="flex flex-wrap justify-center text-center z-10 text-[42px] leading-none py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500"
         variant="h1">
         <Balancer>Turning ideas into reality</Balancer>
       </Text>
