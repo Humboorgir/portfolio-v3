@@ -6,6 +6,10 @@ body {
   @apply bg-background text-foreground-light;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --foreground: 0 0% 98%;
   --foreground-light: 0 0% 65%;
@@ -37,14 +41,6 @@ body {
 }
 
 @media screen(xs) {
-  .grid-areas-layout {
-    grid-template-areas:
-      "one two"
-      "three three";
-  }
-}
-
-@media screen(sm) {
   .grid-areas-layout {
     grid-template-areas: "one two three";
   }

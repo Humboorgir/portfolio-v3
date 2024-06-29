@@ -12,6 +12,7 @@ import { MdOutlineWorkHistory as Work } from "react-icons/md";
 import { IoIosColorWand as Theme } from "react-icons/io";
 import { FaGithub as Github } from "react-icons/fa";
 import { Cycle } from "framer-motion";
+import Link from "next/link";
 
 type Props = {
   toggleOpen: Cycle;
@@ -61,12 +62,12 @@ const Navbar = ({ toggleOpen, links }: Props) => {
           {links.map((link, i) => {
             return (
               <li key={i} onMouseOver={updateButtonRect}>
-                <Button
-                  className="text-foreground/90 text-[17px] hover:bg-inherit"
-                  variant="ghost"
+                <a
+                  className="whitespace-nowrap px-3 py-2.5 text-foreground/90 text-[17px] hover:bg-inherit active:bg-blue-200/10
+                  rounded-md cursor-pointer z-20"
                   href={link.href}>
                   {link.name}
-                </Button>
+                </a>
               </li>
             );
           })}

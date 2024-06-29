@@ -14,7 +14,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        xs: "360px",
+        xs: "364px",
       },
       colors: {
         foreground: {

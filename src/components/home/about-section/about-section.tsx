@@ -16,24 +16,24 @@ import Balancer from "react-wrap-balancer";
 
 const AboutSection = () => {
   return (
-    <div className="relative py-20 bg-primary/10 backdrop-blur-[1px]">
+    <div id="about" className="relative py-20 bg-primary/10 backdrop-blur-[1px]">
       <div className="absolute -z-10 right-0 top-[50%] translate-y-[-50%] w-[50%] h-full bg-blue-900/20 blur-3xl rounded-full" />
       <div className="absolute -z-10 left-0 top-[50%] translate-y-[-50%] w-[50%] h-full bg-primary/20 blur-3xl rounded-full" />
       <Container className="flex flex-col lg:flex-row items-center w-full">
         <Column items="start">
           {/* TODO: create a reusable component for this */}
           <span
-            className="mb-6 flex items-center border-2 border-green-500/10 px-3 py-1 rounded-full w-fit
+            className="mx-auto md:mx-0 mb-6 flex items-center border-2 border-green-500/10 px-3 py-1 rounded-full w-fit
             bg-green-500/10">
             <InfoIcon className="h-5 w-5 text-green-500 mr-1.5" />
             <span className="bg-clip-text text-transparent bg-gradient-to-br from-green-400 to-green-600">
               About me
             </span>
           </span>
-          <Text className="mb-4 text-foreground/90" variant="h2">
+          <Text className="mb-4 xs:text-4xl text-foreground/90 mx-auto md:mx-0" variant="h2">
             Hi there! I'm Iliya
           </Text>
-          <Text className="max-w-prose mb-4" variant="p">
+          <Text className="max-w-prose mb-4 text-center md:text-left" variant="p">
             Hey there! I'm Iliya, a 15 year old high school student and full stack web developer from
             Iran. I've been programming since early 2020 or in other words, since I had just turned 12!
             I've been using computers since the age of 5 and have always shown a huge passion for them.
@@ -64,7 +64,7 @@ const AboutSection = () => {
           </Row>
         </Column>
 
-        <m.div
+        {/* <m.div
           whileInView={{
             gap: "60px",
             rotate: "12deg",
@@ -86,7 +86,7 @@ const AboutSection = () => {
           <div className="p-3 md:p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
             <FramerMotionIcon className="w-12 h-12 sm:w-16 sm:h-16 text-blue-500" />
           </div>
-        </m.div>
+        </m.div> */}
       </Container>
     </div>
   );

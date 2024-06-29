@@ -32,7 +32,7 @@ const ContactSection = () => {
   };
 
   return (
-    <Container className="flex flex-col items-center w-full pb-24">
+    <Container id="contact" className="flex flex-col items-center w-full pb-24">
       <Text className="text-foreground/80 -mb-4" variant="h2">
         So what are you waiting for?
       </Text>
