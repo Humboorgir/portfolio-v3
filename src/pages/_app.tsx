@@ -5,6 +5,7 @@ import type { NextPage } from "next";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Roboto } from "next/font/google";
 import { Provider as WrapBalancerProvider } from "react-wrap-balancer";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"] });
 
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <LazyMotion features={domAnimation}>
       <WrapBalancerProvider>
+        <Toaster position="top-center" />
         <main className={roboto.className}>{getLayout(<Component {...pageProps} />)}</main>
       </WrapBalancerProvider>
     </LazyMotion>

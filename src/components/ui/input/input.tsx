@@ -12,10 +12,12 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 // and if I reutrn the ref of the input, it wont be animated
 // properly
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, placeholder, ...props }, ref) => {
+  ({ className, type, placeholder, name, required, ...props }, ref) => {
     return (
       <div className={cn("relative h-10 w-full", className)} ref={ref} {...props}>
         <input
+          name={name}
+          required={required}
           type={type}
           className="absolute flex top-0 left-0 bottom-0 right-0 rounded-md bg-transparent px-3 py-2 text-sm
         ring-offset-background focus-visible:outline-none border border-ring text-foreground
