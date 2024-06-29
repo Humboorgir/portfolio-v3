@@ -39,7 +39,7 @@ const Navbar = ({ toggleOpen, links }: Props) => {
   return (
     <Container className="relative z-30 w-full md:w-fit">
       <nav
-        className="translate-y-3 rounded-full border-2 border-foreground-muted/20 px-5 md:px-10 w-full
+        className="space-x-4 translate-y-3 rounded-full border-2 border-foreground-muted/20 px-5 md:px-10 w-full
        grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-1 md:py-3.5">
         {/* logo  */}
         <Row>
@@ -73,16 +73,11 @@ const Navbar = ({ toggleOpen, links }: Props) => {
           })}
         </ul>
 
-        {/* theme and github  */}
+        {/* github  */}
         <ul className="hidden md:flex items-center justify-end">
           <li>
-            <Button variant="ghost">
-              Theme <Theme className="text-xl ml-1" />
-            </Button>
-          </li>
-          <li>
-            <Button variant="ghost">
-              Github <Github className="text-xl ml-1.5 mb-0.5" />
+            <Button className="text-foreground/90" variant="ghost">
+              Github Repository <Github className="text-xl ml-1.5 mb-0.5" />
             </Button>
           </li>
         </ul>
