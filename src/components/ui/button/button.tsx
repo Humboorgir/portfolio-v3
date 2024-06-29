@@ -39,15 +39,29 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
     rippleColor?: string;
     href?: string;
     openInNewTab?: boolean;
+    useNextLink?: boolean;
   };
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, children, rippleColor, href, openInNewTab, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      children,
+      rippleColor,
+      href,
+      openInNewTab,
+      useNextLink = true,
+      ...props
+    },
+    ref
+  ) => {
     // use secondary itself as the rippleColor if variant == secondary and rippleColor
     // isn't specified
     if (variant == "secondary" && !rippleColor) rippleColor = "#7C72FF";
 
-    const Component = href ? Link : "button";
+    const Component = !href ? "button" : useNextLink ? Link : "a";
     return (
       <Component
         className={cn(buttonVariants({ variant, size, className }))}
