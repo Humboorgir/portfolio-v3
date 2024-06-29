@@ -64,7 +64,7 @@ const AboutSection = () => {
           </Row>
         </Column>
 
-        {/* <m.div
+        <m.div
           whileInView={{
             gap: "60px",
             rotate: "12deg",
@@ -86,7 +86,7 @@ const AboutSection = () => {
           <div className="p-3 md:p-5 bg-gradient-to-b from-blue-950 to-transparent w-fit h-fit rounded-full">
             <FramerMotionIcon className="w-12 h-12 sm:w-16 sm:h-16 text-blue-500" />
           </div>
-        </m.div> */}
+        </m.div>
       </Container>
     </div>
   );
