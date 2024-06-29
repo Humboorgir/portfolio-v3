@@ -47,7 +47,10 @@ const PricingCard = ({ plan }: Props) => {
           </Text>
         );
       })}
-      <Button className="mt-3 w-[calc(100%-16px)] text-foreground/90 bg-transparent bg-gradient-to-br from-blue-800 to-blue-950">
+      <Button
+        href="#contact"
+        useNextLink={false}
+        className="mt-3 w-[calc(100%-16px)] text-foreground/90 bg-transparent bg-gradient-to-br from-blue-800 to-blue-950">
         Contact <MessageIcon className="w-4.5 h-4.5 ml-2" />
       </Button>
     </Column>

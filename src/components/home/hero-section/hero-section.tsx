@@ -52,12 +52,16 @@ const HeroSection = () => {
       space-y-3 space-x-0 md:space-x-3 md:space-y-0 flex-wrap w-full md:w-fit">
         <Button
           className="md:w-64 md:grow-0 rounded-3xl bg-foreground/80
-        hover:bg-neutral-500 text-background md:px-4 md:py-3 md:text-xl">
+        hover:bg-neutral-500 text-background md:px-4 md:py-3 md:text-xl"
+          href="#about"
+          useNextLink={false}>
           About me
         </Button>
         <Button
           className="md:w-64 md:grow-0 rounded-3xl [box-shadow:var(--shadow-border)] md:px-4 md:py-3 md:text-xl"
-          variant="outline">
+          variant="outline"
+          href="#contact"
+          useNextLink={false}>
           Contact
         </Button>
       </Column>
