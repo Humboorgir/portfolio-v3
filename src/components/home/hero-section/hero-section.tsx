@@ -55,7 +55,7 @@ const HeroSection = () => {
 
       {/* button group */}
       <Column
-        className="max-w-md px-6 md:max-w-none md:flex-row items-stretch md:items-center z-10 mb-10
+        className="max-w-md px-[5%] md:max-w-none md:flex-row items-stretch md:items-center z-10 mb-10
       space-y-3 space-x-0 md:space-x-3 md:space-y-0 flex-wrap w-full md:w-fit">
         <Button
           className="md:w-64 md:grow-0 rounded-3xl bg-foreground/80
