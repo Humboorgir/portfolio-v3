@@ -94,6 +94,7 @@ const NavbarDrawer = ({ isOpen, toggleOpen, links }: Props) => {
                   }}
                   variant="ghost"
                   href={link.href}
+                  onClick={() => toggleOpen()}
                   className="pl-6 w-full py-3 rounded-none hover:bg-blue-100/10 justify-start text-foreground/90 text-lg
                   uppercase border-b-2 border-foreground/20">
                   {link.name}
