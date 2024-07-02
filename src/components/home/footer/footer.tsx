@@ -15,14 +15,15 @@ import Button from "@/components/ui/button";
 const Footer = () => {
   return (
     <div className="relative border-t-2 border-blue-400/10 bg-blue-400/5">
+      {/* TODO: add aria-hidden to all blur-related divs  */}
       <div
         className="absolute top-0 left-0 h-[200px] w-[50%]
           bg-gradient-to-r from-primary/40 to-blue-200/10 blur-[140px]"
         aria-hidden
       />
       <Container className="flex flex-col items-center justify-center px-8 w-full py-8">
-        <Row className="self-start justify-center space-x-14 w-full mb-12 flex-wrap">
-          <Column className="mr-8 items-start">
+        <Column className="self-start justify-center lg:flex-row w-full mb-12">
+          <Column className="sm:mr-0 lg:mr-20 mr-auto items-start">
             <Row>
               <Work className="h-16 w-16 mr-1 mb-2" />{" "}
               <Text className="text-foreground/80" variant="h2">
@@ -34,39 +35,44 @@ const Footer = () => {
               construst the bright future."
             </Text>
           </Column>
-          <Column items="start">
-            <Text className="font-bold text-foreground/90" variant="h4">
-              Quick links
-            </Text>
-            {["Home", "About", "Pricing", "FAQ", "Contact"].map((item) => (
-              <Button size="sm" className="!p-0 text-foreground/70 font-medium mb-0.5" variant="link">
-                {item}
-              </Button>
-            ))}
-          </Column>
-          <Column items="start">
-            <Text className="font-bold text-foreground/90" variant="h4">
-              Quick links
-            </Text>
-            {["Home", "About", "Pricing", "FAQ", "Contact"].map((item) => (
-              <Button size="sm" className="!p-0 text-foreground/70 font-medium mb-0.5" variant="link">
-                {item}
-              </Button>
-            ))}
-          </Column>
-          <Column className="ml-8" items="start">
-            <Text className="font-bold text-foreground/90" variant="h4">
-              Repository
-            </Text>
-            {["Github repo", "Github issues", "Github PRs", "Github commit history", "My github"].map(
-              (item) => (
+          <Column className="sm:flex-row items-start mr-auto sm:mr-0 sm:space-x-14">
+            <Column items="start">
+              <Text className="font-bold text-foreground/90 whitespace-nowrap" variant="h4">
+                Quick links
+              </Text>
+              {["Home", "About", "Pricing", "FAQ", "Contact"].map((item) => (
                 <Button size="sm" className="!p-0 text-foreground/70 font-medium mb-0.5" variant="link">
                   {item}
                 </Button>
-              )
-            )}
+              ))}
+            </Column>
+            <Column items="start">
+              <Text className="font-bold text-foreground/90 whitespace-nowrap" variant="h4">
+                Quick links
+              </Text>
+              {["Home", "About", "Pricing", "FAQ", "Contact"].map((item) => (
+                <Button size="sm" className="!p-0 text-foreground/70 font-medium mb-0.5" variant="link">
+                  {item}
+                </Button>
+              ))}
+            </Column>
+            <Column items="start">
+              <Text className="font-bold text-foreground/90" variant="h4">
+                Repository
+              </Text>
+              {["Github repo", "Github issues", "Github PRs", "Github commit history", "My github"].map(
+                (item) => (
+                  <Button
+                    size="sm"
+                    className="!p-0 text-foreground/70 font-medium mb-0.5"
+                    variant="link">
+                    {item}
+                  </Button>
+                )
+              )}
+            </Column>
           </Column>
-        </Row>
+        </Column>
         <Row className="mb-3">
           {[Github, Discord, Telegram, Youtube].map((Icon) => (
             <div className="group relative mr-3 cursor-pointer">
