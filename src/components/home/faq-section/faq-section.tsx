@@ -1,6 +1,7 @@
 import Accordion from "@/components/ui/accordion";
 import Container from "@/components/ui/container";
 import Text from "@/components/ui/text";
+import Balancer from "react-wrap-balancer";
 
 const FAQSection = () => {
   const accordionItems = [
@@ -44,8 +45,8 @@ const FAQSection = () => {
           FAQ
         </span>
       </span>
-      <Text className="relative text-foreground/90 mb-3" variant="h2">
-        Frequently asked questions
+      <Text className="text-4xl relative text-foreground/90 mb-3" variant="h2">
+        <Balancer>Frequently asked questions</Balancer>
       </Text>
       <Text className="text-lg text-foreground/80 mb-8" variant="p">
         Don't see your question here? Send me a private message on the listed socials

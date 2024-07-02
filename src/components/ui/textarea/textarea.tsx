@@ -26,7 +26,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, InputProps>(
           className="absolute peer-placeholder-shown:top-2 peer-focus:!text-blue-500
           peer-placeholder-shown:left-2 peer-placeholder-shown:text-base
           peer-focus:!-top-1.5 peer-focus:!left-[8px] peer-focus:!text-xs 
-           bg-[#0F1A23] px-1 transition-all duration-200 pointer-events-none
+           bg-[#0E1820] px-1 transition-all duration-200 pointer-events-none
         z-10 -top-1.5 left-[8px] text-foreground-light peer-disabled:opacity-50 text-xs">
           {placeholder}
         </label>

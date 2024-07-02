@@ -16,6 +16,7 @@ import { FaTwitter as Twitter } from "react-icons/fa6";
 import { RiQuestionAnswerLine as Project } from "react-icons/ri";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
+import Balancer from "react-wrap-balancer";
 
 const ContactSection = () => {
   const titleRef = useRef(null);
@@ -121,8 +122,8 @@ const ContactSection = () => {
 
   return (
     <Container id="contact" className="flex flex-col items-center w-full pb-24">
-      <Text className="text-foreground/80 -mb-4" variant="h2">
-        So what are you waiting for?
+      <Text className="text-foreground/80 -mb-4 text-center" variant="h2">
+        <Balancer>So what are you waiting for?</Balancer>
       </Text>
 
       <form
@@ -144,8 +145,8 @@ const ContactSection = () => {
           </span>
         </span>
 
-        <Text className="text-foreground/90 z-20" variant="h2">
-          Let's build the future!
+        <Text className="text-4xl text-foreground/90 z-20" variant="h2">
+          <Balancer>Let's build the feature together</Balancer>
         </Text>
         <Text className="max-w-prose text-center mb-5" variant="p">
           Send me a message, make sure to include necessary details like your project and how I can
@@ -173,8 +174,8 @@ const ContactSection = () => {
         </Button>
       </form>
 
-      <Text variant="h4" className="text-foreground/90 font-medium">
-        Platforms you can contact me from
+      <Text variant="h4" className="text-foreground/90 text-2xl font-medium text-center">
+        <Balancer>Platforms you can contact me on</Balancer>
       </Text>
 
       <Row className="space-x-2 mb-10 flex-wrap justify-center">

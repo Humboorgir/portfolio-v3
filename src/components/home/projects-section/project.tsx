@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import { FiExternalLink as Link } from "react-icons/fi";
 import { cn } from "@/lib/utils";
+import Balancer from "react-wrap-balancer";
 
 type Project = {
   name: string | JSX.Element;
@@ -58,12 +59,12 @@ const Project = ({ project, isEven }: Props) => {
       <div className="relative grid grid-cols-1 md:grid-cols-2 mb-16">
         <div className="absolute left-16 right-16 top-16 bottom-16 bg-blue-400/20 blur-[110px]" />
         <ProjectThumbnail isEven={isEven} project={project} />
-        <Column items="start" className="ml-6 mb-8">
+        <Column items="end" className="ml-6 mb-8">
           <Text className="text-foreground/90 mb-2" variant="h3">
             {project.name}
           </Text>
-          <Text className="mb-4" variant="p">
-            {project.description}
+          <Text className="mb-4 text-right" variant="p">
+            <Balancer>{project.description}</Balancer>
           </Text>
           <Row>
             <Button

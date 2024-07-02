@@ -6,6 +6,7 @@ import Button from "@/components/ui/button";
 
 import { FaNodeJs as NodejsIcon, FaReact as ReactIcon } from "react-icons/fa";
 import { IoLogoDiscord as DiscordIcon } from "react-icons/io5";
+import Balancer from "react-wrap-balancer";
 
 const ExperienceSection = () => {
   return (
@@ -23,9 +24,11 @@ const ExperienceSection = () => {
             Professions
           </span>
         </span>
-        <Text variant="p">Doing Full-stack web development since 2020</Text>
-        <Text className="mb-6 text-foreground/80" variant="h2">
-          Fields I'm experienced at
+        <Text className="text-center px-2" variant="p">
+          <Balancer>Doing Full-stack web development since 2020</Balancer>
+        </Text>
+        <Text className="mb-6 text-foreground/80 text-center text-4xl leading-tight" variant="h2">
+          <Balancer>Fields I'm experienced at</Balancer>
         </Text>
       </Container>
 

@@ -29,7 +29,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           className="absolute peer-placeholder-shown:top-[50%] text-foreground-light
           peer-placeholder-shown:left-[13px] peer-placeholder-shown:text-base
           peer-focus:!top-0 peer-focus:!left-[8px] peer-focus:!text-xs
-          bg-[#0F1A23] px-1 transition-all duration-200 pointer-events-none translate-y-[-50%]
+          bg-[#0E1820] px-1 transition-all duration-200 pointer-events-none translate-y-[-50%]
         z-10 top-0 left-[8px] peer-focus:text-blue-500 text-xs">
           {placeholder}
         </label>

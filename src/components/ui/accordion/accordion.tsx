@@ -115,14 +115,18 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
                   }}
                   className="w-full active:bg-blue-200/15 active:transition-all z-10
                  flex flex-col py-2 -ml-3 px-3 rounded-sm">
-                  <Row className="w-full flex items-center justify-between pointer-events-none">
-                    <Text className="text-foreground/90 flex items-center font-medium" variant="h5">
-                      <QuestionMarkIcon className="w-5 h-5 -mt-1 mr-2" />
+                  <Row items="start" justify="between" className="w-full pointer-events-none">
+                    <Text className="text-foreground/90 flex text-left font-medium" variant="h5">
+                      <div
+                        className="bg-foreground/80 mt-1.5 mr-2 text-base font-bold text-background
+                     rounded-full h-5 w-5 flex items-center justify-center shrink-0">
+                        ?
+                      </div>
                       {item.trigger}
                     </Text>
                     <AngleDownIcon
                       className={cn(
-                        "text-lg mr-1 transition-all duration-300 pointer-events-none",
+                        "text-lg mr-1 mt-3 transition-all duration-300 pointer-events-none",
                         open == i && "rotate-180 ease-out"
                       )}
                     />

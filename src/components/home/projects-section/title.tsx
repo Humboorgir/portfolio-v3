@@ -1,6 +1,7 @@
 import Column from "@/components/ui/column";
 import Container from "@/components/ui/container";
 import Text from "@/components/ui/text";
+import Balancer from "react-wrap-balancer";
 
 const Title = () => {
   return (
@@ -24,27 +25,11 @@ const Title = () => {
         </span>
       </span>
       <Text
-        className="relative w-fit bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400"
+        className="relative text-4xl leading-tight w-fit bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300"
         variant="h2">
-        <div className="mb-1.5">Projects I have built</div>
-        <div>in the past</div>
+        <Balancer>Projects I have built previously</Balancer>
       </Text>
     </Container>
-    // <Column className="relative mb-16 p-5 px-10">
-    //   <Text
-    //     className="flex items-center relative bg-clip-text text-xl text-transparent text-center bg-gradient-to-b from-neutral-100 to-neutral-400"
-    //     variant="lead">
-    //     <PiDetectiveFill className="h-7 w-7 text-neutral-300 mr-2" /> Take a look at
-    //   </Text>
-    //   <Text
-    //     className="relative bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-100 to-neutral-400"
-    //     variant="h2">
-    //     Projects I have built
-    //     <br />
-    //     in the past
-    //   </Text>
-    //   <div className="absolute left-0 right-0 top-0 bottom-0 bg-primary/20 blur-3xl" />
-    // </Column>
   );
 };
 

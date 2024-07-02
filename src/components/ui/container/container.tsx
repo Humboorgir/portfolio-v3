@@ -8,7 +8,7 @@ export type ContainerProps = React.HTMLProps<HTMLDivElement>;
 const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
   ({ children, className, ...props }, ref) => {
     return (
-      <div className={cn("w-fit mx-auto max-w-screen-xl px-6 sm:px-8", className)} ref={ref} {...props}>
+      <div className={cn("w-fit mx-auto max-w-screen-xl px-4 sm:px-8", className)} ref={ref} {...props}>
         {children}
       </div>
     );
