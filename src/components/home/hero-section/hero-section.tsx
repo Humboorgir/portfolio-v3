@@ -36,19 +36,26 @@ const HeroSection = () => {
       </Text>
       {/* title  */}
       <Text
-        className="flex flex-wrap justify-center text-center z-10 text-[42px] leading-none py-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400"
+        className="!text-[max(48px,min(9vw,64px))] lg:!text-[max(48px,min(13vw,74px))]
+         text-center z-10 leading-none py-2 bg-clip-text
+         text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400"
         variant="h1">
         <Balancer>Turning ideas into reality</Balancer>
       </Text>
 
-      <Text className="z-10 text-base md:text-lg md:text-[19px] max-w-screen-md mb-5" variant="lead">
-        Every great project starts with an idea. Whether it's a startup, a small business, or a personal
-        project and I'm here to bring those ideas to life
+      <Text
+        className="z-10 max-w-md md:max-w-screen-md mb-5
+        !text-[max(15px,min(2vw,20px))]"
+        variant="lead">
+        <Balancer>
+          Every great project starts with an idea. Whether it's a startup, a small business, or a
+          personal project and I'm here to bring those ideas to life
+        </Balancer>
       </Text>
 
       {/* button group */}
       <Column
-        className="md:flex-row items-stretch md:items-center z-10 px-6 sm:px-10 mb-10
+        className="max-w-md px-6 md:max-w-none md:flex-row items-stretch md:items-center z-10 mb-10
       space-y-3 space-x-0 md:space-x-3 md:space-y-0 flex-wrap w-full md:w-fit">
         <Button
           className="md:w-64 md:grow-0 rounded-3xl bg-foreground/80

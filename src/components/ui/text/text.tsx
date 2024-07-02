@@ -4,9 +4,10 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const textVariants = cva("", {
+  // sm:text-5xl md:text-6xl lg:text-7xl
   variants: {
     variant: {
-      h1: "text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight font-bold my-2",
+      h1: "text-foreground text-4xl  tracking-tight font-bold my-2",
       h2: "text-foreground text-3xl sm:text-4xl md:text-5xl font-bold my-2",
       h3: "text-foreground text-2xl md:text-3xl font-bold my-1.5",
       h4: "text-foreground text-xl my-1.5",
