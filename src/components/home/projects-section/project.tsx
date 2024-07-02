@@ -60,7 +60,7 @@ const Project = ({ project, isEven }: Props) => {
         <div className="absolute left-16 right-16 top-16 bottom-16 bg-blue-400/20 blur-[110px]" />
         <ProjectThumbnail isEven={isEven} project={project} />
         <Column items="end" className="ml-6 mb-8">
-          <Text className="text-foreground/90 mb-2" variant="h3">
+          <Text className="text-foreground/90 mb-2 text-right" variant="h3">
             {project.name}
           </Text>
           <Text className="mb-4 text-right" variant="p">
