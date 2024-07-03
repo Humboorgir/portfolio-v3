@@ -7,7 +7,10 @@ export type InputProps = React.InputHTMLAttributes<HTMLTextAreaElement>;
 // TODO: fix the ref problem (that also exists in input)
 // refer to the input component for more info
 const TextArea = React.forwardRef<HTMLTextAreaElement, InputProps>(
-  ({ className, placeholder, disabled, name, required, maxLength = 140, ...props }, ref) => {
+  (
+    { className, placeholder, disabled, name, required, autoComplete, maxLength = 140, ...props },
+    ref
+  ) => {
     return (
       // @ts-ignore
       <div className={cn("relative min-h-[120px] max-w-[670px] w-full", className)} ref={ref} {...props}>
@@ -21,6 +24,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, InputProps>(
           required={required}
           placeholder={placeholder}
           disabled={disabled}
+          autoComplete={autoComplete}
         />
         <label
           className="absolute peer-placeholder-shown:top-2 peer-focus:!text-blue-500

@@ -154,6 +154,7 @@ const ContactSection = () => {
         </Text>
         <Input
           required
+          autoComplete="off"
           disabled={loading}
           name="sender"
           className="w-full max-w-[660px] mb-2.5"
@@ -161,6 +162,7 @@ const ContactSection = () => {
         />
         <TextArea
           required
+          autoComplete="off"
           disabled={loading}
           name="message"
           className="w-full max-w-[660px] mb-5"

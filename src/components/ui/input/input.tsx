@@ -12,7 +12,7 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 // and if I reutrn the ref of the input, it wont be animated
 // properly
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, placeholder, name, required, ...props }, ref) => {
+  ({ className, type, placeholder, name, required, autoComplete, ...props }, ref) => {
     return (
       <div className={cn("relative h-10 w-full", className)} ref={ref} {...props}>
         <input
@@ -24,6 +24,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
          disabled:cursor-not-allowed disabled:opacity-50 focus:ring-offset-3 focus:border-3
          focus:border-blue-500 transition-[border] placeholder:text-transparent peer"
           placeholder={placeholder}
+          autoComplete={autoComplete}
         />
         <label
           className="absolute peer-placeholder-shown:top-[50%] text-foreground-light
