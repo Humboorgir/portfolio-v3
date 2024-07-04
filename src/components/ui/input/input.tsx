@@ -20,7 +20,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           required={required}
           type={type}
           className="absolute flex top-0 left-0 bottom-0 right-0 rounded-md bg-transparent px-3 py-2 text-sm
-        ring-offset-background focus-visible:outline-none border border-ring text-foreground
+        ring-offset-background focus-visible:outline-none border border-ring text-foreground w-full h-full
          disabled:cursor-not-allowed disabled:opacity-50 focus:ring-offset-3 focus:border-3
          focus:border-blue-500 transition-[border] placeholder:text-transparent peer"
           placeholder={placeholder}

@@ -16,7 +16,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, InputProps>(
       <div className={cn("relative min-h-[120px] max-w-[670px] w-full", className)} ref={ref} {...props}>
         <textarea
           className="absolute flex top-0 left-0 bottom-0 right-0 rounded-md px-3 py-3 bg-transparent
-        focus-visible:outline-none border disabled:cursor-not-allowed 
+        focus-visible:outline-none border disabled:cursor-not-allowed w-full h-full
         disabled:opacity-50 border-3 border-ring transition-[border] text-foreground
          placeholder:text-transparent peer resize-none focus:border-blue-500"
           maxLength={maxLength}
