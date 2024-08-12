@@ -1,5 +1,3 @@
-import Button from "@/components/button";
-import Column from "@/components/ui/column";
 import Container from "@/components/ui/container";
 import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
@@ -36,12 +34,12 @@ const BlogPage = () => {
   const [currentPost, setCurrentPost] = useState(posts[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  const startAnimation = () => {
+  const startAnimation = useCallback(() => {
     const thePost = posts.find((post) => post.title == currentPost.title);
     const post = posts[posts.indexOf(thePost!) + 1] || posts[0];
     setCurrentPost(post);
     setIsAnimating(true);
-  };
+  }, [currentPost, posts]);
 
   useEffect(() => {
     if (!isAnimating)
@@ -52,8 +50,11 @@ const BlogPage = () => {
 
   return (
     <Container className="w-full mb-20">
-      <Row justify="between" items="stretch" className="flex-wrap">
-        <div className="relative w-[320px] pt-[100px] h-[200px]">
+      <Row justify="between" items="stretch" className="flex-wrap gap-8">
+        <div className="relative w-[280px] md:w-[320px] pt-[100px] h-[200px] overflow-hidden max-w-[85vw]">
+          <div
+            className="absolute w-1/2 h-1/2 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-foreground/30 rounded-[60%]
+          blur-[40px]"></div>
           <Image
             fill
             className="-z-10 blur-[3.5px]
@@ -61,14 +62,15 @@ const BlogPage = () => {
             alt="Ribbon"
             src="/Ribbon.svg"
           />
-          <div className="absolute top-0 right-0 w-[50px] h-full rounded-[60%] rotate-45 bg-blue-300/80 blur-[80px]" />
-          <Text variant="h2">All posts</Text>
+          <Text className="text-4xl" variant="h2">
+            All posts
+          </Text>
           <Text className="md:text-lg flex items-center" variant="lead">
             <Date className="h-5 w-5 mr-1.5" /> December 22
           </Text>
         </div>
 
-        <div className="text-transparent grow relative flex">
+        <div className="text-transparent max-w-[620px] min-h-[220px] min-w-[200px] sm:min-w-[360px] grow relative flex overflow-hidden">
           .
           <AnimatePresence
             onExitComplete={() => {
@@ -96,11 +98,13 @@ const BlogPage = () => {
                 scale: 1.5,
                 position: "absolute",
               }}
-              className="right-0 top-0 absolute w-full max-w-[620px] min-w-[320px] flex flex-col items-end border-neutral-700 border rounded-md p-3
-          bg-gradient-to-b from-white/30 to-90% to-black min-h-[220px]"
+              className="right-0 top-0 absolute w-full flex flex-col items-end border-neutral-700 border rounded-md p-3
+          bg-gradient-to-b from-white/30 to-90% to-black h-full"
               key={currentPost.title}>
-              <Text className="mt-auto mr-auto text-foreground/90 font-bold md:text-xl" variant="h5">
-                {currentPost.title.split(" ").map((letter, index) => (
+              <Text
+                className="mt-auto mr-auto text-foreground/90 font-bold text-xl md:text-xl"
+                variant="h5">
+                {currentPost.title.split(" ").map((word, index) => (
                   <m.span
                     key={currentPost.title + index}
                     initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
@@ -110,7 +114,7 @@ const BlogPage = () => {
                       duration: 0.4,
                     }}
                     className="mr-1 inline-block">
-                    {letter}
+                    {word}
                   </m.span>
                 ))}
               </Text>
@@ -127,7 +131,7 @@ const BlogPage = () => {
         </div>
       </Row>
 
-      <div className="grid mt-12 grid-cols-2 md:grid-cols-3 gap-8 w-full">
+      <div className="grid mt-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
         {posts.map((post, i) => {
           return (
             <div
@@ -135,7 +139,7 @@ const BlogPage = () => {
               className="flex flex-col items-end border-neutral-700 border w-full rounded-md p-3
           bg-gradient-to-b from-white/30 to-90% to-black min-h-[170px]">
               <Text
-                className="mt-auto mr-auto text-foreground/90 font-bold max-w-[280px] md:text-base"
+                className="mt-auto mr-auto text-foreground/90 font-bold max-w-[280px] text-base md:text-base"
                 variant="h5">
                 {post.title}
               </Text>
