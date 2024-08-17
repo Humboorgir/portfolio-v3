@@ -1,0 +1,570 @@
+Note: This article walks through the process of creating reusable UI components from scratch to provide a better understanding of the concept. However, in a real-world scenario, you'd probably copy & paste common UI components (e.g., buttons, inputs, etc) instead of writing them from scratch. So the implementation isn't as time consuming as it might look like 😅.
+
+if you are in a hurry you can jump to the final result [by clicking here](#final-result).
+
+**All CSS is written with Tailwindcss in this article.**
+
+## Introduction 🚀
+You can think of React components as building blocks of the web.
+A component can be a navbar, footer, form, button, or any other piece of the front end.
+
+> They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
+
+[Source](https://www.w3schools.com/react/react_components.asp#:~:text=Components%20are%20independent%20and%20reusable,will%20concentrate%20on%20Function%20components.)
+
+> Code reusability refers to writing code in such a way that it can be reused across multiple contexts with little or no modification required. This approach saves time on repetitive tasks, shrinks codebase size, and improves maintainability.
+
+[Source](https://www.opslevel.com/resources/what-is-code-reuse-and-why-is-it-important#:~:text=Code%20reusability%20refers%20to%20writing,codebase%20size%2C%20and%20improves%20maintainability.)
+
+Reusable React components are components that can be used multiple times throughout an application to prevent unnecessary boilerplate.
+
+Whenever possible, I prefer to create reusable components for common UI elements (e.g., buttons, text inputs, etc) and use them in the application like a component library, Instead of creating a separate component for each instance of the element. 
+This approach makes the code base cleaner, reduces code duplication and scales really well.
+
+Let's take a look at an example to help understand the concept.
+
+For demonstration purposes, we'll recreate the list of buttons in the image below
+![ThreeButtons](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wc65uw0uc9w2jowj4ean.png)
+
+## Step 0: Creating a simple button component
+First, we're gonna start off with the home button.
+
+```tsx
+// home-button.tsx
+const HomeButton = () => {
+  return (
+    <button className="rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-600/90">
+      Home
+    </button>
+  );
+};
+
+export default HomeButton;
+```
+
+Then we will copy and paste the code for the remaining buttons and make the necessary modifications.
+
+```tsx
+// profile-button.tsx
+const ProfileButton = () => {
+  return (
+    <button className="rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-600/90">
+      Profile
+    </button>
+  );
+};
+
+export default ProfileButton;
+```
+
+```tsx
+// settings-button.tsx
+const SettingsButton = () => {
+  return (
+    <button className="rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-600/90">
+      Settings
+    </button>
+  );
+};
+
+export default SettingsButton;
+```
+
+and this is how we would include them in our app:
+
+```tsx
+<HomeButton/> <ProfileButton/> <SettingsButton/>
+```
+
+And... boom! here it is.
+![ThreeButtons](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wc65uw0uc9w2jowj4ean.png)
+
+### Why this is actually a bad approach ❌
+While this does work, it comes with a bunch of problems, one of the notable ones being too much unnecessary boilerplate.
+We just created 3 separate components for essentially the same thing. Imagine you're working on a large application where there are thousands of buttons like this. Making a separate component for each one would create loads of unnecessary boilerplate and quickly turn into an absolute mess.
+
+Not to mention, making modifications to the component would be an absolute nightmare. You'd have to go through the code base and modify each component one by one!
+
+## Step 1: Making the button component reusable
+First off, instead of including each button's label directly in its component, we could pass it off as a prop!
+
+```tsx
+// button.tsx
+const Button = ({ children }) => {
+  return (
+    <button className="rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-600/90">
+      {children}
+    </button>
+  );
+};
+
+export default Button;
+```
+And then modify the code to look like this:
+
+```tsx
+   <Button>Home</Button>
+   <Button>Profile</Button>
+   <Button>Settings</Button>
+```
+
+Same result, better code.
+![ThreeButtons](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wc65uw0uc9w2jowj4ean.png)
+
+Now we've got 1 component instead of 3! That's a huge improvement, but we've still got a major problem: **Customization**.
+
+## Step 2: implementing className prop
+What if you wanted to customize a button's appearance, while using the same button component, without having to create a new component for it?
+
+For example, let's say we want to make something like the image below.
+![Two primary and one secondary button](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3qjot62gskm29m4lly35.png)
+Well, with our current component, we can't! 
+Because a fixed set of classNames is applied to every button element with no way to customize it.
+
+Let's make it so that you can pass `className` as a prop.
+(Like this)
+```tsx
+  <Button className="bg-neutral-700 text-foreground">
+    Home
+  </Button>
+```
+
+### Bad implementation ❌
+Take a look at the button component below.
+```tsx
+const Button = ({ children, className = "" }) => {
+  const defaultStyle = "rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-600/90";
+  // anything passed as 'className' is directly added to button's className prop
+  return (
+    <button className={`${defaultStyle} ${className}`}>
+      {children}
+    </button>
+  );
+};
+
+export default Button;
+```
+We're basically taking `className` as a prop and adding it to the button element's list of classNames.
+
+Let's try applying text-black to the element to see if it works.
+```tsx
+<Button className="text-black">Test</Button>
+```
+
+Button element resulted from the code above:
+```tsx
+<button className="rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-600/90 text-black">Test</button>;
+```
+Take a close look at the list of classNames above.
+
+Expected behaviour: `text-white` should be replaced by `text-black`
+Result: `text-black` is added but `text-white` isn't removed.
+
+So in short, we've got both `text-white` and `text-black` in the same list of classNames which could lead to unexpected behaviour. 
+
+To fix this, we'll use a library called tailwind-merge.
+
+## twMerge (6.7k gzipped)
+tailwind-merge is a library that allows us to merge two sets of Tailwindcss classNames into one.
+
+for example:
+```js
+twMerge('bg-white text-white', 'text-black text-xl')
+// output: 'bg-white text-black text-xl'
+
+// notice how text-white was replaced with text-black?
+// without twMerge, this would output:
+'bg-white text-white text-black text-xl'
+```
+More about tailwind-merge [Here](https://www.npmjs.com/package/tailwind-merge)
+
+In here, we'll use `twMerge` to merge the default classNames with the classNames provided as a prop (to prevent potential conflicts)
+
+```tsx
+import React from "react";
+import { twMerge } from "tailwind-merge";
+
+const Button = ({ children, className }) => {
+  const defaultStyle = "rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-600/90"
+
+  return (
+    <button
+      className={twMerge(defaultStyle, className)}>
+      {children}
+    </button>
+  );
+};
+
+export default Button;
+```
+There you go! Now we can use `className` without having to worry about potential className conflicts.
+
+## Step 3: implementing support for attributes
+We're now one step closer to the final result! But there's still a huge problem, what if we wanted to use other button attributes? like `onClick`, `onFocus`, `type`, `name`, or even our own custom attributes.
+```tsx
+  <Button
+// not working
+    onClick={onClickHandler}
+    type="submit"
+    custom-attribute="custom value">
+    Button
+  </Button>
+```
+
+With our current implementation, such attributes would not be applied to the button element. 
+
+This is how you'd fix that:
+```tsx
+import { twMerge } from "tailwind-merge";
+
+// "...props" gets all remaining props
+const Button = ({ children, className, ...props }) => {
+  const defaultStyle = "rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-600/90";
+  return (
+    <button
+      className={twMerge(defaultStyle, className)}
+      // applying other props
+      {...props}>
+      {children}
+    </button>
+  );
+};
+
+export default Button;
+```
+First, we're extracting `children` and `className` from props here, and then getting the remaining props as `props` by using the spread operator, and then applying them to the button element with `{...props}`.
+
+## Step 4: Improving Re-usability and Readability with variants
+I would consider what we've made so far to be quite re-usable, but there are still a few things we can do to make it even better.
+
+One thing that really reduces boilerplate is implementing variants for common variations of the UI component such as `size`, `color`, etc.
+
+### Why use variants in the first place?
+Using the className prop enables us to customize buttons when needed. But I prefer to only resort to it as my last option since it comes with a lot of boilerplate. If there is a certain button style (other than our default one) we'd want to use all over our application, we should create a variant for it instead of copy & pasting the list of custom classNames everywhere.
+
+For instance, imagine a set of default (primary), secondary, outline and ghost buttons we'd be looking forward to use all over the code base.
+![default, secondary, outline and ghost buttons](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k73av35zwaxnmou6fwgs.png)
+
+This is how the implementation would look like:
+```tsx
+      <Button>Default button</Button>
+      <Button className="bg-neutral-700 text-neutral-50 hover:bg-neutral-700/90">
+        Secondary button
+      </Button>
+      <Button className="border border-black text-black bg-transparent hover:bg-black/10">
+        Outline button
+      </Button>
+      <Button className="bg-transparent text-black hover:bg-black/10">
+        Ghost button
+      </Button>
+```
+It would look quite messy if we had to copy and paste the same set of classNames for each instance of the button.
+
+What if we could specify each button's style by using a simple `variant` prop?
+```tsx
+      <Button>Default button</Button>
+      <Button variant="secondary">Secondary button</Button>
+      <Button variant="outline">Outline button</Button>
+      <Button variant="ghost">Ghost button</Button>
+```
+Much cleaner now, isn't it?
+Well, this is where variants come in handy!
+In this example, we will implement two useful variants for our component:
+`size` and `variant` (quite literally 😅)
+
+In order to implement variants we're going to use **class-variance-authority**
+
+### cva (756 bytes gzipped)
+class-variance-authority is the main library we're going to use to implement variants.
+More about class-variance-authority [Here](https://cva.style/docs/getting-started/variants)
+
+The library provides a function called 'cva'.
+This is how 'cva' is used:
+```tsx
+// cva returns a function after being called.
+// in here, componentVariants is a function that returns
+// a list of classNames after being called according to the
+// specified variant.
+
+// the first parameter is a list of classNames that will be
+// applied to all variants! (like flex layout and transitions)
+const componentVariants = cva('text-black',
+  {
+    variants: {
+// variants such as 'size', 'color' etc are supposed to be here
+      color: {
+        blue: "bg-blue-500",
+        red: "bg-red-500",
+        white: "bg-white",
+      }
+    },
+    defaultVariants: {
+// We'll set the color to blue if nothing is specified.
+      color: "blue",
+    },
+  }
+);
+```
+Now we're gonna use componentVariants like this:
+```tsx
+console.log(componentVariants({ color: "red" }));
+// output: text-black bg-red-500
+console.log(componentVariants({ color: "blue" }));
+// output: text-black bg-blue-500
+console.log(componentVariants());
+// output: text-black bg-blue-500
+```
+You probably know how it works by now
+so let's use it to build different variants for our button component.
+```tsx
+import { twMerge } from "tailwind-merge";
+import { cva } from "class-variance-authority";
+
+const buttonVariants = cva(
+  `inline-flex items-center justify-center rounded-md whitespace-nowrap 
+  ring-offset-background transition-colors focus-visible:outline-none 
+   disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden`,
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-neutral-100 hover:bg-primary/80",
+        secondary: "bg-secondary text-foreground hover:bg-secondary/80",
+        outline: "border border-ring text-foreground bg-background hover:bg-secondary/80",
+        ghost: "text-foreground hover:bg-secondary/80",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "text-base px-3 py-2",
+        sm: "text-sm rounded-md px-2 py-1.5",
+        lg: "text-xl rounded-md px-4 py-3",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+const Button = ({ children, className, variant, size, ...props }) => {
+  return (
+    <button className={twMerge(buttonVariants({ variant, size }), className)} {...props}>
+      {children}
+    </button>
+  );
+};
+
+export default Button;
+```
+
+**Explanation**: the first argument passed to cva, is classNames you want to include in all variants. In this case, that would be flex layout, border-radius, transitions, etc.
+the second argument is an object in which variants are specified. In here, we've got two variants: 'variant' and 'size'.
+variant can be: default, secondary, outline, ghost, link
+whereas size can be set to: default, sm, lg
+For instance, setting the size variant to 'lg' will apply 'text-xl rounded-md px-4 py-3' to the element.
+defaultVariants is also an object that determines which variants should be used by default if nothing is specified.
+In the end, we get the corresponding list of classNames from `buttonVariants({ variant: <variant> })` and pass them to twMerge, which will merge them with custom classNames if any are provided.
+
+## Step 5: Implementing support for refs with React forwardRef
+What if we wanted to us refs with our components? They're supposed to be 100% reusable so this should be a feature.
+
+Picture this:
+```tsx
+ const buttonRef = React.useRef(null);
+  
+  return <Button ref={buttonRef}>Default button</Button>;
+```
+This can be extremely useful in components like inputs.
+
+React's forwardRef allows function components to be given refs.
+To opt in, wrap your component definition into forwardRef():
+```tsx
+const Button = React.forwardRef(({ children, className, variant, size, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      className={twMerge(buttonVariants({ variant, size }), className)}
+      {...props}>
+      {children}
+    </button>
+  );
+});
+```
+(Make sure to import React if you haven't already)
+
+## Step 6: Final tweaks
+
+#### clsx integration
+
+From the official docs:
+> clsx is a tiny (239B) utility for constructing className strings **conditionally**.
+
+```tsx
+import { clsx } from 'clsx';
+
+// Strings (variadic)
+clsx('foo', true && 'bar', 'baz');
+//=> 'foo bar baz'
+
+// Objects
+clsx({ foo:true, bar:false, baz:isTrue() });
+//=> 'foo baz'
+```
+
+More about clsx [here](https://www.npmjs.com/package/clsx)
+
+Wrap className with `clsx` and boom! Now we can use the clsx syntax to apply classNames conditionally.
+
+```tsx
+    <button className={twMerge(buttonVariants({ variant }), clsx(className))} {...props}>
+      {children}
+    </button>
+```
+
+Since we're going to be using twMerge and clsx in all of our reusable components, it would be more practical to create a shortcut for them. In order to achieve this, we'll create a `cn` helper function that wraps the input in both `clsx` and `twMerge`
+
+[Credits to ShadcnUI for the idea]
+
+```tsx
+// lib/utils.js
+import { twMerge } from "tailwind-merge";
+import { clsx } from "clsx";
+
+export function cn(...classes) {
+  return twMerge(clsx(classes));
+}
+
+```
+
+Typescript version:
+```tsx
+// lib/utils.ts
+import { twMerge } from "tailwind-merge";
+import { ClassValue, clsx } from "clsx";
+
+export function cn(...classes: ClassValue[]) {
+  return twMerge(clsx(classes));
+}
+```
+
+Finally, we edit our button component to use `cn` instead of twMerge and clsx
+
+```tsx
+import { cn } from "../lib/utils";
+
+    <button className={cn(buttonVariants({ variant, size, className }))} {...props}>
+      {children}
+    </button>
+```
+And with that, we've finished building our entirely reusable button component.
+You can customize it in however way you'd like.
+In the same way, you can build other reusable components (inputs, modals, dropdowns, etc)
+
+Here's the final result:
+<br/>✅ Supports custom labels
+<br/>✅ Supports custom classNames
+<br/>✅ Supports custom attributes
+<br/>✅ Supports different variants and sizes
+<br/>✅ Supports conditional classNames with clsx syntax
+<br/>✅ Supports `ref`s
+
+```tsx
+import React from "react";
+
+import { cva } from "class-variance-authority";
+import { cn } from "../lib/utils";
+
+const buttonVariants = cva(
+  `inline-flex items-center justify-center rounded-md whitespace-nowrap 
+  ring-offset-background transition-colors focus-visible:outline-none 
+   disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden`,
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-neutral-100 hover:bg-primary/80",
+        secondary: "bg-secondary text-foreground hover:bg-secondary/80",
+        outline: "border border-ring text-foreground bg-background hover:bg-secondary/80",
+        ghost: "text-foreground hover:bg-secondary/80",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "text-base px-3 py-2",
+        sm: "text-sm rounded-md px-2 py-1.5",
+        lg: "text-xl rounded-md px-4 py-3",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+const Button = React.forwardRef(({ children, className, variant, size, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}>
+      {children}
+    </button>
+  );
+});
+
+export default Button;
+```
+
+Typescript version:
+```tsx
+import React from "react";
+
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "../lib/utils";
+
+const buttonVariants = cva(
+  `inline-flex items-center justify-center rounded-md whitespace-nowrap 
+  ring-offset-background transition-colors focus-visible:outline-none 
+   disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden`,
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-neutral-100 hover:bg-primary/80",
+        secondary: "bg-secondary text-foreground hover:bg-secondary/80",
+        outline: "border border-ring text-foreground bg-background hover:bg-secondary/80",
+        ghost: "text-foreground hover:bg-secondary/80",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "text-base px-3 py-2",
+        sm: "text-sm rounded-md px-2 py-1.5",
+        lg: "text-xl rounded-md px-4 py-3",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof buttonVariants>;
+  
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, className, variant, size, ...props }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={cn(buttonVariants({ variant, size, className }))}
+        {...props}>
+        {children}
+      </button>
+    );
+  }
+);
+
+export default Button;
+```
+
+If i made a mistake, make sure to let me know.
+See you on the next one!

@@ -19,7 +19,7 @@ const Post = ({ post }: PostProps) => {
         {post.title}
       </Text>
       <div className="flex justify-between items-center w-full">
-        <Text className="md:text-sm" variant="lead">
+        <Text className="md:text-sm flex items-center" variant="lead">
           ~{post.readTime} read
         </Text>
         <Text className="md:text-sm" variant="lead">

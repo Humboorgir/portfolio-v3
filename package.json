@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.5",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@types/mdx": "^2.0.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.3",
+    "front-matter": "^4.0.2",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.1.0",
     "react": "^18",
@@ -20,16 +25,20 @@
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "react-wrap-balancer": "^1.1.1",
+    "rehype-pretty-code": "^0.13.2",
+    "rehype-slug": "^6.0.0",
+    "simple-functional-loader": "^1.2.1",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/typography": "^0.5.14",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }

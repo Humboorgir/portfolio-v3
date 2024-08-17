@@ -2,12 +2,15 @@ import Container from "@/components/ui/container";
 import Row from "@/components/ui/row";
 import Text from "@/components/ui/text";
 import Post from "@/components/blog/post";
+import Button from "@/components/ui/button";
 
 import BlogLayout from "@/layouts/blog-layout";
 import SlideShow from "@/components/blog/slide-show";
 import PageTitle from "@/components/blog/page-title";
 
 import React, { useCallback, useEffect, useState } from "react";
+
+import { BsArrowLeft as ArrowLeft } from "react-icons/bs";
 
 const BlogPage = () => {
   // dummy data
@@ -52,7 +55,16 @@ const BlogPage = () => {
   }, [isAnimating, startAnimation]);
 
   return (
-    <Container className="w-full mb-20">
+    <Container className="w-full mb-20 mt-5">
+      <Button
+        className="group no-underline w-fit flex items-center rounded-full bg-gradient-to-br
+        from-foreground/90 to-foreground text-background text-sm"
+        href="/"
+        variant="ghost"
+      >
+        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
+      </Button>
+
       <Row justify="between" items="stretch" className="flex-wrap gap-8">
         <PageTitle />
 
@@ -66,10 +78,6 @@ const BlogPage = () => {
       </div>
     </Container>
   );
-};
-
-BlogPage.getLayout = function getLayout(Page: React.ReactElement) {
-  return <BlogLayout>{Page}</BlogLayout>;
 };
 
 export default BlogPage;
