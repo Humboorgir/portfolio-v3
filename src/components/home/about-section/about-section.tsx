@@ -23,28 +23,26 @@ const AboutSection = () => {
         <Column items="start">
           {/* TODO: create a reusable component for this */}
           <span
-            className="mx-auto md:mx-0 mb-6 flex items-center border-2 border-green-500/10 px-3 py-1 rounded-full w-fit
+            className="mb-3 md:mb-6 flex items-center border-2 border-green-500/10 px-3 py-1 rounded-full w-fit
             bg-green-500/10">
             <InfoIcon className="h-5 w-5 text-green-500 mr-1.5" />
             <span className="bg-clip-text text-transparent bg-gradient-to-br from-green-400 to-green-600">
               About me
             </span>
           </span>
-          <Text className="mb-4 xs:text-4xl text-foreground/90 mx-auto md:mx-0" variant="h2">
+          <Text className="mb-4 xs:text-4xl text-foreground/90 md:mx-0" variant="h2">
             Hi there! I'm Iliya
           </Text>
-          <Text className="max-w-prose mb-4 text-center md:text-left" variant="p">
-            <Balancer>
-              Hey there! I'm Iliya, a 15 year old high school student and full stack web developer from
-              Iran. I've been programming since early 2020 or in other words, since I had just turned 12!
-              I've been using computers since the age of 5 and have always shown a huge passion for them.
-              During all these years I've learned a lot and have made countless amounts of projects. In
-              my early days of programming, I started off by back end development however, It's been 1.5
-              years since I've been primarily learning and working on front end development (alongside
-              with back end development) and have managed to learn CSS and most major frontend frameworks
-              to a very high degree and as mentioned earlier, I'm very passionate towards my work and
-              always open to gain new skills.
-            </Balancer>
+          <Text className="max-w-md md:max-w-prose text-[15px] md:text-base mb-4 text-left" variant="p">
+            Hey there! I'm Iliya, a 15 year old high school student and full stack web developer from
+            Iran. I've been programming since early 2020 or in other words, since I had just turned 12!
+            I've been using computers since the age of 5 and have always shown a huge passion for them.
+            During all these years I've learned a lot and have made countless amounts of projects. In my
+            early days of programming, I started off by back end development however, It's been 1.5 years
+            since I've been primarily learning and working on front end development (alongside with back
+            end development) and have managed to learn CSS and most major frontend frameworks to a very
+            high degree and as mentioned earlier, I'm very passionate towards my work and always open to
+            gain new skills.
           </Text>
           <Row className="grid-areas-layout grid gap-x-10 place-items-center mx-auto md:mx-0 md:w-auto">
             {[

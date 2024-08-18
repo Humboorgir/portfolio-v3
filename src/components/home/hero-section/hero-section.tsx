@@ -27,7 +27,7 @@ import { FaExclamationTriangle as Exclamation } from "react-icons/fa";
 import Balancer from "react-wrap-balancer";
 const HeroSection = () => {
   return (
-    <Column id="hero" className="min-w-[1px] relative z-10 text-center pt-[8.5rem] pb-36 mb-14 px-6">
+    <Column id="hero" className="min-w-[1px] relative z-10 text-center pt-[8.5rem] pb-36 mb-14">
       <Text
         className="flex items-center border-2 border-foreground-muted/20 px-4 py-2 rounded-full mb-2
         bg-clip-text text-transparent bg-gradient-to-b from-blue-300 to-blue-500"
@@ -36,26 +36,24 @@ const HeroSection = () => {
       </Text>
       {/* title  */}
       <Text
-        className="!text-[max(48px,min(9vw,64px))] lg:!text-[max(48px,min(13vw,74px))]
-         text-center z-10 leading-none py-2 bg-clip-text
+        className="!text-[max(50px,min(12vw,58px))] lg:!text-[max(48px,min(13vw,74px))]
+         text-center z-10 leading-none py-2 bg-clip-text sm:max-md:px-14 px-6
          text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400"
         variant="h1">
         <Balancer>Turning ideas into reality</Balancer>
       </Text>
 
       <Text
-        className="z-10 max-w-md md:max-w-screen-md mb-5
-        !text-[max(15px,min(2vw,20px))]"
+        className="z-10 max-w-sm md:max-w-screen-md mb-5 px-6
+       !text-[max(15px,min(2vw,20px))]"
         variant="lead">
-        <Balancer>
-          Every great project starts with an idea. Whether it's a startup, a small business, or a
-          personal project and I'm here to bring those ideas to life
-        </Balancer>
+        Every great project starts with an idea. Whether it's a startup, a small business, or a personal
+        project and I'm here to bring those ideas to life
       </Text>
 
       {/* button group */}
       <Column
-        className="max-w-md px-[5%] md:max-w-none md:flex-row items-stretch md:items-center z-10 mb-10
+        className="max-w-md px-[calc(7%+24px)] md:max-w-none md:flex-row items-stretch md:items-center z-10 mb-16
       space-y-3 space-x-0 md:space-x-3 md:space-y-0 flex-wrap w-full md:w-fit">
         <Button
           className="md:w-64 md:grow-0 rounded-3xl bg-foreground/80
@@ -72,17 +70,18 @@ const HeroSection = () => {
           Contact
         </Button>
       </Column>
-      <Column
-        className="w-full max-w-[280px] sm:max-w-sm items-start relative overflow-hidden pb-2.5
-        [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
-        <Text className="self-center mb-1.5" variant="p">
-          <Balancer>Experienced with most major frameworks</Balancer>
+
+      <Column>
+        <Text className="text-sm sm:text-base mb-1.5" variant="p">
+          Experienced with most major frameworks
         </Text>
 
-        <Row className="max-w-[1px]">
-          {/* return this twice, basically */}
+        <Row
+          className="max-w-[280px] sm:max-w-sm w-full overflow-hidden relative
+         [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+          {/* returns this twice, basically */}
           {[0, 0].map(() => (
-            <Row key={Math.random()} className="space-x-3 mt-2 mr-3 animate-scroll">
+            <Row key={Math.random()} className="space-x-3 mr-3 mt-2 animate-scroll">
               {[
                 Typescript,
                 ReactIcon,

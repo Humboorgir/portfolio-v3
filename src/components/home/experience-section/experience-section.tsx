@@ -24,11 +24,13 @@ const ExperienceSection = () => {
             Professions
           </span>
         </span>
-        <Text className="text-center px-2" variant="p">
-          <Balancer>Doing Full-stack web development since 2020</Balancer>
+        <Text className="text-center text-base lg:text-lg px-2" variant="p">
+          Four years of web development
         </Text>
-        <Text className="mb-6 text-foreground/80 text-center text-4xl leading-tight" variant="h2">
-          <Balancer>Fields I'm experienced at</Balancer>
+        <Text
+          className="mb-6 text-foreground/80 text-center text-4xl lg:text-[54px] leading-tight"
+          variant="h2">
+          My Expertises
         </Text>
       </Container>
 
