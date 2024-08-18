@@ -62,6 +62,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     if (variant == "secondary" && !rippleColor) rippleColor = "#7C72FF";
 
     const Component = !href ? "button" : useNextLink ? Link : "a";
+
     return (
       <Component
         className={cn(buttonVariants({ variant, size, className }))}

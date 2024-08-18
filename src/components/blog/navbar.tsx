@@ -9,10 +9,10 @@ const Navbar = () => {
       <Button
         className="group no-underline flex items-center rounded-full bg-gradient-to-br
         from-foreground/90 to-foreground text-background text-sm"
-        href="/"
+        href="/blog"
         variant="ghost"
       >
-        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
+        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
       </Button>
     </Container>
   );
