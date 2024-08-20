@@ -8,7 +8,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     pre: ({ children, ...props }) => (
       <pre
-        className={`p-3 rounded-md ` + robotoMono.className}
+        className={
+          `p-3 rounded-md overflow-x-auto text-sm sm:text-base ` +
+          robotoMono.className
+        }
         {...(props as any)}
       >
         {children}

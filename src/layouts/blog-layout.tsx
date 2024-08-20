@@ -38,7 +38,7 @@ const BlogLayout = ({ children }: Props) => {
           </span>
           | <span className="ml-2">5 min read</span>
         </div>
-        <div className="prose prose-sky max-w-none md:prose-xl dark:prose-invert">
+        <div className="prose prose-sky w-[1px] min-w-full max-w-none md:prose-xl dark:prose-invert">
           {children}
         </div>
       </Container>
