@@ -1,4 +1,4 @@
-import type { Post } from "@/lib/types";
+import type { Post } from "@/types";
 
 import Text from "@/components/ui/text";
 import { AnimatePresence, m } from "framer-motion";

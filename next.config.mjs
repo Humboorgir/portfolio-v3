@@ -35,9 +35,8 @@ const nextConfig = {
               return line.match(/^##\s/);
             });
             return headingLines.map((raw) => {
-              console.log(raw);
               if (!raw) return;
-              const text = raw.replace("##", "");
+              const text = raw.replace("## ", "").replace("##", "");
               return text;
             });
           }
@@ -45,28 +44,21 @@ const nextConfig = {
           // didnt know what to call it lol
           const slugize = (txt) => {
             if (!txt) return;
-            txt.replace(" ", "-").toLowerCase();
+            return txt.replaceAll(" ", "-").replaceAll(":", "").toLowerCase();
           };
 
           const tableOfContent = headings.map((heading) => {
-            console.log(heading);
             return { title: heading, href: `#${slugize(heading)}` };
           });
-          const titleHeading = {
-            title: meta.title,
-            href: `#${slugize(meta.title)}`,
-          };
-          tableOfContent.unshift(titleHeading);
 
           let codeTop = `import BlogLayout from "@/layouts/blog-layout";`;
 
-          // <BlogLayout tableOfContent={tableOfContent} meta={${JSON.stringify(
-          //   meta
-          // )}}>
           let codeBottom = `export default function Page({ children }) {
             const tableOfContent = ${JSON.stringify(tableOfContent)}
             return (
-              <BlogLayout>
+              <BlogLayout tableOfContent={tableOfContent} meta={${JSON.stringify(
+                meta
+              )}}>
                 {children}
               </BlogLayout>
             );
