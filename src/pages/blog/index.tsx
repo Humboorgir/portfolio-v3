@@ -1,19 +1,16 @@
 import Container from "@/components/ui/container";
 import Row from "@/components/ui/row";
-import Text from "@/components/ui/text";
 import Post from "@/components/blog/post";
 import Button from "@/components/ui/button";
 
-import BlogLayout from "@/layouts/blog-layout";
 import SlideShow from "@/components/blog/slide-show";
 import PageTitle from "@/components/blog/page-title";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 
 import { BsArrowLeft as ArrowLeft } from "react-icons/bs";
 
 const BlogPage = () => {
-  // dummy data
   const posts = [
     {
       title: "Authentication in Next.js: A Comprehensive Guide",
@@ -36,24 +33,6 @@ const BlogPage = () => {
       readTime: "8 min",
     },
   ];
-
-  const [currentPost, setCurrentPost] = useState(posts[0]);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
-
-  const startAnimation = useCallback(() => {
-    const thePost = posts.find((post) => post.title == currentPost.title);
-    const post = posts[posts.indexOf(thePost!) + 1] || posts[0];
-    setCurrentPost(post);
-    setIsAnimating(true);
-  }, [currentPost, posts]);
-
-  useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
-        startAnimation();
-      }, 3000);
-  }, [isAnimating, startAnimation]);
-
   return (
     <Container className="w-full mb-20 mt-5">
       <Button
@@ -68,7 +47,7 @@ const BlogPage = () => {
       <Row justify="between" items="stretch" className="flex-wrap gap-8">
         <PageTitle />
 
-        <SlideShow currentPost={currentPost} setIsAnimating={setIsAnimating} />
+        <SlideShow posts={posts} />
       </Row>
 
       <div className="grid mt-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">

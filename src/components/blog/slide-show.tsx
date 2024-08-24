@@ -1,14 +1,32 @@
 import type { Post } from "@/types";
 
 import Text from "@/components/ui/text";
+
 import { AnimatePresence, m } from "framer-motion";
+import React, { useCallback, useEffect, useState } from "react";
 
 type SlideShowProps = {
-  setIsAnimating: React.Dispatch<React.SetStateAction<boolean>>;
-  currentPost: Post;
+  posts: Post[];
 };
 
-const SlideShow = ({ currentPost, setIsAnimating }: SlideShowProps) => {
+const SlideShow = ({ posts }: SlideShowProps) => {
+  const [currentPost, setCurrentPost] = useState(posts[0]);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+
+  const startAnimation = useCallback(() => {
+    const thePost = posts.find((post) => post.title == currentPost.title);
+    const post = posts[posts.indexOf(thePost!) + 1] || posts[0];
+    setCurrentPost(post);
+    setIsAnimating(true);
+  }, [currentPost, posts]);
+
+  useEffect(() => {
+    if (!isAnimating)
+      setTimeout(() => {
+        startAnimation();
+      }, 3000);
+  }, [isAnimating, startAnimation]);
+
   return (
     <div className="text-transparent max-w-[620px] min-h-[220px] min-w-[200px] sm:min-w-[360px] grow relative flex overflow-hidden">
       .
