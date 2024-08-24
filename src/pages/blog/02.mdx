@@ -1,0 +1,38 @@
+---
+title: "Creating Truly Reusable React Components: A Comprehensive Guide"
+postedOn: "2024-08-23T06:15:03.092Z"
+category: "Front-end Development"
+---
+
+Note: This article walks through the process of creating reusable UI components from scratch to provide a better understanding of the concept. However, in a real-world scenario, you'd probably copy & paste common UI components (e.g., buttons, inputs, etc) instead of writing them from scratch. So the implementation isn't as time consuming as it might look like 😅.
+
+if you are in a hurry you can jump to the final result [by clicking here](#final-result).
+
+**All CSS is written with Tailwindcss in this article.**
+
+## Introduction 🚀
+You can think of React components as building blocks of the web.
+A component can be a navbar, footer, form, button, or any other piece of the front end.
+
+> They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
+
+[Source](https://www.w3schools.com/react/react_components.asp#:~:text=Components%20are%20independent%20and%20reusable,will%20concentrate%20on%20Function%20components.)
+
+> Code reusability refers to writing code in such a way that it can be reused across multiple contexts with little or no modification required. This approach saves time on repetitive tasks, shrinks codebase size, and improves maintainability.
+
+[Source](https://www.opslevel.com/resources/what-is-code-reuse-and-why-is-it-important#:~:text=Code%20reusability%20refers%20to%20writing,codebase%20size%2C%20and%20improves%20maintainability.)
+
+Reusable React components are components that can be used multiple times throughout an application to prevent unnecessary boilerplate.
+
+Whenever possible, I prefer to create reusable components for common UI elements (e.g., buttons, text inputs, etc) and use them in the application like a component library, Instead of creating a separate component for each instance of the element. 
+This approach makes the code base cleaner, reduces code duplication and scales really well.
+
+[TOC]
+
+Let's take a look at an example to help understand the concept.
+
+For demonstration purposes, we'll recreate the list of buttons in the image below
+![ThreeButtons](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wc65uw0uc9w2jowj4ean.png)
+
+## Step 0: Creating a simple button component
+First, we're gonna start off with the home button.

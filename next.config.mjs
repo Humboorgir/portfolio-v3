@@ -41,6 +41,27 @@ const nextConfig = {
             });
           }
 
+          // replaces [TOC] with TOC component
+          function implementTOC(source) {
+            return source
+              .split("\n")
+              .map((line) => {
+                const isWriterAskingForTOCToBePlacedHere =
+                  line.includes("[TOC]");
+
+                if (!isWriterAskingForTOCToBePlacedHere) return line;
+                return line.replace(
+                  "[TOC]",
+                  `\n
+                     <TableOfContent tableOfContent={${JSON.stringify(
+                       tableOfContent
+                     )}}/>
+                    \n`
+                );
+              })
+              .join("\n");
+          }
+
           // didnt know what to call it lol
           const slugize = (txt) => {
             if (!txt) return;
@@ -51,7 +72,7 @@ const nextConfig = {
             return { title: heading, href: `#${slugize(heading)}` };
           });
 
-          let codeTop = `import BlogLayout from "@/layouts/blog-layout";`;
+          let codeTop = `import BlogLayout from "@/layouts/blog-layout";\nimport TableOfContent from "@/components/blog/table-of-content"`;
 
           let codeBottom = `export default function Page({ children }) {
             const tableOfContent = ${JSON.stringify(tableOfContent)}
@@ -64,7 +85,11 @@ const nextConfig = {
             );
           }`;
 
-          return [codeTop, body, codeBottom].join("\n\n");
+          const finalCode = [codeTop, body, codeBottom].join("\n\n");
+          console.log(finalCode);
+
+          const finalCodeWithTOC = implementTOC(finalCode);
+          return finalCodeWithTOC;
         }),
       ];
     }
