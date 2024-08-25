@@ -4,6 +4,7 @@ import Text from "@/components/ui/text";
 
 import { AnimatePresence, m } from "framer-motion";
 import React, { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 
 type SlideShowProps = {
   posts: Post[];
@@ -28,7 +29,10 @@ const SlideShow = ({ posts }: SlideShowProps) => {
   }, [isAnimating, startAnimation]);
 
   return (
-    <div className="text-transparent max-w-[620px] min-h-[220px] min-w-[200px] sm:min-w-[360px] grow relative flex overflow-hidden">
+    <Link
+      href={currentPost.url}
+      className="text-transparent max-w-[620px] min-h-[220px] min-w-[200px] sm:min-w-[360px] grow relative flex overflow-hidden"
+    >
       .
       <AnimatePresence
         onExitComplete={() => {
@@ -90,7 +94,7 @@ const SlideShow = ({ posts }: SlideShowProps) => {
           </div>
         </m.div>
       </AnimatePresence>
-    </div>
+    </Link>
   );
 };
 

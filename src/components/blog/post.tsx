@@ -1,6 +1,7 @@
 import type { Post } from "@/types";
 
 import Text from "@/components/ui/text";
+import Link from "next/link";
 
 type PostProps = {
   post: Post;
@@ -8,7 +9,8 @@ type PostProps = {
 
 const Post = ({ post }: PostProps) => {
   return (
-    <div
+    <Link
+      href={post.url}
       className="flex flex-col items-end border-neutral-700 border w-full rounded-md p-3
       bg-gradient-to-b from-white/30 to-90% to-black min-h-[170px]"
     >
@@ -27,7 +29,7 @@ const Post = ({ post }: PostProps) => {
           {post.readTime} min read
         </Text>
       </div>
-    </div>
+    </Link>
   );
 };
 

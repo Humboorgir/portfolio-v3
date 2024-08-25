@@ -1,34 +1,30 @@
+import { Post } from "@/types";
+
 import Container from "@/components/ui/container";
 import Row from "@/components/ui/row";
-import PostComponent from "@/components/blog/post";
 import Button from "@/components/ui/button";
 
 import SlideShow from "@/components/blog/slide-show";
 import PageTitle from "@/components/blog/page-title";
+import PostComponent from "@/components/blog/post";
 
 import React from "react";
 import fs from "fs";
-import path from "path";
 import frontMatter from "front-matter";
+import { estimateReadTime, formatDateRelatively, slugify } from "@/lib/utils";
 
 import { BsArrowLeft as ArrowLeft } from "react-icons/bs";
-import { Post } from "@/types";
-import {
-  estimateReadTime,
-  formatDate,
-  formatDateRelatively,
-} from "@/lib/utils";
 
 const BlogPage = ({ posts }: { posts: Post[] }) => {
   return (
     <Container className="w-full mb-20 mt-5">
       <Button
-        className="group no-underline w-fit flex items-center rounded-full bg-gradient-to-br
-        from-foreground/90 to-foreground text-background text-sm"
+        className="group w-fit no-underline transition-all flex items-center rounded-full text-foreground/70 hover:text-foreground/90 text-sm"
         href="/"
         variant="ghost"
       >
-        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
+        <ArrowLeft className="w-4 h-4 text-foreground/70 transition-all duration-[250ms] mr-1 group-hover:text-foreground/90 group-hover:mr-2" />
+        Back to Home
       </Button>
 
       <Row justify="between" items="stretch" className="flex-wrap gap-8">
@@ -59,8 +55,9 @@ export async function getStaticProps() {
 
     const readTime = estimateReadTime(source);
     const postedOn = formatDateRelatively(meta.postedOn);
+    const url = `/blog/${slugify(meta.title)}`;
 
-    return { ...meta, postedOn, readTime };
+    return { ...meta, readTime, postedOn, url };
   });
 
   return { props: { posts } };
