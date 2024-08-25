@@ -18,12 +18,13 @@ const Post = ({ post }: PostProps) => {
       >
         {post.title}
       </Text>
-      <div className="flex justify-between items-center w-full">
-        <Text className="md:text-sm flex items-center" variant="lead">
-          ~{post.readTime} read
-        </Text>
+      <div className="flex items-center pl-1 w-full">
         <Text className="md:text-sm" variant="lead">
-          {post.published}
+          {post.postedOn}
+        </Text>
+        <div className="h-1 w-1 rounded-full bg-white/70 mx-2" />
+        <Text className="md:text-sm flex items-center" variant="lead">
+          {post.readTime} min read
         </Text>
       </div>
     </div>

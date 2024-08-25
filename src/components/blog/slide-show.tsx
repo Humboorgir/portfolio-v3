@@ -82,10 +82,10 @@ const SlideShow = ({ posts }: SlideShowProps) => {
           </Text>
           <div className="flex mt-1 justify-between items-center w-full">
             <Text className="md:text-sm" variant="lead">
-              ~{currentPost.readTime} read
+              ~{currentPost.readTime} min read
             </Text>
             <Text className="md:text-sm" variant="lead">
-              {currentPost.published}
+              {currentPost.postedOn}
             </Text>
           </div>
         </m.div>
