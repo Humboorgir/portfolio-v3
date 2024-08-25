@@ -7,7 +7,7 @@ export function cn(...classes: ClassValue[]) {
 
 // used in blog pages
 export function formatDate(date: string) {
-  const postedDate = new Date(date);
+  const d = new Date(date);
   const days = [
     "Sunday",
     "Monday",
@@ -17,7 +17,7 @@ export function formatDate(date: string) {
     "Friday",
     "Saturday",
   ];
-  const day = days[postedDate.getDay()];
+  const day = days[d.getDay()];
 
   const months = [
     "January",
@@ -33,7 +33,7 @@ export function formatDate(date: string) {
     "November",
     "December",
   ];
-  const month = months[postedDate.getMonth()];
+  const month = months[d.getMonth()];
 
   function getNumberWithOrdinal(n: number) {
     var s = ["th", "st", "nd", "rd"],
@@ -41,11 +41,71 @@ export function formatDate(date: string) {
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
   }
 
-  const dayOfTheMonth = getNumberWithOrdinal(postedDate.getDate());
+  const dayOfTheMonth = getNumberWithOrdinal(d.getDate());
 
-  const year = postedDate.getFullYear();
+  const year = d.getFullYear();
 
-  const postedDateFormatted = `${day}, ${month} ${dayOfTheMonth} ${year}`;
+  const dFormatted = `${day}, ${month} ${dayOfTheMonth} ${year}`;
 
-  return postedDateFormatted;
+  return dFormatted;
+}
+
+// used for to get relative time from date (eg. 'x days ago')
+export function formatDateRelatively(date: string) {
+  const timeStamp = new Date(date);
+
+  // Note: valueOf() is only used to get rid of typescript errors
+  const secondsPast = (Date.now().valueOf() - timeStamp.valueOf()) / 1000;
+
+  // number of seconds in:
+  const oneMinute = 60;
+  const oneHour = oneMinute * 60;
+  const oneDay = oneHour * 24;
+  const oneMonth = oneDay * 30;
+  const oneYear = oneMonth * 12;
+
+  if (secondsPast < oneMinute) {
+    const relativeTime = Math.floor(secondsPast);
+    const sIfNeeded = relativeTime > 1 ? "s" : "";
+    return relativeTime + ` second${sIfNeeded} ago`;
+  }
+
+  if (secondsPast < oneHour) {
+    const relativeTime = Math.floor(secondsPast / oneMinute);
+    const sIfNeeded = relativeTime > 1 ? "s" : "";
+    return relativeTime + ` minute${sIfNeeded} ago`;
+  }
+
+  if (secondsPast < oneDay) {
+    const relativeTime = Math.floor(secondsPast / oneHour);
+    const sIfNeeded = relativeTime > 1 ? "s" : "";
+    return relativeTime + ` hour${sIfNeeded} ago`;
+  }
+
+  if (secondsPast < oneMonth) {
+    const relativeTime = Math.floor(secondsPast / oneDay);
+    const sIfNeeded = relativeTime > 1 ? "s" : "";
+    return relativeTime + ` day${sIfNeeded} ago`;
+  }
+
+  if (secondsPast <= oneYear) {
+    const relativeTime = Math.floor(secondsPast / oneMonth);
+    const sIfNeeded = relativeTime > 1 ? "s" : "";
+    return relativeTime + ` month${sIfNeeded} ago`;
+  }
+
+  if (secondsPast > oneYear) {
+    const relativeTime = Math.floor(secondsPast / oneYear);
+    const sIfNeeded = relativeTime > 1 ? "s" : "";
+    return relativeTime + ` year${sIfNeeded} ago`;
+  }
+}
+
+export function estimateReadTime(source: string) {
+  const textLength = source.trim().split(/\s+/).length;
+  const wordsPerMinute = 250;
+
+  console.log(textLength);
+  console.log(wordsPerMinute);
+  return Math.ceil(textLength / wordsPerMinute);
 }
