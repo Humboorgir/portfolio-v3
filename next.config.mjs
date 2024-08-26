@@ -23,7 +23,8 @@ const withMDX = nextMDX({
 const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   reactStrictMode: true,
-  webpack(config, options) {
+  webpack(config) {
+    // TODO: break these down into multiple files
     function mdxLoader() {
       return [
         createLoader(function (source) {
