@@ -7,10 +7,6 @@ import { MdOutlineDateRange as Date } from "react-icons/md";
 const PageTitle = () => {
   return (
     <div className="relative w-[280px] md:w-[320px] pt-[100px] h-[200px] overflow-hidden max-w-[85vw]">
-      <div
-        className="absolute w-1/2 h-1/2 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-foreground/30 rounded-[60%]
-    blur-[40px]"
-      ></div>
       <Image
         fill
         className="-z-10 blur-[3.5px]

@@ -17,7 +17,12 @@ import { BsArrowLeft as ArrowLeft } from "react-icons/bs";
 
 const BlogPage = ({ posts }: { posts: Post[] }) => {
   return (
-    <Container className="w-full mb-20 mt-5">
+    <Container className="relative w-full mb-20 mt-5">
+      <div
+        className="-z-10 absolute top-0 left-0 h-[200px] w-[300px] max-w-[60vw]
+       bg-gradient-to-r from-primary/80 to-primary/60 blur-[100px]"
+      />
+
       <Button
         className="group w-fit no-underline transition-all flex items-center rounded-full text-foreground/70 hover:text-foreground/90 text-sm"
         href="/"
@@ -56,8 +61,9 @@ export async function getStaticProps() {
     const readTime = estimateReadTime(source);
     const postedOn = formatDateRelatively(meta.postedOn);
     const url = `/blog/${slugify(meta.title)}`;
+    const thumbnail = `/blog/thumbnail/${slugify(meta.title)}.png`;
 
-    return { ...meta, readTime, postedOn, url };
+    return { ...meta, thumbnail, readTime, postedOn, url };
   });
 
   return { props: { posts } };
