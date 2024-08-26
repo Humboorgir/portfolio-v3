@@ -4,6 +4,7 @@ import Text from "@/components/ui/text";
 
 import { AnimatePresence, m } from "framer-motion";
 import React, { useCallback, useEffect, useState } from "react";
+import { formatDateRelatively } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -99,7 +100,7 @@ const SlideShow = ({ posts }: SlideShowProps) => {
                 ~{currentPost.readTime} min read
               </Text>
               <Text className="md:text-sm" variant="lead">
-                {currentPost.postedOn}
+                {formatDateRelatively(currentPost.postedOn)}
               </Text>
             </div>
           </div>

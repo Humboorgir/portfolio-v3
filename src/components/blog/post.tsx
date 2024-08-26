@@ -1,6 +1,8 @@
 import type { Post } from "@/types";
 
 import Text from "@/components/ui/text";
+
+import { formatDateRelatively } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -29,7 +31,7 @@ const Post = ({ post }: PostProps) => {
       </Text>
       <div className="flex items-center pl-1 w-full">
         <Text className="md:text-sm" variant="lead">
-          {post.postedOn}
+          {formatDateRelatively(post.postedOn)}
         </Text>
         <div className="h-1 w-1 rounded-full bg-white/70 mx-2" />
         <Text className="md:text-sm flex items-center" variant="lead">

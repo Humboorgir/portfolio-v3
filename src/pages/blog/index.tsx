@@ -11,7 +11,7 @@ import PostComponent from "@/components/blog/post";
 import React from "react";
 import fs from "fs";
 import frontMatter from "front-matter";
-import { estimateReadTime, formatDateRelatively, slugify } from "@/lib/utils";
+import { estimateReadTime, slugify } from "@/lib/utils";
 
 import { BsArrowLeft as ArrowLeft } from "react-icons/bs";
 
@@ -59,11 +59,10 @@ export async function getStaticProps() {
     const { attributes: meta } = frontMatter<PostWithoutReadTime>(source);
 
     const readTime = estimateReadTime(source);
-    const postedOn = formatDateRelatively(meta.postedOn);
     const url = `/blog/${slugify(meta.title)}`;
     const thumbnail = `/blog/thumbnail/${slugify(meta.title)}.png`;
 
-    return { ...meta, thumbnail, readTime, postedOn, url };
+    return { ...meta, thumbnail, readTime, url };
   });
 
   return { props: { posts } };
