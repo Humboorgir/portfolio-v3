@@ -4,7 +4,7 @@ type TableOfContentProps = {
 
 const TableOfContent = ({ tableOfContent }: TableOfContentProps) => {
   return (
-    <div className="flex w-fit flex-col">
+    <div className="flex w-fit flex-col max-w-full">
       {tableOfContent.map((x, i) => {
         return (
           <div key={i} className="p-0 m-0 group flex items-center">
