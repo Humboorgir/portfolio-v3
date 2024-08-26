@@ -14,11 +14,13 @@ const Post = ({ post }: PostProps) => {
   return (
     <Link
       href={post.url}
-      className="relative flex flex-col items-end border-neutral-700 border w-full rounded-md p-3
-      bg-gradient-to-b from-black/10 to-70% to-black min-h-[200px]"
+      className="group overflow-hidden transition-all duration-300 hover:-translate-y-2 
+      relative flex flex-col items-end border-neutral-700 border w-full rounded-md p-3
+       min-h-[200px] hover:bg-white/10 active:bg-white/20"
     >
+      <div className="absolute -left-[140px] top-0 h-full w-[80px] rotate-[30deg] scale-y-150 bg-white/10 transition-all duration-[600ms] group-hover:left-[calc(100%+60px)]" />
       <Image
-        className="-z-10 rounded-md object-cover"
+        className="-z-10 rounded-md object-cover [mask-image:linear-gradient(to_top,transparent_30%,black)]"
         fill
         alt={post.title}
         src={post.thumbnail}

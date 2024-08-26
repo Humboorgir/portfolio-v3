@@ -64,7 +64,7 @@ const SlideShow = ({ posts }: SlideShowProps) => {
             position: "absolute",
           }}
           className="right-0 top-0 grid grid-cols-[1fr] absolute w-full border-neutral-700 border rounded-md
-    bg-gradient-to-b from-transparent to-80% to-black h-full max-h-[220px]"
+    bg-gradient-to-b from-transparent to-80% to-black h-full max-h-[220px] hover:bg-white/10 active:bg-white/20"
           key={currentPost.title}
         >
           <Image
