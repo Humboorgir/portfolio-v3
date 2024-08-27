@@ -9,7 +9,7 @@ import Tooltip from "@/components/ui/tooltip";
 
 import { cubicBezier, m, useInView } from "framer-motion";
 
-import { AiOutlineMail as Mail } from "react-icons/ai";
+import { FaPaperPlane as Mail } from "react-icons/fa";
 import { IoLogoDiscord as Discord } from "react-icons/io5";
 import { FaTelegram as Telegram } from "react-icons/fa6";
 import { FaTwitter as Twitter } from "react-icons/fa6";
@@ -41,7 +41,8 @@ const ContactSection = () => {
       viewBox="0 0 20 20"
       fill="currentColor"
       height="20"
-      width="20">
+      width="20"
+    >
       <path
         fillRule="evenodd"
         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
@@ -56,7 +57,8 @@ const ContactSection = () => {
       viewBox="0 0 20 20"
       fill="currentColor"
       height="20"
-      width="20">
+      width="20"
+    >
       <path
         fillRule="evenodd"
         d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z"
@@ -90,7 +92,10 @@ const ContactSection = () => {
             from-transparent via-red-500 to-transparent"
             aria-hidden="true"
           />
-          <Text className="flex font-bold items-center text-red-200" variant="h4">
+          <Text
+            className="flex font-bold items-center text-red-200"
+            variant="h4"
+          >
             {ErrorIcon} <span className="ml-2">Error!</span>
           </Text>
           <Text className="text-red-100" variant="p">
@@ -107,7 +112,10 @@ const ContactSection = () => {
             from-transparent via-green-500 to-transparent"
           aria-hidden="true"
         />
-        <Text className="flex font-bold items-center text-green-200" variant="h4">
+        <Text
+          className="flex font-bold items-center text-green-200"
+          variant="h4"
+        >
           {SuccessIcon} <span className="ml-2">Success!</span>
         </Text>
         <Text className="text-green-100" variant="p">
@@ -121,7 +129,7 @@ const ContactSection = () => {
   }
 
   return (
-    <Container id="contact" className="flex flex-col items-center w-full pb-24">
+    <Container id="contact" className="flex flex-col items-center w-full">
       <Text className="text-foreground/80 -mb-4 text-center" variant="h2">
         <Balancer>So what are you waiting for?</Balancer>
       </Text>
@@ -129,7 +137,8 @@ const ContactSection = () => {
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center relative text-center !pt-12 p-7 md:p-10 z-10 bg-blue-400/5 rounded-xl backdrop-blur-sm 
-        border-2 border-blue-400/10 mb-8 w-full">
+        border-2 border-blue-400/10 mb-8 w-full"
+      >
         <div
           className="absolute top-0 left-0 h-[200px] w-[400px] max-w-[80vw]
           bg-gradient-to-r from-primary/40 to-blue-200/30 blur-[140px]"
@@ -138,7 +147,8 @@ const ContactSection = () => {
 
         <span
           className="mb-5 flex items-center justify-between border-2 border-blue-500/10 px-5 py-1.5 rounded-full
-        bg-blue-500/10 w-fit">
+        bg-blue-500/10 w-fit"
+        >
           <div className="h-3.5 w-3.5 mb-0.5 rounded-full bg-blue-500 animate-pulse mr-3" />
           <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-500">
             Contact
@@ -149,8 +159,8 @@ const ContactSection = () => {
           <Balancer>Let's build the feature together</Balancer>
         </Text>
         <Text className="max-w-prose text-center mb-5" variant="p">
-          Send me a message, make sure to include necessary details like your project and how I can
-          contact you back
+          Send me a message, make sure to include necessary details like your
+          project and how I can contact you back
         </Text>
         <Input
           required
@@ -171,12 +181,16 @@ const ContactSection = () => {
         <Button
           disabled={loading}
           type="submit"
-          className="w-full max-w-[660px] bg-gradient-to-br from-blue-600 to-blue-800">
-          Send project request <Mail className="ml-1" />
+          className="w-full max-w-[660px] bg-gradient-to-br from-blue-600 to-blue-900"
+        >
+          Send project request <Mail className="ml-1.5" />
         </Button>
       </form>
 
-      <Text variant="h4" className="text-foreground/90 text-2xl font-medium text-center">
+      <Text
+        variant="h4"
+        className="text-foreground/90 text-2xl font-medium text-center"
+      >
         <Balancer>Platforms you can contact me on</Balancer>
       </Text>
 
@@ -190,7 +204,8 @@ const ContactSection = () => {
                 <Button
                   size="default"
                   variant="ghost"
-                  className="text-lg bg-transparent text-blue-200 relative">
+                  className="text-lg bg-transparent text-blue-200 relative"
+                >
                   <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
                   <Telegram className="text-2xl mr-1.5" /> Telegram
                 </Button>
@@ -203,7 +218,8 @@ const ContactSection = () => {
                 <Button
                   size="default"
                   variant="ghost"
-                  className="text-lg bg-transparent text-blue-200 relative">
+                  className="text-lg bg-transparent text-blue-200 relative"
+                >
                   <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
                   <Discord className="text-2xl mr-1.5" /> Discord
                 </Button>
@@ -216,7 +232,8 @@ const ContactSection = () => {
                 <Button
                   size="default"
                   variant="ghost"
-                  className="text-lg bg-transparent text-blue-200 relative">
+                  className="text-lg bg-transparent text-blue-200 relative"
+                >
                   <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
                   <Twitter className="text-2xl mr-1.5" /> Twitter
                 </Button>

@@ -16,7 +16,7 @@ const HomeLayout = ({ children }: Props) => {
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-    { name: "Resume", href: "/resume" },
+    { name: "Blog", href: "/blog" },
   ];
 
   const [isOpen, toggleOpen] = useCycle(false, true);

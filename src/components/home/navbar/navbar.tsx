@@ -40,13 +40,15 @@ const Navbar = ({ toggleOpen, links }: Props) => {
     <Container className="relative z-30 w-full max-w-[1080px]">
       <nav
         className="translate-y-3 rounded-full border-2 border-foreground-muted/20 px-5 md:px-10 w-full
-       grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-1 md:py-3.5">
+       grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,3fr,1fr] py-1 md:py-3.5"
+      >
         {/* logo  */}
         <Row>
           <Work className="text-3xl mr-1" />
           <Text
             className="font-bold bg-gradient-to-br from-neutral-100 to-neutral-300 bg-clip-text text-transparent"
-            variant="h5">
+            variant="h5"
+          >
             Portfolio
           </Text>
         </Row>
@@ -56,8 +58,12 @@ const Navbar = ({ toggleOpen, links }: Props) => {
           key="navbar"
           ref={containerRef}
           onMouseLeave={resetButtonRect}
-          className="relative hidden md:flex items-center justify-center">
-          <HoverHighlight buttonRect={buttonRect} containerRect={containerRect} />
+          className="relative hidden md:flex items-center justify-center"
+        >
+          <HoverHighlight
+            buttonRect={buttonRect}
+            containerRect={containerRect}
+          />
 
           {links.map((link, i) => {
             return (
@@ -66,7 +72,8 @@ const Navbar = ({ toggleOpen, links }: Props) => {
                   className="text-foreground/90 text-[17px] hover:bg-inherit"
                   variant="ghost"
                   href={link.href}
-                  useNextLink={false}>
+                  useNextLink={!link.href.startsWith("#")}
+                >
                   {link.name}
                 </Button>
               </li>
@@ -83,7 +90,10 @@ const Navbar = ({ toggleOpen, links }: Props) => {
           </li>
         </ul>
 
-        <HamburgerButton className="md:hidden ml-auto" toggleOpen={toggleOpen} />
+        <HamburgerButton
+          className="md:hidden ml-auto"
+          toggleOpen={toggleOpen}
+        />
       </nav>
     </Container>
   );

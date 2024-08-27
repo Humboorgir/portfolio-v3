@@ -31,27 +31,41 @@ const Footer = () => {
               </Text>
             </Row>
             <Text className="mb-8 max-w-md" variant="lead">
-              "I'm Iliya, Your average front-end developer. My job is to turn ideas into reality and help
-              construst the bright future."
+              "I'm Iliya, Your average front-end developer. My job is to turn
+              ideas into reality and help construst the bright future."
             </Text>
           </Column>
           <Column className="sm:flex-row items-start mr-auto sm:mr-0 sm:space-x-14">
             <Column items="start">
-              <Text className="font-bold text-foreground/90 whitespace-nowrap" variant="h4">
+              <Text
+                className="font-bold text-foreground/90 whitespace-nowrap"
+                variant="h4"
+              >
                 Quick links
               </Text>
               {["Home", "About", "Pricing", "FAQ", "Contact"].map((item) => (
-                <Button size="sm" className="!p-0 text-foreground/70 font-medium mb-0.5" variant="link">
+                <Button
+                  size="sm"
+                  className="!p-0 text-foreground/70 font-medium mb-0.5"
+                  variant="link"
+                >
                   {item}
                 </Button>
               ))}
             </Column>
             <Column items="start">
-              <Text className="font-bold text-foreground/90 whitespace-nowrap" variant="h4">
+              <Text
+                className="font-bold text-foreground/90 whitespace-nowrap"
+                variant="h4"
+              >
                 Quick links
               </Text>
               {["Home", "About", "Pricing", "FAQ", "Contact"].map((item) => (
-                <Button size="sm" className="!p-0 text-foreground/70 font-medium mb-0.5" variant="link">
+                <Button
+                  size="sm"
+                  className="!p-0 text-foreground/70 font-medium mb-0.5"
+                  variant="link"
+                >
                   {item}
                 </Button>
               ))}
@@ -60,22 +74,27 @@ const Footer = () => {
               <Text className="font-bold text-foreground/90" variant="h4">
                 Repository
               </Text>
-              {["Github repo", "Github issues", "Github PRs", "Github commit history", "My github"].map(
-                (item) => (
-                  <Button
-                    size="sm"
-                    className="!p-0 text-foreground/70 font-medium mb-0.5"
-                    variant="link">
-                    {item}
-                  </Button>
-                )
-              )}
+              {[
+                "Github repo",
+                "Github issues",
+                "Github PRs",
+                "Github commit history",
+                "My github",
+              ].map((item) => (
+                <Button
+                  size="sm"
+                  className="!p-0 text-foreground/70 font-medium mb-0.5"
+                  variant="link"
+                >
+                  {item}
+                </Button>
+              ))}
             </Column>
           </Column>
         </Column>
         <Row className="mb-3">
           {[Github, Discord, Telegram, Youtube].map((Icon) => (
-            <div className="group relative mr-3 cursor-pointer">
+            <div className="group relative mr-3 last-of-type:mr-0 cursor-pointer">
               <div
                 className="opacity-0 group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 bg-blue-500/40 blur-lg
             transition-all duration-[350ms]"

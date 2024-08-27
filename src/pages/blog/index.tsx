@@ -24,7 +24,7 @@ const BlogPage = ({ posts }: { posts: Post[] }) => {
       />
 
       <Button
-        className="group w-fit no-underline transition-all flex items-center rounded-full text-foreground/70 hover:text-foreground/90 text-sm"
+        className="group w-fit no-underline transition-all flex items-center rounded-full text-foreground/70 hover:bg-white/10 hover:text-foreground/90 text-sm"
         href="/"
         variant="ghost"
       >

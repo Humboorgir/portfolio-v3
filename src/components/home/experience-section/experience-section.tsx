@@ -13,12 +13,13 @@ const ExperienceSection = () => {
     <>
       <Container className="relative pt-20 flex flex-col items-center">
         <div
-          className="absolute top-0 left-0 h-[200px] w-[400px] max-w-[80vw]
-   bg-gradient-to-r from-primary/50 to-blue-200/30 blur-[140px]"
+          className="absolute top-0 left-0 h-[200px] w-[100%] max-w-[300px]
+   bg-gradient-to-r from-primary/40 to-blue-200/30 blur-[100px]"
         />
         <span
           className="mb-6 flex items-center border-2 border-blue-500/10 px-4 py-1.5 rounded-full
-        bg-blue-500/10 w-fit">
+        bg-blue-500/10 w-fit"
+        >
           <div className="h-3.5 w-3.5 mb-0.5 rounded-full bg-blue-500 animate-pulse mr-2" />
           <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-500">
             Professions
@@ -29,7 +30,8 @@ const ExperienceSection = () => {
         </Text>
         <Text
           className="mb-6 text-foreground/80 text-center text-4xl lg:text-[54px] leading-tight"
-          variant="h2">
+          variant="h2"
+        >
           My Expertises
         </Text>
       </Container>
@@ -59,7 +61,8 @@ const ExperienceSection = () => {
             return (
               <Column
                 className="md:mr-4 mb-6 text-center relative p-6 w-full max-w-[440px] md:w-[44%] md:max-w-[350px] rounded-md border-2 border-blue-300/10 backdrop-blur-sm"
-                key={label}>
+                key={label}
+              >
                 <div
                   className="absolute top-0 left-[50%] translate-x-[-50%] w-[50%] h-[2px] bg-gradient-to-r 
             from-transparent via-blue-500 to-transparent"
@@ -78,17 +81,22 @@ const ExperienceSection = () => {
                   <Text
                     className="bg-clip-text text-3xl text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400
                     max-w-[240px]"
-                    variant="h3">
+                    variant="h3"
+                  >
                     {label}
                   </Text>
-                  <Text variant="lead" className="text-[15px] max-w-[300px] pb-5">
+                  <Text
+                    variant="lead"
+                    className="text-[15px] max-w-[300px] pb-5"
+                  >
                     {description}
                   </Text>
 
                   <Button
                     href="#projects"
                     useNextLink={false}
-                    className="mt-auto w-[calc(100%-16px)] text-foreground/80 bg-transparent bg-gradient-to-br from-blue-800 to-blue-950">
+                    className="mt-auto w-[calc(100%-16px)] text-foreground/80 bg-transparent bg-gradient-to-br from-blue-800 to-blue-950"
+                  >
                     See work samples
                   </Button>
                 </Column>
