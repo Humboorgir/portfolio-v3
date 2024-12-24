@@ -9,41 +9,55 @@ import PageTitle from "@/components/blog/page-title";
 import PostComponent from "@/components/blog/post";
 
 import React from "react";
-import fs from "fs";
+import Head from "next/head";
 import frontMatter from "front-matter";
+import fs from "fs";
 import { estimateReadTime, slugify } from "@/lib/utils";
 
 import { BsArrowLeft as ArrowLeft } from "react-icons/bs";
 
 const BlogPage = ({ posts }: { posts: Post[] }) => {
   return (
-    <Container className="relative w-full mb-20 mt-5">
-      <div
-        className="-z-10 absolute top-0 left-0 h-[200px] w-[300px] max-w-[60vw]
+    <>
+      {/* metadata */}
+      <Head>
+        <title>IliyaFaz ~ My blog</title>
+
+        <meta
+          name="description"
+          content="My blog! This is the place where I post a wide range of 
+          programming-related articles, ranging from tutorials, coding best practices,
+          about my past experiences and even my thoughts on certain topics."
+        />
+      </Head>
+      {/* page content  */}
+      <Container className="relative w-full mb-20 mt-5">
+        <div
+          className="-z-10 absolute top-0 left-0 h-[200px] w-[300px] max-w-[60vw]
        bg-gradient-to-r from-primary/80 to-primary/60 blur-[100px]"
-      />
+        />
 
-      <Button
-        className="group w-fit no-underline transition-all flex items-center rounded-full text-foreground/70 hover:bg-white/10 hover:text-foreground/90 text-sm"
-        href="/"
-        variant="ghost"
-      >
-        <ArrowLeft className="w-4 h-4 text-foreground/70 transition-all duration-[250ms] mr-1 group-hover:text-foreground/90 group-hover:mr-2" />
-        Back to Home
-      </Button>
+        <Button
+          className="group w-fit no-underline transition-all flex items-center rounded-full text-foreground/70 hover:bg-white/10 hover:text-foreground/90 text-sm"
+          href="/"
+          variant="ghost">
+          <ArrowLeft className="w-4 h-4 text-foreground/70 transition-all duration-[250ms] mr-1 group-hover:text-foreground/90 group-hover:mr-2" />
+          Back to Home
+        </Button>
 
-      <Row justify="between" items="stretch" className="flex-wrap gap-8">
-        <PageTitle />
+        <Row justify="between" items="stretch" className="flex-wrap gap-8">
+          <PageTitle />
 
-        <SlideShow posts={posts} />
-      </Row>
+          <SlideShow posts={posts} />
+        </Row>
 
-      <div className="grid mt-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-        {posts.map((post, i) => {
-          return <PostComponent key={i} post={post} />;
-        })}
-      </div>
-    </Container>
+        <div className="grid mt-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+          {posts.map((post, i) => {
+            return <PostComponent key={i} post={post} />;
+          })}
+        </div>
+      </Container>
+    </>
   );
 };
 
