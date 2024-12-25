@@ -29,7 +29,9 @@ const Project = ({ project, isEven }: Props) => {
   // Not the best approach but this resulted with the most readable code
   if (isEven)
     return (
-      <Row className="relative z-10 px-5 items-stretch h-fit min-h-[2px]" items="start">
+      <Row
+        className="relative z-10 px-5 items-stretch h-fit min-h-[2px]"
+        items="start">
         <div className="grid grid-cols-1 md:grid-cols-2 mb-16">
           <Column className="relative mr-4 items-start mb-8">
             <div className="absolute left-10 right-10 top-10 bottom-10 bg-blue-400/20 blur-[90px]" />
@@ -55,9 +57,11 @@ const Project = ({ project, isEven }: Props) => {
     );
 
   return (
-    <Row className="relative z-10 px-5 items-stretch h-fit min-h-[2px]" items="start">
+    <Row
+      className="relative z-10 px-5 items-stretch h-fit min-h-[2px]"
+      items="start">
       <div className="relative grid grid-cols-1 md:grid-cols-2 mb-16">
-        <div className="absolute left-16 right-16 top-16 bottom-16 bg-blue-400/20 blur-[110px]" />
+        <div className="absolute left-16 right-16 top-16 bottom-16 bg-blue-400/20 blur-[100px]" />
         <ProjectThumbnail isEven={isEven} project={project} />
         <Column items="end" className="ml-6 mb-8">
           <Text className="text-foreground/90 mb-2 text-right" variant="h3">
@@ -81,7 +85,13 @@ const Project = ({ project, isEven }: Props) => {
   );
 };
 
-function ProjectThumbnail({ project, isEven }: { project: Project; isEven: boolean }) {
+function ProjectThumbnail({
+  project,
+  isEven,
+}: {
+  project: Project;
+  isEven: boolean;
+}) {
   return (
     <div
       className="relative border-2 p-2.5 rounded-xl border-slate-200/20 grid place-items-center opacity-80 row-start-2 row-end-2

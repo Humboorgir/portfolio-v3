@@ -35,7 +35,7 @@ const FAQSection = () => {
     <Container className="relative mb-32 w-full max-w-screen-md">
       <div
         className="absolute top-0 left-0 h-[200px] w-[400px]  max-w-[80vw]
-          bg-gradient-to-r from-primary/40 to-blue-200/30 blur-[140px]"
+          bg-gradient-to-r from-primary/30 to-blue-200/20 blur-[100px]"
       />
       <span
         className="mb-5 flex items-center justify-between border-2 border-blue-500/10 px-5 py-1.5 rounded-full
@@ -49,7 +49,8 @@ const FAQSection = () => {
         <Balancer>Frequently asked questions</Balancer>
       </Text>
       <Text className="text-lg text-foreground/80 mb-8" variant="p">
-        Don't see your question here? Send me a private message on the listed socials
+        Don't see your question here? Send me a private message on the listed
+        socials
       </Text>
       <Accordion className="z-10" items={accordionItems} />
     </Container>

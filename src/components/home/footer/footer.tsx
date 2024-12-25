@@ -18,7 +18,7 @@ const Footer = () => {
       {/* TODO: add aria-hidden to all blur-related divs  */}
       <div
         className="absolute top-0 left-0 h-[200px] w-[50%]
-          bg-gradient-to-r from-primary/40 to-blue-200/10 blur-[140px]"
+          bg-gradient-to-r from-primary/30 to-blue-200/10 blur-[100px]"
         aria-hidden
       />
       <Container className="flex flex-col items-center justify-center px-8 w-full py-8">
@@ -39,16 +39,14 @@ const Footer = () => {
             <Column items="start">
               <Text
                 className="font-bold text-foreground/90 whitespace-nowrap"
-                variant="h4"
-              >
+                variant="h4">
                 Quick links
               </Text>
               {["Home", "About", "Pricing", "FAQ", "Contact"].map((item) => (
                 <Button
                   size="sm"
                   className="!p-0 text-foreground/70 font-medium mb-0.5"
-                  variant="link"
-                >
+                  variant="link">
                   {item}
                 </Button>
               ))}
@@ -56,16 +54,14 @@ const Footer = () => {
             <Column items="start">
               <Text
                 className="font-bold text-foreground/90 whitespace-nowrap"
-                variant="h4"
-              >
+                variant="h4">
                 Quick links
               </Text>
               {["Home", "About", "Pricing", "FAQ", "Contact"].map((item) => (
                 <Button
                   size="sm"
                   className="!p-0 text-foreground/70 font-medium mb-0.5"
-                  variant="link"
-                >
+                  variant="link">
                   {item}
                 </Button>
               ))}
@@ -84,8 +80,7 @@ const Footer = () => {
                 <Button
                   size="sm"
                   className="!p-0 text-foreground/70 font-medium mb-0.5"
-                  variant="link"
-                >
+                  variant="link">
                   {item}
                 </Button>
               ))}

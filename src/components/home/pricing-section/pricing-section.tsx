@@ -8,7 +8,7 @@ const PricingSection = () => {
     <Container className="relative flex flex-col items-center mb-44">
       <div
         className="absolute top-0 left-0 h-[200px] w-[400px]  max-w-[80vw]
-   bg-gradient-to-r from-primary/40 to-blue-200/30 blur-[140px]"
+   bg-gradient-to-r from-primary/30 to-blue-200/20 blur-[100px]"
       />
       <span
         className="mb-3 flex items-center justify-between border-2 border-blue-500/10 px-4 py-1.5 rounded-full
@@ -22,8 +22,8 @@ const PricingSection = () => {
         Available services
       </Text>
       <Text className="max-w-xl text-center mb-8" variant="p">
-        Prices might change over time. Payments are only accepted in crypto. Possible to pay after the
-        project is done.
+        Prices might change over time. Payments are only accepted in crypto.
+        Possible to pay after the project is done.
       </Text>
       <PricingCards />
     </Container>

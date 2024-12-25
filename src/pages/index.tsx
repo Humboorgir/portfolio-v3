@@ -12,12 +12,6 @@ import Head from "next/head";
 
 const Home = () => {
   return (
-    // TODO: fix the bug described below
-    // in firefox, the blur filter cannot have a value of above 100px,
-    // as a result, elements with blur-[140px] (or more) will
-    // not look the same on chrome and firefox
-    // to fix this, reduce the blur amount of the elements to 100px and reduce their opacity
-    // this might not produce the exact same result but it will be close.
     <>
       {/* metadata  */}
       <Head>
@@ -48,8 +42,8 @@ const Home = () => {
         </svg>
 
         <div
-          className="absolute top-0 left-[50%] translate-x-[-50%] h-[200px] w-[600px] max-w-[60vw]
-       bg-gradient-to-r from-primary/80 to-accent/60 blur-[140px]"
+          className="absolute top-0 left-[50%] translate-x-[-50%] h-[260px] w-[600px] max-w-[60vw]
+       bg-gradient-to-r from-primary/50 to-accent/30 blur-[100px]"
         />
         <HeroSection />
 
