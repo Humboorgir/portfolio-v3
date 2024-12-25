@@ -8,8 +8,7 @@ const BlogSection = () => {
     <Container className="w-full flex flex-col items-center pb-24">
       <div
         className="relative bg-blue-400/5 rounded-xl backdrop-blur-sm 
-        border-2 border-blue-400/10 p-5 max-w-3xl"
-      >
+        border-2 border-blue-400/10 p-5 max-w-3xl">
         <div
           className="absolute top-0 left-0 h-[70px] w-[40%] max-w-[80vw]
           bg-gradient-to-r from-primary/40 to-blue-200/30 blur-[60px]"
@@ -27,9 +26,11 @@ const BlogSection = () => {
         <Button
           className="relative min-w-44 text-blue-200/90 bg-transparent hover:bg-white/5"
           variant="ghost"
-          href="/blog"
-        >
-          <div className="-z-10 absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
+          href="/blog">
+          <div
+            aria-hidden
+            className="-z-10 absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg"
+          />
           Visit my blog
           <Link className="w-3 h-3 ml-1.5" />
         </Button>

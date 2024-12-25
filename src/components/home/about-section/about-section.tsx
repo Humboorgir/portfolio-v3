@@ -19,8 +19,14 @@ const AboutSection = () => {
     <div
       id="about"
       className="relative py-20 bg-primary/10 backdrop-blur-[1px]">
-      <div className="absolute -z-10 right-0 top-[50%] translate-y-[-50%] w-[50%] h-full bg-blue-900/20 blur-3xl rounded-full" />
-      <div className="absolute -z-10 left-0 top-[50%] translate-y-[-50%] w-[50%] h-full bg-primary/20 blur-3xl rounded-full" />
+      <div
+        aria-hidden
+        className="absolute -z-10 right-0 top-[50%] translate-y-[-50%] w-[50%] h-full bg-blue-900/20 blur-3xl rounded-full"
+      />
+      <div
+        aria-hidden
+        className="absolute -z-10 left-0 top-[50%] translate-y-[-50%] w-[50%] h-full bg-primary/20 blur-3xl rounded-full"
+      />
       <Container className="flex flex-col lg:flex-row items-center w-full">
         <Column items="start">
           {/* TODO: create a reusable component for this */}

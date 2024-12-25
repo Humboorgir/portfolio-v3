@@ -36,6 +36,7 @@ const FAQSection = () => {
       <div
         className="absolute top-0 left-0 h-[200px] w-[400px]  max-w-[80vw]
           bg-gradient-to-r from-primary/30 to-blue-200/20 blur-[100px]"
+        aria-hidden
       />
       <span
         className="mb-5 flex items-center justify-between border-2 border-blue-500/10 px-5 py-1.5 rounded-full

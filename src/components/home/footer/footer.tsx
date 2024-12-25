@@ -15,7 +15,6 @@ import Button from "@/components/ui/button";
 const Footer = () => {
   return (
     <div className="relative border-t-2 border-blue-400/10 bg-blue-400/5">
-      {/* TODO: add aria-hidden to all blur-related divs  */}
       <div
         className="absolute top-0 left-0 h-[200px] w-[50%]
           bg-gradient-to-r from-primary/30 to-blue-200/10 blur-[100px]"

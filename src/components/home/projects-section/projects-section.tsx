@@ -46,22 +46,25 @@ const ProjectsSection = () => {
         {/* projects  */}
         {projects.map((project, i) => {
           const isEven = (i + 1) % 2 == 0;
-          return <Project key={project.repo} project={project} isEven={isEven} />;
+          return (
+            <Project key={project.repo} project={project} isEven={isEven} />
+          );
         })}
 
         <Row className="relative items-stretch w-full justify-end px-5 h-fit min-h-[1.5px]">
           <div
             className="absolute top-0 right-0 w-1/3 h-1/2 bg-gradient-to-l
             from-blue-400/30 to-transparent blur-[100px]"
-            aria-hidden="true"
+            aria-hidden
           />
           <Column className="z-10 items-end mb-36">
             <Text className="text-foreground/90" variant="h3">
               More Projects
             </Text>
             <Text className="mb-3 text-right max-w-xl" variant="p">
-              There's more to discover! If you're interested, feel free to explore my Github account,
-              where you can find a number of projects I've worked on.
+              There's more to discover! If you're interested, feel free to
+              explore my Github account, where you can find a number of projects
+              I've worked on.
             </Text>
             <Row>
               <Button
@@ -79,7 +82,7 @@ const ProjectsSection = () => {
             </Row>
           </Column>
 
-          <Column className="relative mt-3.5 ml-2 xs:ml-6">
+          <Column aria-hidden className="relative mt-3.5 ml-2 xs:ml-6">
             {/* icon */}
             <div className="bg-blue-400 blur-[1px] w-4 h-4 rounded-full mb-1.5" />
             <div className="absolute right-0 top-0 bg-blue-400 blur-md w-[20px] h-[20px] rounded-full mb-1.5" />
@@ -87,7 +90,7 @@ const ProjectsSection = () => {
             <div
               className="w-[2px] h-full bg-gradient-to-b
             from-transparent via-20% via-blue-400 to-100% to-transparent blur-[1px]"
-              aria-hidden="true"
+              aria-hidden
             />
           </Column>
         </Row>

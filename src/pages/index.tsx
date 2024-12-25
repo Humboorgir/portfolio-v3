@@ -42,6 +42,7 @@ const Home = () => {
         </svg>
 
         <div
+          aria-hidden
           className="absolute top-0 left-[50%] translate-x-[-50%] h-[260px] w-[600px] max-w-[60vw]
        bg-gradient-to-r from-primary/50 to-accent/30 blur-[100px]"
         />

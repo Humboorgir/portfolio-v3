@@ -197,7 +197,10 @@ const ContactSection = () => {
                   size="default"
                   variant="ghost"
                   className="text-lg bg-transparent text-blue-200 relative">
-                  <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
+                  <div
+                    aria-hidden
+                    className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg"
+                  />
                   <Telegram className="text-2xl mr-1.5" /> Telegram
                 </Button>
               ),
@@ -210,7 +213,10 @@ const ContactSection = () => {
                   size="default"
                   variant="ghost"
                   className="text-lg bg-transparent text-blue-200 relative">
-                  <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
+                  <div
+                    aria-hidden
+                    className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg"
+                  />
                   <Discord className="text-2xl mr-1.5" /> Discord
                 </Button>
               ),
@@ -223,7 +229,10 @@ const ContactSection = () => {
                   size="default"
                   variant="ghost"
                   className="text-lg bg-transparent text-blue-200 relative">
-                  <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg" />
+                  <div
+                    aria-hidden
+                    className="absolute top-0 left-0 right-0 bottom-0 bg-blue-500/30 blur-lg"
+                  />
                   <Twitter className="text-2xl mr-1.5" /> Twitter
                 </Button>
               ),
