@@ -36,22 +36,18 @@ const BlogLayout = ({ children, tableOfContent, meta }: Props) => {
           </div>
           <span className="mb-2.5">{postedOn}</span>
         </div>
-        <Text
-          className="max-w-4xl text-3xl sm:text-4xl md:text-5xl mb-5 mt-4"
-          variant="h1"
-        >
+        <Text className="max-w-4xl text-3xl sm:text-4xl md:text-5xl mb-5 mt-4" variant="h1">
           {meta.title}
         </Text>
         <div className="flex my-0.5 text-foreground-muted items-center mb-10">
           <span className="text-foreground/90 mr-2 flex items-center">
             {/* all articles are posted by me so im just gonna hard code this
           I know its not neccessary to put this here but it kinda looks nice */}
-            <div className="h-4 w-4 bg-white/70 rounded-full mr-1.5" /> Posted
-            by Iliya
+            <div className="h-4 w-4 bg-white/70 rounded-full mr-1.5" /> Posted by Iliya
           </span>
           | <span className="ml-2">5 min read</span>
         </div>
-        <div className="prose prose-sky w-[1px] min-w-full max-w-none md:prose-xl dark:prose-invert">
+        <div className="prose prose-sky w-[1px] min-w-full max-w-none md:prose-xl prose-invert">
           {children}
         </div>
       </Container>
